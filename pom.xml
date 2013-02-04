@@ -1,94 +1,203 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <groupId>com.rabbitmq.jms</groupId>
   <artifactId>jmscts</artifactId>
+  <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
+
   <name>rabbit-jmscts</name>
   <description>Compliance Test Suite for RabbitMQ JMS</description>
 
-  <parent>
-    <groupId>com.rabbitmq.jms</groupId>
-    <artifactId>rabbitmq-jms-parent</artifactId>
-    <version>1.0-SNAPSHOT</version>
-  </parent>
-
   <properties>
-    <maven.test.skip>true</maven.test.skip>
+
+    <java-compile-version>1.7</java-compile-version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+
+    <!-- Project build dependencies -->
+    <amqp-client.version>3.0.1</amqp-client.version>
+    <jcip-annotations.version>1.0</jcip-annotations.version>
+
+    <geronimo-spec.version>1.1.1</geronimo-spec.version>
+    <junit.version>4.10</junit.version>
+
+    <commons-cli.version>1.2</commons-cli.version>
+    <commons-collections.version>2.1.1</commons-collections.version>
+    <commons-logging.version>1.0.4</commons-logging.version>
+    <oswego-concurrent.version>1.3.4</oswego-concurrent.version>
+    <exolabcore.version>0.3.7</exolabcore.version>
+    <log4j.version>1.2.17</log4j.version>
+    <oro.version>2.0.8</oro.version>
+    <xdoclet.xdoclet.version>1.2.3</xdoclet.xdoclet.version>
+    <xdoclet.xjavadoc.version>1.1</xdoclet.xjavadoc.version>
+    <castor.version>0.9.4.3</castor.version>
+    <xalan.version>2.5.1</xalan.version>
+    <xerces-impl.version>2.9.0</xerces-impl.version>
+
+    <!-- Test dependencies -->
+    <rabbitmq-jms.version>3.0.1</rabbitmq-jms.version>
+
+    <!-- plugin versions -->
+    <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
+    <exec-maven-plugin.version>1.2.1</exec-maven-plugin.version>
+    <maven-surefire-plugin.version>2.12.4</maven-surefire-plugin.version>
+    <maven-failsafe-plugin.version>2.12.4</maven-failsafe-plugin.version>
+    <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
+    <maven-antrun-plugin.version>1.7</maven-antrun-plugin.version>
+      <ant-junit.version>1.8.4</ant-junit.version>
+      <ant.version>1.8.4</ant.version>
+
   </properties>
 
   <dependencies>
-
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-jms_1.1_spec</artifactId>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.apache.geronimo.specs</groupId>
-      <artifactId>geronimo-jms_1.1_spec</artifactId>
-    </dependency>
-
-    <dependency>
       <groupId>commons-cli</groupId>
       <artifactId>commons-cli</artifactId>
-      <version>1.2</version>
     </dependency>
     <dependency>
       <groupId>commons-collections</groupId>
       <artifactId>commons-collections</artifactId>
-      <version>2.1.1</version>
     </dependency>
     <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
-      <version>1.0.4</version>
     </dependency>
     <dependency>
       <groupId>oswego-concurrent</groupId>
       <artifactId>concurrent</artifactId>
-      <version>1.3.4</version>
     </dependency>
     <dependency>
       <groupId>exolabcore</groupId>
       <artifactId>exolabcore</artifactId>
-      <version>0.3.7</version>
     </dependency>
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
-      <version>1.2.17</version>
     </dependency>
     <dependency>
       <groupId>oro</groupId>
       <artifactId>oro</artifactId>
-      <version>2.0.8</version>
     </dependency>
     <dependency>
       <groupId>xdoclet</groupId>
       <artifactId>xdoclet</artifactId>
-      <version>1.2.3</version>
     </dependency>
     <dependency>
       <groupId>xdoclet</groupId>
       <artifactId>xjavadoc</artifactId>
-      <version>1.1</version>
     </dependency>
     <dependency>
       <groupId>castor</groupId>
       <artifactId>castor</artifactId>
-      <version>0.9.4.3</version>
     </dependency>
     <dependency>
       <groupId>xalan</groupId>
       <artifactId>xalan</artifactId>
-      <version>2.5.1</version>
     </dependency>
     <dependency>
       <groupId>org.bluestemsoftware.open.maven.tparty</groupId>
       <artifactId>xerces-impl</artifactId>
-      <version>2.9.0</version>
     </dependency>
 
+    <!-- test scope -->
+    <dependency>
+      <groupId>com.rabbitmq.jms</groupId>
+      <artifactId>rabbitmq-jms</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+
+      <dependency>
+        <groupId>org.apache.geronimo.specs</groupId>
+        <artifactId>geronimo-jms_1.1_spec</artifactId>
+        <version>${geronimo-spec.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.rabbitmq.jms</groupId>
+        <artifactId>rabbitmq-jms</artifactId>
+        <version>${rabbitmq-jms.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>commons-cli</groupId>
+        <artifactId>commons-cli</artifactId>
+        <version>${commons-cli.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-collections</groupId>
+        <artifactId>commons-collections</artifactId>
+        <version>${commons-collections.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+        <version>${commons-logging.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>oswego-concurrent</groupId>
+        <artifactId>concurrent</artifactId>
+        <version>${oswego-concurrent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>exolabcore</groupId>
+        <artifactId>exolabcore</artifactId>
+        <version>${exolabcore.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>${log4j.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>oro</groupId>
+        <artifactId>oro</artifactId>
+        <version>${oro.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>xdoclet</groupId>
+        <artifactId>xdoclet</artifactId>
+        <version>${xdoclet.xdoclet.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>xdoclet</groupId>
+        <artifactId>xjavadoc</artifactId>
+        <version>${xdoclet.xjavadoc.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>castor</groupId>
+        <artifactId>castor</artifactId>
+        <version>${castor.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>xalan</groupId>
+        <artifactId>xalan</artifactId>
+        <version>${xalan.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.bluestemsoftware.open.maven.tparty</groupId>
+        <artifactId>xerces-impl</artifactId>
+        <version>${xerces-impl.version}</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
 
   <build>
 
@@ -98,6 +207,71 @@
         <artifactId>maven-compiler-plugin</artifactId>
       </plugin>
     </plugins>
+
+    <pluginManagement>
+      <plugins>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${maven-compiler-plugin.version}</version>
+          <configuration>
+            <source>${java-compile-version}</source>
+            <target>${java-compile-version}</target>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${maven-surefire-plugin.version}</version>
+
+          <configuration>
+            <encoding>UTF-8</encoding>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <version>${maven-failsafe-plugin.version}</version>
+
+          <configuration>
+            <encoding>UTF-8</encoding>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>${maven-antrun-plugin.version}</version>
+
+          <dependencies>
+            <dependency>
+              <groupId>org.apache.ant</groupId>
+              <artifactId>ant-junit</artifactId>
+              <version>${ant-junit.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>org.apache.ant</groupId>
+              <artifactId>ant</artifactId>
+              <version>${ant.version}</version>
+            </dependency>
+          </dependencies>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>${maven-jar-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>${exec-maven-plugin.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
 
   </build>
 
@@ -115,8 +289,8 @@
       </snapshots>
     </pluginRepository>
   </pluginRepositories>
-  <repositories>
 
+  <repositories>
     <repository>
       <id>jboss.org</id>
       <name>Jboss Maven 2 Repository</name>
