@@ -11,17 +11,21 @@
 
   <properties>
 
+    <rabbitmq.version>3.0.1</rabbitmq.version>
+    <jms-spec.version>1.1</jms-spec.version>
+    <p></p>
+
     <java-compile-version>1.7</java-compile-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-
     <!-- Project build dependencies -->
     <amqp-client.version>3.0.1</amqp-client.version>
+
     <jcip-annotations.version>1.0</jcip-annotations.version>
 
     <geronimo-spec.version>1.1.1</geronimo-spec.version>
-    <junit.version>4.10</junit.version>
 
+    <junit.version>4.10</junit.version>
     <commons-cli.version>1.2</commons-cli.version>
     <commons-collections.version>2.1.1</commons-collections.version>
     <commons-logging.version>1.0.4</commons-logging.version>
@@ -35,8 +39,9 @@
     <xalan.version>2.5.1</xalan.version>
     <xerces-impl.version>2.9.0</xerces-impl.version>
 
-    <!-- Test dependencies -->
-    <rabbitmq-jms.version>3.0.1</rabbitmq-jms.version>
+    <!-- JMS Implementation dependencies -->
+    <rabbitmq-jms.version>${project.version}</rabbitmq-jms.version>
+    <rjms-topic-selector.version>${project.version}</rjms-topic-selector.version>
 
     <!-- plugin versions -->
     <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
@@ -110,25 +115,42 @@
 
     <!-- test scope -->
     <dependency>
-      <groupId>com.rabbitmq.jms</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>rabbitmq-jms</artifactId>
       <scope>test</scope>
     </dependency>
+
+    <!-- runtime scope -->
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>rjms-topic-selector</artifactId>
+      <scope>runtime</scope>
+      <type>ez</type>
+    </dependency>
+
   </dependencies>
 
   <dependencyManagement>
     <dependencies>
 
       <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>rabbitmq-jms</artifactId>
+        <version>${rabbitmq-jms.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>rjms-topic-selector</artifactId>
+        <version>${rjms-topic-selector.version}</version>
+        <type>ez</type>
+      </dependency>
+
+      <dependency>
         <groupId>org.apache.geronimo.specs</groupId>
         <artifactId>geronimo-jms_1.1_spec</artifactId>
         <version>${geronimo-spec.version}</version>
       </dependency>
-      <dependency>
-        <groupId>com.rabbitmq.jms</groupId>
-        <artifactId>rabbitmq-jms</artifactId>
-        <version>${rabbitmq-jms.version}</version>
-      </dependency>
+
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
@@ -202,10 +224,119 @@
   <build>
 
     <plugins>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
       </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+
+        <configuration>
+          <forkMode>always</forkMode>
+          <argLine>-Xms1024m -Xmx4096m</argLine>
+        </configuration>
+
+        <executions>
+          <execution>
+            <id>integration-test</id>
+            <goals>
+              <goal>integration-test</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>verify</id>
+            <goals>
+              <goal>verify</goal>
+            </goals>
+          </execution>
+        </executions>
+
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+
+        <executions>
+          <execution>
+            <id>test-integration-reports</id>
+            <phase>integration-test</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <junitreport todir="target/failsafe-reports">
+                  <fileset dir="target/failsafe-reports">
+                    <include name="**/*.xml" />
+                  </fileset>
+                  <report format="noframes" todir="target/failsafe-reports" />
+                </junitreport>
+              </target>
+            </configuration>
+          </execution>
+        </executions>
+
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>get-rabbitmq-plugin</id>
+            <phase>pre-integration-test</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>${project.groupId}</groupId>
+                  <artifactId>rjms-topic-selector</artifactId>
+                  <version>${project.version}</version>
+                  <type>ez</type>
+                  <outputDirectory>${project.build.directory}/plugins</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+
+        <executions>
+          <execution>
+            <id>set-up-rabbit</id>
+            <phase>pre-integration-test</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <executable>bin/setUpIntegrationTests</executable>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>tear-down-rabbit</id>
+            <phase>post-integration-test</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <executable>bin/tearDownIntegrationTests</executable>
+            </configuration>
+          </execution>
+        </executions>
+
+      </plugin>
+
     </plugins>
 
     <pluginManagement>
