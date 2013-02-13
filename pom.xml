@@ -13,7 +13,6 @@
 
     <rabbitmq.version>3.0.1</rabbitmq.version>
     <jms-spec.version>1.1</jms-spec.version>
-    <p></p>
 
     <java-compile-version>1.7</java-compile-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -426,6 +425,16 @@
       <id>jboss.org</id>
       <name>Jboss Maven 2 Repository</name>
       <url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+    </repository>
+    <repository>
+      <id>vmware-release</id>
+      <name>VMware Release repository</name>
+      <url>http://s3.amazonaws.com/private.maven.vmware.com/release</url>
+    </repository>
+    <repository>
+      <id>vmware-snapshot</id>
+      <name>VMware Snapshot repository</name>
+      <url>http://s3.amazonaws.com/private.maven.vmware.com/snapshot</url>
     </repository>
   </repositories>
 
