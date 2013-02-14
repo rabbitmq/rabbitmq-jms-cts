@@ -284,6 +284,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
+
         <executions>
           <execution>
             <id>get-rabbitmq-plugin</id>
@@ -296,7 +297,7 @@
                 <artifactItem>
                   <groupId>${project.groupId}</groupId>
                   <artifactId>rjms-topic-selector</artifactId>
-                  <version>${project.version}</version>
+                  <version>${rjms-topic-selector.version}</version>
                   <type>ez</type>
                   <outputDirectory>${project.build.directory}/plugins</outputDirectory>
                 </artifactItem>
@@ -304,6 +305,7 @@
             </configuration>
           </execution>
         </executions>
+
       </plugin>
 
       <plugin>
