@@ -44,8 +44,6 @@
  */
 package org.exolab.jmscts.provider;
 
-import java.io.File;
-import java.io.IOException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
@@ -226,34 +224,34 @@ public class ProviderLoader {
         return (Provider) clazz.newInstance();
     }
 
-    /**
-     * Converts a path to an URL
-     *
-     * @param path the path to convert
-     * @return the path as a URL
-     * @throws IOException if the path cannot be converted
-     */
-    @SuppressWarnings("deprecation")
-    private URL getURL(String path) throws IOException {
-        URL url;
-        File file = new File(path);
-        if (!file.isAbsolute()) {
-            file = file.getCanonicalFile();
-        }
-        if (file.exists() && file.canRead()) {
-            url = file.toURL();
-        } else {
-            url = new URL(path);
-
-            if (url.getProtocol().equals("file")) {
-                file = new File(url.getFile());
-                if (file.exists() && file.canRead() && file.isDirectory()) {
-                    url = file.getCanonicalFile().toURL();
-                }
-            }
-        }
-
-        return url;
-    }
+//    /**
+//     * Converts a path to an URL
+//     *
+//     * @param path the path to convert
+//     * @return the path as a URL
+//     * @throws IOException if the path cannot be converted
+//     */
+//    @SuppressWarnings("deprecation")
+//    private URL getURL(String path) throws IOException {
+//        URL url;
+//        File file = new File(path);
+//        if (!file.isAbsolute()) {
+//            file = file.getCanonicalFile();
+//        }
+//        if (file.exists() && file.canRead()) {
+//            url = file.toURL();
+//        } else {
+//            url = new URL(path);
+//
+//            if (url.getProtocol().equals("file")) {
+//                file = new File(url.getFile());
+//                if (file.exists() && file.canRead() && file.isDirectory()) {
+//                    url = file.getCanonicalFile().toURL();
+//                }
+//            }
+//        }
+//
+//        return url;
+//    }
 
 }

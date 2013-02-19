@@ -1,5 +1,5 @@
 /*
- * This class was automatically generated with 
+ * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
  * $Id$
@@ -11,24 +11,17 @@ package org.exolab.jmscts.requirements;
  //- Imported classes and packages -/
 //---------------------------------/
 
-import java.io.IOException;
-import java.io.Reader;
-import java.io.Serializable;
-import java.io.Writer;
 import java.util.ArrayList;
-import java.util.Enumeration;
-import org.exolab.castor.xml.MarshalException;
+
 import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.xml.Unmarshaller;
-import org.exolab.castor.xml.ValidationException;
-import org.xml.sax.ContentHandler;
 
 /**
  * This element specifies a requirement, defined by the JMS
  * specification
  *  or associated API documentation. A requirement may be optional.
- *  
- * 
+ *
+ *
  * @version $Revision$ $Date$
  */
 public class Requirement implements java.io.Serializable {
@@ -37,6 +30,11 @@ public class Requirement implements java.io.Serializable {
       //--------------------------/
      //- Class/Member Variables -/
     //--------------------------/
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
     /**
      * Field _requirementId
@@ -61,7 +59,7 @@ public class Requirement implements java.io.Serializable {
     /**
      * Field _requirementChoiceList
      */
-    private java.util.ArrayList _requirementChoiceList;
+    private java.util.ArrayList<RequirementChoice> _requirementChoiceList;
 
 
       //----------------/
@@ -70,7 +68,7 @@ public class Requirement implements java.io.Serializable {
 
     public Requirement() {
         super();
-        _requirementChoiceList = new ArrayList();
+        _requirementChoiceList = new ArrayList<RequirementChoice>();
     } //-- org.exolab.jmscts.requirements.Requirement()
 
 
@@ -80,18 +78,18 @@ public class Requirement implements java.io.Serializable {
 
     /**
      * Method addRequirementChoice
-     * 
+     *
      * @param vRequirementChoice
      */
     public void addRequirementChoice(org.exolab.jmscts.requirements.RequirementChoice vRequirementChoice)
         throws java.lang.IndexOutOfBoundsException
     {
         _requirementChoiceList.add(vRequirementChoice);
-    } //-- void addRequirementChoice(org.exolab.jmscts.requirements.RequirementChoice) 
+    } //-- void addRequirementChoice(org.exolab.jmscts.requirements.RequirementChoice)
 
     /**
      * Method addRequirementChoice
-     * 
+     *
      * @param index
      * @param vRequirementChoice
      */
@@ -99,7 +97,7 @@ public class Requirement implements java.io.Serializable {
         throws java.lang.IndexOutOfBoundsException
     {
         _requirementChoiceList.add(index, vRequirementChoice);
-    } //-- void addRequirementChoice(int, org.exolab.jmscts.requirements.RequirementChoice) 
+    } //-- void addRequirementChoice(int, org.exolab.jmscts.requirements.RequirementChoice)
 
     /**
      * Method clearRequirementChoice
@@ -107,7 +105,7 @@ public class Requirement implements java.io.Serializable {
     public void clearRequirementChoice()
     {
         _requirementChoiceList.clear();
-    } //-- void clearRequirementChoice() 
+    } //-- void clearRequirementChoice()
 
     /**
      * Method deleteOptional
@@ -115,32 +113,32 @@ public class Requirement implements java.io.Serializable {
     public void deleteOptional()
     {
         this._has_optional= false;
-    } //-- void deleteOptional() 
+    } //-- void deleteOptional()
 
     /**
      * Method enumerateRequirementChoice
      */
-    public java.util.Enumeration enumerateRequirementChoice()
+    public java.util.Enumeration<?> enumerateRequirementChoice()
     {
         return new org.exolab.castor.util.IteratorEnumeration(_requirementChoiceList.iterator());
-    } //-- java.util.Enumeration enumerateRequirementChoice() 
+    } //-- java.util.Enumeration enumerateRequirementChoice()
 
     /**
      * Note: hashCode() has not been overriden
-     * 
+     *
      * @param obj
      */
     public boolean equals(java.lang.Object obj)
     {
         if ( this == obj )
             return true;
-        
+
         if (obj instanceof Requirement) {
-        
+
             Requirement temp = (Requirement)obj;
             if (this._requirementId != null) {
                 if (temp._requirementId == null) return false;
-                else if (!(this._requirementId.equals(temp._requirementId))) 
+                else if (!(this._requirementId.equals(temp._requirementId)))
                     return false;
             }
             else if (temp._requirementId != null)
@@ -151,14 +149,14 @@ public class Requirement implements java.io.Serializable {
                 return false;
             if (this._description != null) {
                 if (temp._description == null) return false;
-                else if (!(this._description.equals(temp._description))) 
+                else if (!(this._description.equals(temp._description)))
                     return false;
             }
             else if (temp._description != null)
                 return false;
             if (this._requirementChoiceList != null) {
                 if (temp._requirementChoiceList == null) return false;
-                else if (!(this._requirementChoiceList.equals(temp._requirementChoiceList))) 
+                else if (!(this._requirementChoiceList.equals(temp._requirementChoiceList)))
                     return false;
             }
             else if (temp._requirementChoiceList != null)
@@ -166,31 +164,31 @@ public class Requirement implements java.io.Serializable {
             return true;
         }
         return false;
-    } //-- boolean equals(java.lang.Object) 
+    } //-- boolean equals(java.lang.Object)
 
     /**
      * Returns the value of field 'description'.
-     * 
+     *
      * @return the value of field 'description'.
      */
     public Description getDescription()
     {
         return this._description;
-    } //-- Description getDescription() 
+    } //-- Description getDescription()
 
     /**
      * Returns the value of field 'optional'.
-     * 
+     *
      * @return the value of field 'optional'.
      */
     public boolean getOptional()
     {
         return this._optional;
-    } //-- boolean getOptional() 
+    } //-- boolean getOptional()
 
     /**
      * Method getRequirementChoice
-     * 
+     *
      * @param index
      */
     public org.exolab.jmscts.requirements.RequirementChoice getRequirementChoice(int index)
@@ -200,9 +198,9 @@ public class Requirement implements java.io.Serializable {
         if ((index < 0) || (index > _requirementChoiceList.size())) {
             throw new IndexOutOfBoundsException();
         }
-        
-        return (org.exolab.jmscts.requirements.RequirementChoice) _requirementChoiceList.get(index);
-    } //-- org.exolab.jmscts.requirements.RequirementChoice getRequirementChoice(int) 
+
+        return _requirementChoiceList.get(index);
+    } //-- org.exolab.jmscts.requirements.RequirementChoice getRequirementChoice(int)
 
     /**
      * Method getRequirementChoice
@@ -212,10 +210,10 @@ public class Requirement implements java.io.Serializable {
         int size = _requirementChoiceList.size();
         org.exolab.jmscts.requirements.RequirementChoice[] mArray = new org.exolab.jmscts.requirements.RequirementChoice[size];
         for (int index = 0; index < size; index++) {
-            mArray[index] = (org.exolab.jmscts.requirements.RequirementChoice) _requirementChoiceList.get(index);
+            mArray[index] = _requirementChoiceList.get(index);
         }
         return mArray;
-    } //-- org.exolab.jmscts.requirements.RequirementChoice[] getRequirementChoice() 
+    } //-- org.exolab.jmscts.requirements.RequirementChoice[] getRequirementChoice()
 
     /**
      * Method getRequirementChoiceCount
@@ -223,17 +221,17 @@ public class Requirement implements java.io.Serializable {
     public int getRequirementChoiceCount()
     {
         return _requirementChoiceList.size();
-    } //-- int getRequirementChoiceCount() 
+    } //-- int getRequirementChoiceCount()
 
     /**
      * Returns the value of field 'requirementId'.
-     * 
+     *
      * @return the value of field 'requirementId'.
      */
     public java.lang.String getRequirementId()
     {
         return this._requirementId;
-    } //-- java.lang.String getRequirementId() 
+    } //-- java.lang.String getRequirementId()
 
     /**
      * Method hasOptional
@@ -241,7 +239,7 @@ public class Requirement implements java.io.Serializable {
     public boolean hasOptional()
     {
         return this._has_optional;
-    } //-- boolean hasOptional() 
+    } //-- boolean hasOptional()
 
     /**
      * Method isValid
@@ -255,67 +253,67 @@ public class Requirement implements java.io.Serializable {
             return false;
         }
         return true;
-    } //-- boolean isValid() 
+    } //-- boolean isValid()
 
     /**
      * Method marshal
-     * 
+     *
      * @param out
      */
     public void marshal(java.io.Writer out)
         throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
     {
-        
+
         Marshaller.marshal(this, out);
-    } //-- void marshal(java.io.Writer) 
+    } //-- void marshal(java.io.Writer)
 
     /**
      * Method marshal
-     * 
+     *
      * @param handler
      */
     public void marshal(org.xml.sax.ContentHandler handler)
         throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
     {
-        
+
         Marshaller.marshal(this, handler);
-    } //-- void marshal(org.xml.sax.ContentHandler) 
+    } //-- void marshal(org.xml.sax.ContentHandler)
 
     /**
      * Method removeRequirementChoice
-     * 
+     *
      * @param vRequirementChoice
      */
     public boolean removeRequirementChoice(org.exolab.jmscts.requirements.RequirementChoice vRequirementChoice)
     {
         boolean removed = _requirementChoiceList.remove(vRequirementChoice);
         return removed;
-    } //-- boolean removeRequirementChoice(org.exolab.jmscts.requirements.RequirementChoice) 
+    } //-- boolean removeRequirementChoice(org.exolab.jmscts.requirements.RequirementChoice)
 
     /**
      * Sets the value of field 'description'.
-     * 
+     *
      * @param description the value of field 'description'.
      */
     public void setDescription(Description description)
     {
         this._description = description;
-    } //-- void setDescription(Description) 
+    } //-- void setDescription(Description)
 
     /**
      * Sets the value of field 'optional'.
-     * 
+     *
      * @param optional the value of field 'optional'.
      */
     public void setOptional(boolean optional)
     {
         this._optional = optional;
         this._has_optional = true;
-    } //-- void setOptional(boolean) 
+    } //-- void setOptional(boolean)
 
     /**
      * Method setRequirementChoice
-     * 
+     *
      * @param index
      * @param vRequirementChoice
      */
@@ -327,11 +325,11 @@ public class Requirement implements java.io.Serializable {
             throw new IndexOutOfBoundsException();
         }
         _requirementChoiceList.set(index, vRequirementChoice);
-    } //-- void setRequirementChoice(int, org.exolab.jmscts.requirements.RequirementChoice) 
+    } //-- void setRequirementChoice(int, org.exolab.jmscts.requirements.RequirementChoice)
 
     /**
      * Method setRequirementChoice
-     * 
+     *
      * @param requirementChoiceArray
      */
     public void setRequirementChoice(org.exolab.jmscts.requirements.RequirementChoice[] requirementChoiceArray)
@@ -341,28 +339,28 @@ public class Requirement implements java.io.Serializable {
         for (int i = 0; i < requirementChoiceArray.length; i++) {
             _requirementChoiceList.add(requirementChoiceArray[i]);
         }
-    } //-- void setRequirementChoice(org.exolab.jmscts.requirements.RequirementChoice) 
+    } //-- void setRequirementChoice(org.exolab.jmscts.requirements.RequirementChoice)
 
     /**
      * Sets the value of field 'requirementId'.
-     * 
+     *
      * @param requirementId the value of field 'requirementId'.
      */
     public void setRequirementId(java.lang.String requirementId)
     {
         this._requirementId = requirementId;
-    } //-- void setRequirementId(java.lang.String) 
+    } //-- void setRequirementId(java.lang.String)
 
     /**
      * Method unmarshal
-     * 
+     *
      * @param reader
      */
     public static org.exolab.jmscts.requirements.Requirement unmarshal(java.io.Reader reader)
         throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
     {
         return (org.exolab.jmscts.requirements.Requirement) Unmarshaller.unmarshal(org.exolab.jmscts.requirements.Requirement.class, reader);
-    } //-- org.exolab.jmscts.requirements.Requirement unmarshal(java.io.Reader) 
+    } //-- org.exolab.jmscts.requirements.Requirement unmarshal(java.io.Reader)
 
     /**
      * Method validate
@@ -372,6 +370,6 @@ public class Requirement implements java.io.Serializable {
     {
         org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
         validator.validate(this);
-    } //-- void validate() 
+    } //-- void validate()
 
 }

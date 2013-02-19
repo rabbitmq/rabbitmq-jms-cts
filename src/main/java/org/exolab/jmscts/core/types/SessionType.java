@@ -1,5 +1,5 @@
 /*
- * This class was automatically generated with 
+ * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
  * $Id$
@@ -11,15 +11,11 @@ package org.exolab.jmscts.core.types;
  //- Imported classes and packages -/
 //---------------------------------/
 
-import java.io.Serializable;
-import java.util.Enumeration;
 import java.util.Hashtable;
-import org.exolab.castor.xml.Marshaller;
-import org.exolab.castor.xml.Unmarshaller;
 
 /**
  * Class SessionType.
- * 
+ *
  * @version $Revision$ $Date$
  */
 public class SessionType implements java.io.Serializable {
@@ -28,6 +24,11 @@ public class SessionType implements java.io.Serializable {
       //--------------------------/
      //- Class/Member Variables -/
     //--------------------------/
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
     /**
      * The TRANSACTED type
@@ -72,7 +73,7 @@ public class SessionType implements java.io.Serializable {
     /**
      * Field _memberTable
      */
-    private static java.util.Hashtable _memberTable = init();
+    private static java.util.Hashtable<String, SessionType> _memberTable = init();
 
     /**
      * Field type
@@ -104,10 +105,10 @@ public class SessionType implements java.io.Serializable {
      * Method enumerateReturns an enumeration of all possible
      * instances of SessionType
      */
-    public static java.util.Enumeration enumerate()
+    public static java.util.Enumeration<SessionType> enumerate()
     {
         return _memberTable.elements();
-    } //-- java.util.Enumeration enumerate() 
+    } //-- java.util.Enumeration enumerate()
 
     /**
      * Method getTypeReturns the type of this SessionType
@@ -115,20 +116,20 @@ public class SessionType implements java.io.Serializable {
     public int getType()
     {
         return this.type;
-    } //-- int getType() 
+    } //-- int getType()
 
     /**
      * Method init
      */
-    private static java.util.Hashtable init()
+    private static java.util.Hashtable<String, SessionType> init()
     {
-        Hashtable members = new Hashtable();
+        Hashtable<String, SessionType> members = new Hashtable<String, SessionType>();
         members.put("TRANSACTED", TRANSACTED);
         members.put("CLIENT_ACKNOWLEDGE", CLIENT_ACKNOWLEDGE);
         members.put("DUPS_OK_ACKNOWLEDGE", DUPS_OK_ACKNOWLEDGE);
         members.put("AUTO_ACKNOWLEDGE", AUTO_ACKNOWLEDGE);
         return members;
-    } //-- java.util.Hashtable init() 
+    } //-- java.util.Hashtable init()
 
     /**
      * Method toStringReturns the String representation of this
@@ -137,12 +138,12 @@ public class SessionType implements java.io.Serializable {
     public java.lang.String toString()
     {
         return this.stringValue;
-    } //-- java.lang.String toString() 
+    } //-- java.lang.String toString()
 
     /**
      * Method valueOfReturns a new SessionType based on the given
      * String value.
-     * 
+     *
      * @param string
      */
     public static org.exolab.jmscts.core.types.SessionType valueOf(java.lang.String string)
@@ -154,6 +155,6 @@ public class SessionType implements java.io.Serializable {
             throw new IllegalArgumentException(err);
         }
         return (SessionType) obj;
-    } //-- org.exolab.jmscts.core.types.SessionType valueOf(java.lang.String) 
+    } //-- org.exolab.jmscts.core.types.SessionType valueOf(java.lang.String)
 
 }

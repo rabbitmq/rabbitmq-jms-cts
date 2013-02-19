@@ -1,5 +1,5 @@
 /*
- * This class was automatically generated with 
+ * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
  * $Id$
@@ -11,15 +11,11 @@ package org.exolab.jmscts.report.types;
  //- Imported classes and packages -/
 //---------------------------------/
 
-import java.io.Serializable;
-import java.util.Enumeration;
 import java.util.Hashtable;
-import org.exolab.castor.xml.Marshaller;
-import org.exolab.castor.xml.Unmarshaller;
 
 /**
  * Class StatisticType.
- * 
+ *
  * @version $Revision$ $Date$
  */
 public class StatisticType implements java.io.Serializable {
@@ -28,6 +24,11 @@ public class StatisticType implements java.io.Serializable {
       //--------------------------/
      //- Class/Member Variables -/
     //--------------------------/
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
     /**
      * The send type
@@ -52,7 +53,7 @@ public class StatisticType implements java.io.Serializable {
     /**
      * Field _memberTable
      */
-    private static java.util.Hashtable _memberTable = init();
+    private static java.util.Hashtable<String, StatisticType> _memberTable = init();
 
     /**
      * Field type
@@ -84,10 +85,10 @@ public class StatisticType implements java.io.Serializable {
      * Method enumerateReturns an enumeration of all possible
      * instances of StatisticType
      */
-    public static java.util.Enumeration enumerate()
+    public static java.util.Enumeration<StatisticType> enumerate()
     {
         return _memberTable.elements();
-    } //-- java.util.Enumeration enumerate() 
+    } //-- java.util.Enumeration enumerate()
 
     /**
      * Method getTypeReturns the type of this StatisticType
@@ -95,18 +96,18 @@ public class StatisticType implements java.io.Serializable {
     public int getType()
     {
         return this.type;
-    } //-- int getType() 
+    } //-- int getType()
 
     /**
      * Method init
      */
-    private static java.util.Hashtable init()
+    private static java.util.Hashtable<String, StatisticType> init()
     {
-        Hashtable members = new Hashtable();
+        Hashtable<String, StatisticType> members = new Hashtable<String, StatisticType>();
         members.put("send", SEND);
         members.put("receive", RECEIVE);
         return members;
-    } //-- java.util.Hashtable init() 
+    } //-- java.util.Hashtable init()
 
     /**
      * Method toStringReturns the String representation of this
@@ -115,12 +116,12 @@ public class StatisticType implements java.io.Serializable {
     public java.lang.String toString()
     {
         return this.stringValue;
-    } //-- java.lang.String toString() 
+    } //-- java.lang.String toString()
 
     /**
      * Method valueOfReturns a new StatisticType based on the given
      * String value.
-     * 
+     *
      * @param string
      */
     public static org.exolab.jmscts.report.types.StatisticType valueOf(java.lang.String string)
@@ -132,6 +133,6 @@ public class StatisticType implements java.io.Serializable {
             throw new IllegalArgumentException(err);
         }
         return (StatisticType) obj;
-    } //-- org.exolab.jmscts.report.types.StatisticType valueOf(java.lang.String) 
+    } //-- org.exolab.jmscts.report.types.StatisticType valueOf(java.lang.String)
 
 }

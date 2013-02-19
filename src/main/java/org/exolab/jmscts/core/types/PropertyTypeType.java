@@ -1,5 +1,5 @@
 /*
- * This class was automatically generated with 
+ * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
  * $Id$
@@ -11,15 +11,11 @@ package org.exolab.jmscts.core.types;
  //- Imported classes and packages -/
 //---------------------------------/
 
-import java.io.Serializable;
-import java.util.Enumeration;
 import java.util.Hashtable;
-import org.exolab.castor.xml.Marshaller;
-import org.exolab.castor.xml.Unmarshaller;
 
 /**
  * Class PropertyTypeType.
- * 
+ *
  * @version $Revision$ $Date$
  */
 public class PropertyTypeType implements java.io.Serializable {
@@ -28,6 +24,11 @@ public class PropertyTypeType implements java.io.Serializable {
       //--------------------------/
      //- Class/Member Variables -/
     //--------------------------/
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
     /**
      * The java.lang.Boolean type
@@ -112,7 +113,7 @@ public class PropertyTypeType implements java.io.Serializable {
     /**
      * Field _memberTable
      */
-    private static java.util.Hashtable _memberTable = init();
+    private static java.util.Hashtable<String, PropertyTypeType> _memberTable = init();
 
     /**
      * Field type
@@ -144,10 +145,10 @@ public class PropertyTypeType implements java.io.Serializable {
      * Method enumerateReturns an enumeration of all possible
      * instances of PropertyTypeType
      */
-    public static java.util.Enumeration enumerate()
+    public static java.util.Enumeration<PropertyTypeType> enumerate()
     {
         return _memberTable.elements();
-    } //-- java.util.Enumeration enumerate() 
+    } //-- java.util.Enumeration enumerate()
 
     /**
      * Method getTypeReturns the type of this PropertyTypeType
@@ -155,14 +156,14 @@ public class PropertyTypeType implements java.io.Serializable {
     public int getType()
     {
         return this.type;
-    } //-- int getType() 
+    } //-- int getType()
 
     /**
      * Method init
      */
-    private static java.util.Hashtable init()
+    private static java.util.Hashtable<String, PropertyTypeType> init()
     {
-        Hashtable members = new Hashtable();
+        Hashtable<String, PropertyTypeType> members = new Hashtable<String, PropertyTypeType>();
         members.put("java.lang.Boolean", VALUE_0);
         members.put("java.lang.Byte", VALUE_1);
         members.put("java.lang.Short", VALUE_2);
@@ -172,7 +173,7 @@ public class PropertyTypeType implements java.io.Serializable {
         members.put("java.lang.Double", VALUE_6);
         members.put("java.lang.String", VALUE_7);
         return members;
-    } //-- java.util.Hashtable init() 
+    } //-- java.util.Hashtable init()
 
     /**
      * Method toStringReturns the String representation of this
@@ -181,12 +182,12 @@ public class PropertyTypeType implements java.io.Serializable {
     public java.lang.String toString()
     {
         return this.stringValue;
-    } //-- java.lang.String toString() 
+    } //-- java.lang.String toString()
 
     /**
      * Method valueOfReturns a new PropertyTypeType based on the
      * given String value.
-     * 
+     *
      * @param string
      */
     public static org.exolab.jmscts.core.types.PropertyTypeType valueOf(java.lang.String string)
@@ -198,6 +199,6 @@ public class PropertyTypeType implements java.io.Serializable {
             throw new IllegalArgumentException(err);
         }
         return (PropertyTypeType) obj;
-    } //-- org.exolab.jmscts.core.types.PropertyTypeType valueOf(java.lang.String) 
+    } //-- org.exolab.jmscts.core.types.PropertyTypeType valueOf(java.lang.String)
 
 }

@@ -1,5 +1,5 @@
 /*
- * This class was automatically generated with 
+ * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
  * $Id$
@@ -11,15 +11,11 @@ package org.exolab.jmscts.core.types;
  //- Imported classes and packages -/
 //---------------------------------/
 
-import java.io.Serializable;
-import java.util.Enumeration;
 import java.util.Hashtable;
-import org.exolab.castor.xml.Marshaller;
-import org.exolab.castor.xml.Unmarshaller;
 
 /**
  * Class DeliveryModeType.
- * 
+ *
  * @version $Revision$ $Date$
  */
 public class DeliveryModeType implements java.io.Serializable {
@@ -28,6 +24,11 @@ public class DeliveryModeType implements java.io.Serializable {
       //--------------------------/
      //- Class/Member Variables -/
     //--------------------------/
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
     /**
      * The PERSISTENT type
@@ -52,7 +53,7 @@ public class DeliveryModeType implements java.io.Serializable {
     /**
      * Field _memberTable
      */
-    private static java.util.Hashtable _memberTable = init();
+    private static java.util.Hashtable<String, DeliveryModeType> _memberTable = init();
 
     /**
      * Field type
@@ -84,10 +85,10 @@ public class DeliveryModeType implements java.io.Serializable {
      * Method enumerateReturns an enumeration of all possible
      * instances of DeliveryModeType
      */
-    public static java.util.Enumeration enumerate()
+    public static java.util.Enumeration<DeliveryModeType> enumerate()
     {
         return _memberTable.elements();
-    } //-- java.util.Enumeration enumerate() 
+    } //-- java.util.Enumeration enumerate()
 
     /**
      * Method getTypeReturns the type of this DeliveryModeType
@@ -95,18 +96,18 @@ public class DeliveryModeType implements java.io.Serializable {
     public int getType()
     {
         return this.type;
-    } //-- int getType() 
+    } //-- int getType()
 
     /**
      * Method init
      */
-    private static java.util.Hashtable init()
+    private static java.util.Hashtable<String, DeliveryModeType> init()
     {
-        Hashtable members = new Hashtable();
+        Hashtable<String, DeliveryModeType> members = new Hashtable<String, DeliveryModeType>();
         members.put("PERSISTENT", PERSISTENT);
         members.put("NON_PERSISTENT", NON_PERSISTENT);
         return members;
-    } //-- java.util.Hashtable init() 
+    } //-- java.util.Hashtable init()
 
     /**
      * Method toStringReturns the String representation of this
@@ -115,12 +116,12 @@ public class DeliveryModeType implements java.io.Serializable {
     public java.lang.String toString()
     {
         return this.stringValue;
-    } //-- java.lang.String toString() 
+    } //-- java.lang.String toString()
 
     /**
      * Method valueOfReturns a new DeliveryModeType based on the
      * given String value.
-     * 
+     *
      * @param string
      */
     public static org.exolab.jmscts.core.types.DeliveryModeType valueOf(java.lang.String string)
@@ -132,6 +133,6 @@ public class DeliveryModeType implements java.io.Serializable {
             throw new IllegalArgumentException(err);
         }
         return (DeliveryModeType) obj;
-    } //-- org.exolab.jmscts.core.types.DeliveryModeType valueOf(java.lang.String) 
+    } //-- org.exolab.jmscts.core.types.DeliveryModeType valueOf(java.lang.String)
 
 }

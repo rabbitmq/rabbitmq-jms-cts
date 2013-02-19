@@ -151,10 +151,10 @@ public class MethodInvoker {
         throws Exception, NoSuchMethodException {
         return invoke(object, method, new Object[]{argument});
     }
-    
-    
-    
-    public Object invoke(Object object, String method, Object argument, Class type)
+
+
+
+    public Object invoke(Object object, String method, Object argument, Class<?> type)
         throws Exception, NoSuchMethodException {
         return invoke(object, method, new Object[]{argument}, new Class[]{type});
     }
@@ -199,13 +199,13 @@ public class MethodInvoker {
      */
     public Object invoke(Object object, String method, Object[] arguments)
         throws Exception, NoSuchMethodException {
-        
+
         Class<?> clazz = (_clazz != null) ? _clazz : object.getClass();
         Method invoker = ClassHelper.getMethod(clazz, method, arguments);
         return invoke(object, invoker, arguments);
     }
 
-    public Object invoke(Object object, String method, Object[] arguments, Class[] types)
+    public Object invoke(Object object, String method, Object[] arguments, Class<?>[] types)
         throws Exception, NoSuchMethodException {
         Class<?> clazz = (_clazz != null) ? _clazz : object.getClass();
         Method invoker = ClassHelper.getMethod(clazz, method, arguments,types);

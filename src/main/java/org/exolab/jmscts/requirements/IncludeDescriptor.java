@@ -1,5 +1,5 @@
 /*
- * This class was automatically generated with 
+ * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
  * $Id$
@@ -11,14 +11,11 @@ package org.exolab.jmscts.requirements;
  //- Imported classes and packages -/
 //---------------------------------/
 
-import org.exolab.castor.mapping.AccessMode;
-import org.exolab.castor.xml.TypeValidator;
-import org.exolab.castor.xml.XMLFieldDescriptor;
-import org.exolab.castor.xml.validators.*;
+import org.exolab.castor.xml.validators.StringValidator;
 
 /**
  * Class IncludeDescriptor.
- * 
+ *
  * @version $Revision$ $Date$
  */
 public class IncludeDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
@@ -61,18 +58,18 @@ public class IncludeDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
         org.exolab.castor.xml.XMLFieldHandler              handler        = null;
         org.exolab.castor.xml.FieldValidator               fieldValidator = null;
         //-- initialize attribute descriptors
-        
+
         //-- _path
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(java.lang.String.class, "_path", "path", org.exolab.castor.xml.NodeType.Attribute);
         desc.setImmutable(true);
         handler = (new org.exolab.castor.xml.XMLFieldHandler() {
-            public java.lang.Object getValue( java.lang.Object object ) 
+            public java.lang.Object getValue( java.lang.Object object )
                 throws IllegalStateException
             {
                 Include target = (Include) object;
                 return target.getPath();
             }
-            public void setValue( java.lang.Object object, java.lang.Object value) 
+            public void setValue( java.lang.Object object, java.lang.Object value)
                 throws IllegalStateException, IllegalArgumentException
             {
                 try {
@@ -90,7 +87,7 @@ public class IncludeDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
         desc.setHandler(handler);
         desc.setRequired(true);
         addFieldDescriptor(desc);
-        
+
         //-- validation code for: _path
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(1);
@@ -101,7 +98,7 @@ public class IncludeDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
         }
         desc.setValidator(fieldValidator);
         //-- initialize element descriptors
-        
+
     } //-- org.exolab.jmscts.requirements.IncludeDescriptor()
 
 
@@ -115,7 +112,7 @@ public class IncludeDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
     public org.exolab.castor.mapping.AccessMode getAccessMode()
     {
         return null;
-    } //-- org.exolab.castor.mapping.AccessMode getAccessMode() 
+    } //-- org.exolab.castor.mapping.AccessMode getAccessMode()
 
     /**
      * Method getExtends
@@ -123,7 +120,7 @@ public class IncludeDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
     public org.exolab.castor.mapping.ClassDescriptor getExtends()
     {
         return null;
-    } //-- org.exolab.castor.mapping.ClassDescriptor getExtends() 
+    } //-- org.exolab.castor.mapping.ClassDescriptor getExtends()
 
     /**
      * Method getIdentity
@@ -131,15 +128,15 @@ public class IncludeDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
     public org.exolab.castor.mapping.FieldDescriptor getIdentity()
     {
         return identity;
-    } //-- org.exolab.castor.mapping.FieldDescriptor getIdentity() 
+    } //-- org.exolab.castor.mapping.FieldDescriptor getIdentity()
 
     /**
      * Method getJavaClass
      */
-    public java.lang.Class getJavaClass()
+    public java.lang.Class<Include> getJavaClass()
     {
         return org.exolab.jmscts.requirements.Include.class;
-    } //-- java.lang.Class getJavaClass() 
+    } //-- java.lang.Class getJavaClass()
 
     /**
      * Method getNameSpacePrefix
@@ -147,7 +144,7 @@ public class IncludeDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
     public java.lang.String getNameSpacePrefix()
     {
         return nsPrefix;
-    } //-- java.lang.String getNameSpacePrefix() 
+    } //-- java.lang.String getNameSpacePrefix()
 
     /**
      * Method getNameSpaceURI
@@ -155,7 +152,7 @@ public class IncludeDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
     public java.lang.String getNameSpaceURI()
     {
         return nsURI;
-    } //-- java.lang.String getNameSpaceURI() 
+    } //-- java.lang.String getNameSpaceURI()
 
     /**
      * Method getValidator
@@ -163,7 +160,7 @@ public class IncludeDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
     public org.exolab.castor.xml.TypeValidator getValidator()
     {
         return this;
-    } //-- org.exolab.castor.xml.TypeValidator getValidator() 
+    } //-- org.exolab.castor.xml.TypeValidator getValidator()
 
     /**
      * Method getXMLName
@@ -171,6 +168,6 @@ public class IncludeDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
     public java.lang.String getXMLName()
     {
         return xmlName;
-    } //-- java.lang.String getXMLName() 
+    } //-- java.lang.String getXMLName()
 
 }

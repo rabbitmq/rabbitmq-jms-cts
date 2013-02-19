@@ -1,5 +1,5 @@
 /*
- * This class was automatically generated with 
+ * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
  * $Id$
@@ -11,18 +11,11 @@ package org.exolab.jmscts.core;
  //- Imported classes and packages -/
 //---------------------------------/
 
-import java.io.Reader;
-import java.io.Serializable;
-import java.io.Writer;
 import java.util.ArrayList;
-import java.util.Enumeration;
-import org.exolab.castor.xml.Marshaller;
-import org.exolab.castor.xml.Unmarshaller;
-import org.exolab.castor.xml.ValidationException;
 
 /**
  * Class Text.
- * 
+ *
  * @version $Revision$ $Date$
  */
 public abstract class Text implements java.io.Serializable {
@@ -33,6 +26,11 @@ public abstract class Text implements java.io.Serializable {
     //--------------------------/
 
     /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
+    /**
      * internal content storage
      */
     private java.lang.String _content = "";
@@ -40,7 +38,7 @@ public abstract class Text implements java.io.Serializable {
     /**
      * Field _anyObject
      */
-    private java.util.ArrayList _anyObject;
+    private java.util.ArrayList<Object> _anyObject;
 
 
       //----------------/
@@ -50,7 +48,7 @@ public abstract class Text implements java.io.Serializable {
     public Text() {
         super();
         setContent("");
-        _anyObject = new ArrayList();
+        _anyObject = new ArrayList<Object>();
     } //-- org.exolab.jmscts.core.Text()
 
 
@@ -60,18 +58,18 @@ public abstract class Text implements java.io.Serializable {
 
     /**
      * Method addAnyObject
-     * 
+     *
      * @param vAnyObject
      */
     public void addAnyObject(java.lang.Object vAnyObject)
         throws java.lang.IndexOutOfBoundsException
     {
         _anyObject.add(vAnyObject);
-    } //-- void addAnyObject(java.lang.Object) 
+    } //-- void addAnyObject(java.lang.Object)
 
     /**
      * Method addAnyObject
-     * 
+     *
      * @param index
      * @param vAnyObject
      */
@@ -79,7 +77,7 @@ public abstract class Text implements java.io.Serializable {
         throws java.lang.IndexOutOfBoundsException
     {
         _anyObject.add(index, vAnyObject);
-    } //-- void addAnyObject(int, java.lang.Object) 
+    } //-- void addAnyObject(int, java.lang.Object)
 
     /**
      * Method clearAnyObject
@@ -87,39 +85,39 @@ public abstract class Text implements java.io.Serializable {
     public void clearAnyObject()
     {
         _anyObject.clear();
-    } //-- void clearAnyObject() 
+    } //-- void clearAnyObject()
 
     /**
      * Method enumerateAnyObject
      */
-    public java.util.Enumeration enumerateAnyObject()
+    public java.util.Enumeration<?> enumerateAnyObject()
     {
         return new org.exolab.castor.util.IteratorEnumeration(_anyObject.iterator());
-    } //-- java.util.Enumeration enumerateAnyObject() 
+    } //-- java.util.Enumeration enumerateAnyObject()
 
     /**
      * Note: hashCode() has not been overriden
-     * 
+     *
      * @param obj
      */
     public boolean equals(java.lang.Object obj)
     {
         if ( this == obj )
             return true;
-        
+
         if (obj instanceof Text) {
-        
+
             Text temp = (Text)obj;
             if (this._content != null) {
                 if (temp._content == null) return false;
-                else if (!(this._content.equals(temp._content))) 
+                else if (!(this._content.equals(temp._content)))
                     return false;
             }
             else if (temp._content != null)
                 return false;
             if (this._anyObject != null) {
                 if (temp._anyObject == null) return false;
-                else if (!(this._anyObject.equals(temp._anyObject))) 
+                else if (!(this._anyObject.equals(temp._anyObject)))
                     return false;
             }
             else if (temp._anyObject != null)
@@ -127,11 +125,11 @@ public abstract class Text implements java.io.Serializable {
             return true;
         }
         return false;
-    } //-- boolean equals(java.lang.Object) 
+    } //-- boolean equals(java.lang.Object)
 
     /**
      * Method getAnyObject
-     * 
+     *
      * @param index
      */
     public java.lang.Object getAnyObject(int index)
@@ -141,9 +139,9 @@ public abstract class Text implements java.io.Serializable {
         if ((index < 0) || (index > _anyObject.size())) {
             throw new IndexOutOfBoundsException();
         }
-        
-        return (java.lang.Object) _anyObject.get(index);
-    } //-- java.lang.Object getAnyObject(int) 
+
+        return _anyObject.get(index);
+    } //-- java.lang.Object getAnyObject(int)
 
     /**
      * Method getAnyObject
@@ -153,10 +151,10 @@ public abstract class Text implements java.io.Serializable {
         int size = _anyObject.size();
         java.lang.Object[] mArray = new java.lang.Object[size];
         for (int index = 0; index < size; index++) {
-            mArray[index] = (java.lang.Object) _anyObject.get(index);
+            mArray[index] = _anyObject.get(index);
         }
         return mArray;
-    } //-- java.lang.Object[] getAnyObject() 
+    } //-- java.lang.Object[] getAnyObject()
 
     /**
      * Method getAnyObjectCount
@@ -164,18 +162,18 @@ public abstract class Text implements java.io.Serializable {
     public int getAnyObjectCount()
     {
         return _anyObject.size();
-    } //-- int getAnyObjectCount() 
+    } //-- int getAnyObjectCount()
 
     /**
      * Returns the value of field 'content'. The field 'content'
      * has the following description: internal content storage
-     * 
+     *
      * @return the value of field 'content'.
      */
     public java.lang.String getContent()
     {
         return this._content;
-    } //-- java.lang.String getContent() 
+    } //-- java.lang.String getContent()
 
     /**
      * Method isValid
@@ -189,22 +187,22 @@ public abstract class Text implements java.io.Serializable {
             return false;
         }
         return true;
-    } //-- boolean isValid() 
+    } //-- boolean isValid()
 
     /**
      * Method removeAnyObject
-     * 
+     *
      * @param vAnyObject
      */
     public boolean removeAnyObject(java.lang.Object vAnyObject)
     {
         boolean removed = _anyObject.remove(vAnyObject);
         return removed;
-    } //-- boolean removeAnyObject(java.lang.Object) 
+    } //-- boolean removeAnyObject(java.lang.Object)
 
     /**
      * Method setAnyObject
-     * 
+     *
      * @param index
      * @param vAnyObject
      */
@@ -216,11 +214,11 @@ public abstract class Text implements java.io.Serializable {
             throw new IndexOutOfBoundsException();
         }
         _anyObject.set(index, vAnyObject);
-    } //-- void setAnyObject(int, java.lang.Object) 
+    } //-- void setAnyObject(int, java.lang.Object)
 
     /**
      * Method setAnyObject
-     * 
+     *
      * @param anyObjectArray
      */
     public void setAnyObject(java.lang.Object[] anyObjectArray)
@@ -230,18 +228,18 @@ public abstract class Text implements java.io.Serializable {
         for (int i = 0; i < anyObjectArray.length; i++) {
             _anyObject.add(anyObjectArray[i]);
         }
-    } //-- void setAnyObject(java.lang.Object) 
+    } //-- void setAnyObject(java.lang.Object)
 
     /**
      * Sets the value of field 'content'. The field 'content' has
      * the following description: internal content storage
-     * 
+     *
      * @param content the value of field 'content'.
      */
     public void setContent(java.lang.String content)
     {
         this._content = content;
-    } //-- void setContent(java.lang.String) 
+    } //-- void setContent(java.lang.String)
 
     /**
      * Method validate
@@ -251,6 +249,6 @@ public abstract class Text implements java.io.Serializable {
     {
         org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
         validator.validate(this);
-    } //-- void validate() 
+    } //-- void validate()
 
 }

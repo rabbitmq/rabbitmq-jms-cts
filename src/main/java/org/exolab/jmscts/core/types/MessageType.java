@@ -1,5 +1,5 @@
 /*
- * This class was automatically generated with 
+ * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
  * $Id$
@@ -11,15 +11,11 @@ package org.exolab.jmscts.core.types;
  //- Imported classes and packages -/
 //---------------------------------/
 
-import java.io.Serializable;
-import java.util.Enumeration;
 import java.util.Hashtable;
-import org.exolab.castor.xml.Marshaller;
-import org.exolab.castor.xml.Unmarshaller;
 
 /**
  * Class MessageType.
- * 
+ *
  * @version $Revision$ $Date$
  */
 public class MessageType implements java.io.Serializable {
@@ -28,6 +24,11 @@ public class MessageType implements java.io.Serializable {
       //--------------------------/
      //- Class/Member Variables -/
     //--------------------------/
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
     /**
      * The BytesMessage type
@@ -92,7 +93,7 @@ public class MessageType implements java.io.Serializable {
     /**
      * Field _memberTable
      */
-    private static java.util.Hashtable _memberTable = init();
+    private static java.util.Hashtable<String, MessageType> _memberTable = init();
 
     /**
      * Field type
@@ -124,10 +125,10 @@ public class MessageType implements java.io.Serializable {
      * Method enumerateReturns an enumeration of all possible
      * instances of MessageType
      */
-    public static java.util.Enumeration enumerate()
+    public static java.util.Enumeration<MessageType> enumerate()
     {
         return _memberTable.elements();
-    } //-- java.util.Enumeration enumerate() 
+    } //-- java.util.Enumeration enumerate()
 
     /**
      * Method getTypeReturns the type of this MessageType
@@ -135,14 +136,14 @@ public class MessageType implements java.io.Serializable {
     public int getType()
     {
         return this.type;
-    } //-- int getType() 
+    } //-- int getType()
 
     /**
      * Method init
      */
-    private static java.util.Hashtable init()
+    private static java.util.Hashtable<String, MessageType> init()
     {
-        Hashtable members = new Hashtable();
+        Hashtable<String, MessageType> members = new Hashtable<String, MessageType>();
         members.put("BytesMessage", BYTESMESSAGE);
         members.put("MapMessage", MAPMESSAGE);
         members.put("ObjectMessage", OBJECTMESSAGE);
@@ -150,7 +151,7 @@ public class MessageType implements java.io.Serializable {
         members.put("TextMessage", TEXTMESSAGE);
         members.put("Message", MESSAGE);
         return members;
-    } //-- java.util.Hashtable init() 
+    } //-- java.util.Hashtable init()
 
     /**
      * Method toStringReturns the String representation of this
@@ -159,12 +160,12 @@ public class MessageType implements java.io.Serializable {
     public java.lang.String toString()
     {
         return this.stringValue;
-    } //-- java.lang.String toString() 
+    } //-- java.lang.String toString()
 
     /**
      * Method valueOfReturns a new MessageType based on the given
      * String value.
-     * 
+     *
      * @param string
      */
     public static org.exolab.jmscts.core.types.MessageType valueOf(java.lang.String string)
@@ -176,6 +177,6 @@ public class MessageType implements java.io.Serializable {
             throw new IllegalArgumentException(err);
         }
         return (MessageType) obj;
-    } //-- org.exolab.jmscts.core.types.MessageType valueOf(java.lang.String) 
+    } //-- org.exolab.jmscts.core.types.MessageType valueOf(java.lang.String)
 
 }

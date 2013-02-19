@@ -209,7 +209,7 @@ public abstract class TestRunner extends TestSetup implements JMSTest {
      *
      * @return an array of the contained tests
      */
-    @SuppressWarnings("unchecked")
+//    @SuppressWarnings("unchecked")
     protected Test[] getTests() {
         Test test = getTest();
         ArrayList<Test> result = new ArrayList<Test>();

@@ -1,5 +1,5 @@
 /*
- * This class was automatically generated with 
+ * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
  * $Id$
@@ -11,24 +11,18 @@ package org.exolab.jmscts.report;
  //- Imported classes and packages -/
 //---------------------------------/
 
-import java.io.IOException;
-import java.io.Reader;
 import java.io.Serializable;
-import java.io.Writer;
 import java.util.ArrayList;
-import java.util.Enumeration;
-import org.exolab.castor.xml.MarshalException;
+
 import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.xml.Unmarshaller;
-import org.exolab.castor.xml.ValidationException;
-import org.xml.sax.ContentHandler;
 
 /**
  * The requirementCoverage element is the root element of all test
- * case 
+ * case
  *  requirement coverage documents.
- *  
- * 
+ *
+ *
  * @version $Revision$ $Date$
  */
 public class RequirementCoverage implements java.io.Serializable {
@@ -39,35 +33,40 @@ public class RequirementCoverage implements java.io.Serializable {
     //--------------------------/
 
     /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
+    /**
      * Field _provider
      */
     private java.lang.String _provider;
 
     /**
      * This element details the state of the current executing test
-     *  
+     *
      */
     private org.exolab.jmscts.report.CurrentTest _currentTest;
 
     /**
      * This element lists the tests which have covered a particular
-     * 
+     *
      *  requirement, and a count of any failures that occurred.
-     *  
+     *
      */
-    private java.util.ArrayList _coverageList;
+    private java.util.ArrayList<Serializable> _coverageList;
 
     /**
      * This element describes the results of each run of a test.
-     *  
+     *
      */
-    private java.util.ArrayList _testRunsList;
+    private java.util.ArrayList<Serializable> _testRunsList;
 
     /**
      * This element describes a test case failure.
-     *  
+     *
      */
-    private java.util.ArrayList _failureList;
+    private java.util.ArrayList<Serializable> _failureList;
 
 
       //----------------/
@@ -76,9 +75,9 @@ public class RequirementCoverage implements java.io.Serializable {
 
     public RequirementCoverage() {
         super();
-        _coverageList = new ArrayList();
-        _testRunsList = new ArrayList();
-        _failureList = new ArrayList();
+        _coverageList = new ArrayList<Serializable>();
+        _testRunsList = new ArrayList<Serializable>();
+        _failureList = new ArrayList<Serializable>();
     } //-- org.exolab.jmscts.report.RequirementCoverage()
 
 
@@ -88,18 +87,18 @@ public class RequirementCoverage implements java.io.Serializable {
 
     /**
      * Method addCoverage
-     * 
+     *
      * @param vCoverage
      */
     public void addCoverage(org.exolab.jmscts.report.Coverage vCoverage)
         throws java.lang.IndexOutOfBoundsException
     {
         _coverageList.add(vCoverage);
-    } //-- void addCoverage(org.exolab.jmscts.report.Coverage) 
+    } //-- void addCoverage(org.exolab.jmscts.report.Coverage)
 
     /**
      * Method addCoverage
-     * 
+     *
      * @param index
      * @param vCoverage
      */
@@ -107,22 +106,22 @@ public class RequirementCoverage implements java.io.Serializable {
         throws java.lang.IndexOutOfBoundsException
     {
         _coverageList.add(index, vCoverage);
-    } //-- void addCoverage(int, org.exolab.jmscts.report.Coverage) 
+    } //-- void addCoverage(int, org.exolab.jmscts.report.Coverage)
 
     /**
      * Method addFailure
-     * 
+     *
      * @param vFailure
      */
     public void addFailure(org.exolab.jmscts.report.Failure vFailure)
         throws java.lang.IndexOutOfBoundsException
     {
         _failureList.add(vFailure);
-    } //-- void addFailure(org.exolab.jmscts.report.Failure) 
+    } //-- void addFailure(org.exolab.jmscts.report.Failure)
 
     /**
      * Method addFailure
-     * 
+     *
      * @param index
      * @param vFailure
      */
@@ -130,22 +129,22 @@ public class RequirementCoverage implements java.io.Serializable {
         throws java.lang.IndexOutOfBoundsException
     {
         _failureList.add(index, vFailure);
-    } //-- void addFailure(int, org.exolab.jmscts.report.Failure) 
+    } //-- void addFailure(int, org.exolab.jmscts.report.Failure)
 
     /**
      * Method addTestRuns
-     * 
+     *
      * @param vTestRuns
      */
     public void addTestRuns(org.exolab.jmscts.report.TestRuns vTestRuns)
         throws java.lang.IndexOutOfBoundsException
     {
         _testRunsList.add(vTestRuns);
-    } //-- void addTestRuns(org.exolab.jmscts.report.TestRuns) 
+    } //-- void addTestRuns(org.exolab.jmscts.report.TestRuns)
 
     /**
      * Method addTestRuns
-     * 
+     *
      * @param index
      * @param vTestRuns
      */
@@ -153,7 +152,7 @@ public class RequirementCoverage implements java.io.Serializable {
         throws java.lang.IndexOutOfBoundsException
     {
         _testRunsList.add(index, vTestRuns);
-    } //-- void addTestRuns(int, org.exolab.jmscts.report.TestRuns) 
+    } //-- void addTestRuns(int, org.exolab.jmscts.report.TestRuns)
 
     /**
      * Method clearCoverage
@@ -161,7 +160,7 @@ public class RequirementCoverage implements java.io.Serializable {
     public void clearCoverage()
     {
         _coverageList.clear();
-    } //-- void clearCoverage() 
+    } //-- void clearCoverage()
 
     /**
      * Method clearFailure
@@ -169,7 +168,7 @@ public class RequirementCoverage implements java.io.Serializable {
     public void clearFailure()
     {
         _failureList.clear();
-    } //-- void clearFailure() 
+    } //-- void clearFailure()
 
     /**
      * Method clearTestRuns
@@ -177,76 +176,76 @@ public class RequirementCoverage implements java.io.Serializable {
     public void clearTestRuns()
     {
         _testRunsList.clear();
-    } //-- void clearTestRuns() 
+    } //-- void clearTestRuns()
 
     /**
      * Method enumerateCoverage
      */
-    public java.util.Enumeration enumerateCoverage()
+    public java.util.Enumeration<?> enumerateCoverage()
     {
         return new org.exolab.castor.util.IteratorEnumeration(_coverageList.iterator());
-    } //-- java.util.Enumeration enumerateCoverage() 
+    } //-- java.util.Enumeration enumerateCoverage()
 
     /**
      * Method enumerateFailure
      */
-    public java.util.Enumeration enumerateFailure()
+    public java.util.Enumeration<?> enumerateFailure()
     {
         return new org.exolab.castor.util.IteratorEnumeration(_failureList.iterator());
-    } //-- java.util.Enumeration enumerateFailure() 
+    } //-- java.util.Enumeration enumerateFailure()
 
     /**
      * Method enumerateTestRuns
      */
-    public java.util.Enumeration enumerateTestRuns()
+    public java.util.Enumeration<?> enumerateTestRuns()
     {
         return new org.exolab.castor.util.IteratorEnumeration(_testRunsList.iterator());
-    } //-- java.util.Enumeration enumerateTestRuns() 
+    } //-- java.util.Enumeration enumerateTestRuns()
 
     /**
      * Note: hashCode() has not been overriden
-     * 
+     *
      * @param obj
      */
     public boolean equals(java.lang.Object obj)
     {
         if ( this == obj )
             return true;
-        
+
         if (obj instanceof RequirementCoverage) {
-        
+
             RequirementCoverage temp = (RequirementCoverage)obj;
             if (this._provider != null) {
                 if (temp._provider == null) return false;
-                else if (!(this._provider.equals(temp._provider))) 
+                else if (!(this._provider.equals(temp._provider)))
                     return false;
             }
             else if (temp._provider != null)
                 return false;
             if (this._currentTest != null) {
                 if (temp._currentTest == null) return false;
-                else if (!(this._currentTest.equals(temp._currentTest))) 
+                else if (!(this._currentTest.equals(temp._currentTest)))
                     return false;
             }
             else if (temp._currentTest != null)
                 return false;
             if (this._coverageList != null) {
                 if (temp._coverageList == null) return false;
-                else if (!(this._coverageList.equals(temp._coverageList))) 
+                else if (!(this._coverageList.equals(temp._coverageList)))
                     return false;
             }
             else if (temp._coverageList != null)
                 return false;
             if (this._testRunsList != null) {
                 if (temp._testRunsList == null) return false;
-                else if (!(this._testRunsList.equals(temp._testRunsList))) 
+                else if (!(this._testRunsList.equals(temp._testRunsList)))
                     return false;
             }
             else if (temp._testRunsList != null)
                 return false;
             if (this._failureList != null) {
                 if (temp._failureList == null) return false;
-                else if (!(this._failureList.equals(temp._failureList))) 
+                else if (!(this._failureList.equals(temp._failureList)))
                     return false;
             }
             else if (temp._failureList != null)
@@ -254,11 +253,11 @@ public class RequirementCoverage implements java.io.Serializable {
             return true;
         }
         return false;
-    } //-- boolean equals(java.lang.Object) 
+    } //-- boolean equals(java.lang.Object)
 
     /**
      * Method getCoverage
-     * 
+     *
      * @param index
      */
     public org.exolab.jmscts.report.Coverage getCoverage(int index)
@@ -268,9 +267,9 @@ public class RequirementCoverage implements java.io.Serializable {
         if ((index < 0) || (index > _coverageList.size())) {
             throw new IndexOutOfBoundsException();
         }
-        
+
         return (org.exolab.jmscts.report.Coverage) _coverageList.get(index);
-    } //-- org.exolab.jmscts.report.Coverage getCoverage(int) 
+    } //-- org.exolab.jmscts.report.Coverage getCoverage(int)
 
     /**
      * Method getCoverage
@@ -283,7 +282,7 @@ public class RequirementCoverage implements java.io.Serializable {
             mArray[index] = (org.exolab.jmscts.report.Coverage) _coverageList.get(index);
         }
         return mArray;
-    } //-- org.exolab.jmscts.report.Coverage[] getCoverage() 
+    } //-- org.exolab.jmscts.report.Coverage[] getCoverage()
 
     /**
      * Method getCoverageCount
@@ -291,24 +290,24 @@ public class RequirementCoverage implements java.io.Serializable {
     public int getCoverageCount()
     {
         return _coverageList.size();
-    } //-- int getCoverageCount() 
+    } //-- int getCoverageCount()
 
     /**
      * Returns the value of field 'currentTest'. The field
      * 'currentTest' has the following description: This element
      * details the state of the current executing test
-     *  
-     * 
+     *
+     *
      * @return the value of field 'currentTest'.
      */
     public org.exolab.jmscts.report.CurrentTest getCurrentTest()
     {
         return this._currentTest;
-    } //-- org.exolab.jmscts.report.CurrentTest getCurrentTest() 
+    } //-- org.exolab.jmscts.report.CurrentTest getCurrentTest()
 
     /**
      * Method getFailure
-     * 
+     *
      * @param index
      */
     public org.exolab.jmscts.report.Failure getFailure(int index)
@@ -318,9 +317,9 @@ public class RequirementCoverage implements java.io.Serializable {
         if ((index < 0) || (index > _failureList.size())) {
             throw new IndexOutOfBoundsException();
         }
-        
+
         return (org.exolab.jmscts.report.Failure) _failureList.get(index);
-    } //-- org.exolab.jmscts.report.Failure getFailure(int) 
+    } //-- org.exolab.jmscts.report.Failure getFailure(int)
 
     /**
      * Method getFailure
@@ -333,7 +332,7 @@ public class RequirementCoverage implements java.io.Serializable {
             mArray[index] = (org.exolab.jmscts.report.Failure) _failureList.get(index);
         }
         return mArray;
-    } //-- org.exolab.jmscts.report.Failure[] getFailure() 
+    } //-- org.exolab.jmscts.report.Failure[] getFailure()
 
     /**
      * Method getFailureCount
@@ -341,21 +340,21 @@ public class RequirementCoverage implements java.io.Serializable {
     public int getFailureCount()
     {
         return _failureList.size();
-    } //-- int getFailureCount() 
+    } //-- int getFailureCount()
 
     /**
      * Returns the value of field 'provider'.
-     * 
+     *
      * @return the value of field 'provider'.
      */
     public java.lang.String getProvider()
     {
         return this._provider;
-    } //-- java.lang.String getProvider() 
+    } //-- java.lang.String getProvider()
 
     /**
      * Method getTestRuns
-     * 
+     *
      * @param index
      */
     public org.exolab.jmscts.report.TestRuns getTestRuns(int index)
@@ -365,9 +364,9 @@ public class RequirementCoverage implements java.io.Serializable {
         if ((index < 0) || (index > _testRunsList.size())) {
             throw new IndexOutOfBoundsException();
         }
-        
+
         return (org.exolab.jmscts.report.TestRuns) _testRunsList.get(index);
-    } //-- org.exolab.jmscts.report.TestRuns getTestRuns(int) 
+    } //-- org.exolab.jmscts.report.TestRuns getTestRuns(int)
 
     /**
      * Method getTestRuns
@@ -380,7 +379,7 @@ public class RequirementCoverage implements java.io.Serializable {
             mArray[index] = (org.exolab.jmscts.report.TestRuns) _testRunsList.get(index);
         }
         return mArray;
-    } //-- org.exolab.jmscts.report.TestRuns[] getTestRuns() 
+    } //-- org.exolab.jmscts.report.TestRuns[] getTestRuns()
 
     /**
      * Method getTestRunsCount
@@ -388,7 +387,7 @@ public class RequirementCoverage implements java.io.Serializable {
     public int getTestRunsCount()
     {
         return _testRunsList.size();
-    } //-- int getTestRunsCount() 
+    } //-- int getTestRunsCount()
 
     /**
      * Method isValid
@@ -402,68 +401,68 @@ public class RequirementCoverage implements java.io.Serializable {
             return false;
         }
         return true;
-    } //-- boolean isValid() 
+    } //-- boolean isValid()
 
     /**
      * Method marshal
-     * 
+     *
      * @param out
      */
     public void marshal(java.io.Writer out)
         throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
     {
-        
+
         Marshaller.marshal(this, out);
-    } //-- void marshal(java.io.Writer) 
+    } //-- void marshal(java.io.Writer)
 
     /**
      * Method marshal
-     * 
+     *
      * @param handler
      */
     public void marshal(org.xml.sax.ContentHandler handler)
         throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
     {
-        
+
         Marshaller.marshal(this, handler);
-    } //-- void marshal(org.xml.sax.ContentHandler) 
+    } //-- void marshal(org.xml.sax.ContentHandler)
 
     /**
      * Method removeCoverage
-     * 
+     *
      * @param vCoverage
      */
     public boolean removeCoverage(org.exolab.jmscts.report.Coverage vCoverage)
     {
         boolean removed = _coverageList.remove(vCoverage);
         return removed;
-    } //-- boolean removeCoverage(org.exolab.jmscts.report.Coverage) 
+    } //-- boolean removeCoverage(org.exolab.jmscts.report.Coverage)
 
     /**
      * Method removeFailure
-     * 
+     *
      * @param vFailure
      */
     public boolean removeFailure(org.exolab.jmscts.report.Failure vFailure)
     {
         boolean removed = _failureList.remove(vFailure);
         return removed;
-    } //-- boolean removeFailure(org.exolab.jmscts.report.Failure) 
+    } //-- boolean removeFailure(org.exolab.jmscts.report.Failure)
 
     /**
      * Method removeTestRuns
-     * 
+     *
      * @param vTestRuns
      */
     public boolean removeTestRuns(org.exolab.jmscts.report.TestRuns vTestRuns)
     {
         boolean removed = _testRunsList.remove(vTestRuns);
         return removed;
-    } //-- boolean removeTestRuns(org.exolab.jmscts.report.TestRuns) 
+    } //-- boolean removeTestRuns(org.exolab.jmscts.report.TestRuns)
 
     /**
      * Method setCoverage
-     * 
+     *
      * @param index
      * @param vCoverage
      */
@@ -475,11 +474,11 @@ public class RequirementCoverage implements java.io.Serializable {
             throw new IndexOutOfBoundsException();
         }
         _coverageList.set(index, vCoverage);
-    } //-- void setCoverage(int, org.exolab.jmscts.report.Coverage) 
+    } //-- void setCoverage(int, org.exolab.jmscts.report.Coverage)
 
     /**
      * Method setCoverage
-     * 
+     *
      * @param coverageArray
      */
     public void setCoverage(org.exolab.jmscts.report.Coverage[] coverageArray)
@@ -489,24 +488,24 @@ public class RequirementCoverage implements java.io.Serializable {
         for (int i = 0; i < coverageArray.length; i++) {
             _coverageList.add(coverageArray[i]);
         }
-    } //-- void setCoverage(org.exolab.jmscts.report.Coverage) 
+    } //-- void setCoverage(org.exolab.jmscts.report.Coverage)
 
     /**
      * Sets the value of field 'currentTest'. The field
      * 'currentTest' has the following description: This element
      * details the state of the current executing test
-     *  
-     * 
+     *
+     *
      * @param currentTest the value of field 'currentTest'.
      */
     public void setCurrentTest(org.exolab.jmscts.report.CurrentTest currentTest)
     {
         this._currentTest = currentTest;
-    } //-- void setCurrentTest(org.exolab.jmscts.report.CurrentTest) 
+    } //-- void setCurrentTest(org.exolab.jmscts.report.CurrentTest)
 
     /**
      * Method setFailure
-     * 
+     *
      * @param index
      * @param vFailure
      */
@@ -518,11 +517,11 @@ public class RequirementCoverage implements java.io.Serializable {
             throw new IndexOutOfBoundsException();
         }
         _failureList.set(index, vFailure);
-    } //-- void setFailure(int, org.exolab.jmscts.report.Failure) 
+    } //-- void setFailure(int, org.exolab.jmscts.report.Failure)
 
     /**
      * Method setFailure
-     * 
+     *
      * @param failureArray
      */
     public void setFailure(org.exolab.jmscts.report.Failure[] failureArray)
@@ -532,21 +531,21 @@ public class RequirementCoverage implements java.io.Serializable {
         for (int i = 0; i < failureArray.length; i++) {
             _failureList.add(failureArray[i]);
         }
-    } //-- void setFailure(org.exolab.jmscts.report.Failure) 
+    } //-- void setFailure(org.exolab.jmscts.report.Failure)
 
     /**
      * Sets the value of field 'provider'.
-     * 
+     *
      * @param provider the value of field 'provider'.
      */
     public void setProvider(java.lang.String provider)
     {
         this._provider = provider;
-    } //-- void setProvider(java.lang.String) 
+    } //-- void setProvider(java.lang.String)
 
     /**
      * Method setTestRuns
-     * 
+     *
      * @param index
      * @param vTestRuns
      */
@@ -558,11 +557,11 @@ public class RequirementCoverage implements java.io.Serializable {
             throw new IndexOutOfBoundsException();
         }
         _testRunsList.set(index, vTestRuns);
-    } //-- void setTestRuns(int, org.exolab.jmscts.report.TestRuns) 
+    } //-- void setTestRuns(int, org.exolab.jmscts.report.TestRuns)
 
     /**
      * Method setTestRuns
-     * 
+     *
      * @param testRunsArray
      */
     public void setTestRuns(org.exolab.jmscts.report.TestRuns[] testRunsArray)
@@ -572,18 +571,18 @@ public class RequirementCoverage implements java.io.Serializable {
         for (int i = 0; i < testRunsArray.length; i++) {
             _testRunsList.add(testRunsArray[i]);
         }
-    } //-- void setTestRuns(org.exolab.jmscts.report.TestRuns) 
+    } //-- void setTestRuns(org.exolab.jmscts.report.TestRuns)
 
     /**
      * Method unmarshal
-     * 
+     *
      * @param reader
      */
     public static org.exolab.jmscts.report.RequirementCoverage unmarshal(java.io.Reader reader)
         throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
     {
         return (org.exolab.jmscts.report.RequirementCoverage) Unmarshaller.unmarshal(org.exolab.jmscts.report.RequirementCoverage.class, reader);
-    } //-- org.exolab.jmscts.report.RequirementCoverage unmarshal(java.io.Reader) 
+    } //-- org.exolab.jmscts.report.RequirementCoverage unmarshal(java.io.Reader)
 
     /**
      * Method validate
@@ -593,6 +592,6 @@ public class RequirementCoverage implements java.io.Serializable {
     {
         org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
         validator.validate(this);
-    } //-- void validate() 
+    } //-- void validate()
 
 }

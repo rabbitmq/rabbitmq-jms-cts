@@ -1,5 +1,5 @@
 /*
- * This class was automatically generated with 
+ * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
  * $Id$
@@ -11,14 +11,10 @@ package org.exolab.jmscts.core.filter;
  //- Imported classes and packages -/
 //---------------------------------/
 
-import org.exolab.castor.mapping.AccessMode;
-import org.exolab.castor.xml.TypeValidator;
-import org.exolab.castor.xml.XMLFieldDescriptor;
-import org.exolab.castor.xml.validators.*;
 
 /**
  * Class ExcludeDescriptor.
- * 
+ *
  * @version $Revision$ $Date$
  */
 public class ExcludeDescriptor extends org.exolab.jmscts.core.filter.SelectorDescriptor {
@@ -71,7 +67,7 @@ public class ExcludeDescriptor extends org.exolab.jmscts.core.filter.SelectorDes
     public org.exolab.castor.mapping.AccessMode getAccessMode()
     {
         return null;
-    } //-- org.exolab.castor.mapping.AccessMode getAccessMode() 
+    } //-- org.exolab.castor.mapping.AccessMode getAccessMode()
 
     /**
      * Method getExtends
@@ -79,7 +75,7 @@ public class ExcludeDescriptor extends org.exolab.jmscts.core.filter.SelectorDes
     public org.exolab.castor.mapping.ClassDescriptor getExtends()
     {
         return super.getExtends();
-    } //-- org.exolab.castor.mapping.ClassDescriptor getExtends() 
+    } //-- org.exolab.castor.mapping.ClassDescriptor getExtends()
 
     /**
      * Method getIdentity
@@ -89,15 +85,15 @@ public class ExcludeDescriptor extends org.exolab.jmscts.core.filter.SelectorDes
         if (identity == null)
             return super.getIdentity();
         return identity;
-    } //-- org.exolab.castor.mapping.FieldDescriptor getIdentity() 
+    } //-- org.exolab.castor.mapping.FieldDescriptor getIdentity()
 
     /**
      * Method getJavaClass
      */
-    public java.lang.Class getJavaClass()
+    public java.lang.Class<?> getJavaClass()
     {
         return org.exolab.jmscts.core.filter.Exclude.class;
-    } //-- java.lang.Class getJavaClass() 
+    } //-- java.lang.Class getJavaClass()
 
     /**
      * Method getNameSpacePrefix
@@ -105,7 +101,7 @@ public class ExcludeDescriptor extends org.exolab.jmscts.core.filter.SelectorDes
     public java.lang.String getNameSpacePrefix()
     {
         return nsPrefix;
-    } //-- java.lang.String getNameSpacePrefix() 
+    } //-- java.lang.String getNameSpacePrefix()
 
     /**
      * Method getNameSpaceURI
@@ -113,7 +109,7 @@ public class ExcludeDescriptor extends org.exolab.jmscts.core.filter.SelectorDes
     public java.lang.String getNameSpaceURI()
     {
         return nsURI;
-    } //-- java.lang.String getNameSpaceURI() 
+    } //-- java.lang.String getNameSpaceURI()
 
     /**
      * Method getValidator
@@ -121,7 +117,7 @@ public class ExcludeDescriptor extends org.exolab.jmscts.core.filter.SelectorDes
     public org.exolab.castor.xml.TypeValidator getValidator()
     {
         return this;
-    } //-- org.exolab.castor.xml.TypeValidator getValidator() 
+    } //-- org.exolab.castor.xml.TypeValidator getValidator()
 
     /**
      * Method getXMLName
@@ -129,6 +125,6 @@ public class ExcludeDescriptor extends org.exolab.jmscts.core.filter.SelectorDes
     public java.lang.String getXMLName()
     {
         return xmlName;
-    } //-- java.lang.String getXMLName() 
+    } //-- java.lang.String getXMLName()
 
 }

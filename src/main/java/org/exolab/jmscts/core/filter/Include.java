@@ -1,5 +1,5 @@
 /*
- * This class was automatically generated with 
+ * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
  * $Id$
@@ -11,25 +11,18 @@ package org.exolab.jmscts.core.filter;
  //- Imported classes and packages -/
 //---------------------------------/
 
-import java.io.IOException;
-import java.io.Reader;
-import java.io.Serializable;
-import java.io.Writer;
-import org.exolab.castor.xml.MarshalException;
 import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.xml.Unmarshaller;
-import org.exolab.castor.xml.ValidationException;
-import org.xml.sax.ContentHandler;
 
 /**
  * This element specifies to include the specified test cases when
  * running
  *  the test suite
- *  
- * 
+ *
+ *
  * @version $Revision$ $Date$
  */
-public class Include extends org.exolab.jmscts.core.filter.Selector 
+public class Include extends org.exolab.jmscts.core.filter.Selector
 implements java.io.Serializable
 {
 
@@ -37,6 +30,11 @@ implements java.io.Serializable
       //----------------/
      //- Constructors -/
     //----------------/
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
     public Include() {
         super();
@@ -49,24 +47,25 @@ implements java.io.Serializable
 
     /**
      * Note: hashCode() has not been overriden
-     * 
+     *
      * @param obj
      */
     public boolean equals(java.lang.Object obj)
     {
         if ( this == obj )
             return true;
-        
+
         if (super.equals(obj)==false)
             return false;
-        
+
         if (obj instanceof Include) {
-        
+
+            @SuppressWarnings("unused")
             Include temp = (Include)obj;
             return true;
         }
         return false;
-    } //-- boolean equals(java.lang.Object) 
+    } //-- boolean equals(java.lang.Object)
 
     /**
      * Method isValid
@@ -80,42 +79,42 @@ implements java.io.Serializable
             return false;
         }
         return true;
-    } //-- boolean isValid() 
+    } //-- boolean isValid()
 
     /**
      * Method marshal
-     * 
+     *
      * @param out
      */
     public void marshal(java.io.Writer out)
         throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
     {
-        
+
         Marshaller.marshal(this, out);
-    } //-- void marshal(java.io.Writer) 
+    } //-- void marshal(java.io.Writer)
 
     /**
      * Method marshal
-     * 
+     *
      * @param handler
      */
     public void marshal(org.xml.sax.ContentHandler handler)
         throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
     {
-        
+
         Marshaller.marshal(this, handler);
-    } //-- void marshal(org.xml.sax.ContentHandler) 
+    } //-- void marshal(org.xml.sax.ContentHandler)
 
     /**
      * Method unmarshal
-     * 
+     *
      * @param reader
      */
     public static org.exolab.jmscts.core.filter.Include unmarshal(java.io.Reader reader)
         throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
     {
         return (org.exolab.jmscts.core.filter.Include) Unmarshaller.unmarshal(org.exolab.jmscts.core.filter.Include.class, reader);
-    } //-- org.exolab.jmscts.core.filter.Include unmarshal(java.io.Reader) 
+    } //-- org.exolab.jmscts.core.filter.Include unmarshal(java.io.Reader)
 
     /**
      * Method validate
@@ -125,6 +124,6 @@ implements java.io.Serializable
     {
         org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
         validator.validate(this);
-    } //-- void validate() 
+    } //-- void validate()
 
 }

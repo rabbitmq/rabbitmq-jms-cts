@@ -1,5 +1,5 @@
 /*
- * This class was automatically generated with 
+ * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
  * $Id$
@@ -11,14 +11,10 @@ package org.exolab.jmscts.report;
  //- Imported classes and packages -/
 //---------------------------------/
 
-import org.exolab.castor.mapping.AccessMode;
-import org.exolab.castor.xml.TypeValidator;
-import org.exolab.castor.xml.XMLFieldDescriptor;
-import org.exolab.castor.xml.validators.*;
 
 /**
  * Class ContextDescriptor.
- * 
+ *
  * @version $Revision$ $Date$
  */
 public class ContextDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
@@ -57,26 +53,26 @@ public class ContextDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
         super();
         nsURI = "http://jmscts.sourceforge.net/test";
         xmlName = "context";
-        
+
         //-- set grouping compositor
         setCompositorAsSequence();
         org.exolab.castor.xml.util.XMLFieldDescriptorImpl  desc           = null;
         org.exolab.castor.xml.XMLFieldHandler              handler        = null;
         org.exolab.castor.xml.FieldValidator               fieldValidator = null;
         //-- initialize attribute descriptors
-        
+
         //-- initialize element descriptors
-        
+
         //-- _factory
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.exolab.jmscts.report.Factory.class, "_factory", "factory", org.exolab.castor.xml.NodeType.Element);
         handler = (new org.exolab.castor.xml.XMLFieldHandler() {
-            public java.lang.Object getValue( java.lang.Object object ) 
+            public java.lang.Object getValue( java.lang.Object object )
                 throws IllegalStateException
             {
                 Context target = (Context) object;
                 return target.getFactory();
             }
-            public void setValue( java.lang.Object object, java.lang.Object value) 
+            public void setValue( java.lang.Object object, java.lang.Object value)
                 throws IllegalStateException, IllegalArgumentException
             {
                 try {
@@ -95,7 +91,7 @@ public class ContextDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
         desc.setRequired(true);
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
-        
+
         //-- validation code for: _factory
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(1);
@@ -105,13 +101,13 @@ public class ContextDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
         //-- _session
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.exolab.jmscts.core.types.SessionType.class, "_session", "session", org.exolab.castor.xml.NodeType.Element);
         handler = (new org.exolab.castor.xml.XMLFieldHandler() {
-            public java.lang.Object getValue( java.lang.Object object ) 
+            public java.lang.Object getValue( java.lang.Object object )
                 throws IllegalStateException
             {
                 Context target = (Context) object;
                 return target.getSession();
             }
-            public void setValue( java.lang.Object object, java.lang.Object value) 
+            public void setValue( java.lang.Object object, java.lang.Object value)
                 throws IllegalStateException, IllegalArgumentException
             {
                 try {
@@ -130,7 +126,7 @@ public class ContextDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
         desc.setImmutable(true);
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
-        
+
         //-- validation code for: _session
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         { //-- local scope
@@ -139,13 +135,13 @@ public class ContextDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
         //-- _message
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.exolab.jmscts.core.types.MessageType.class, "_message", "message", org.exolab.castor.xml.NodeType.Element);
         handler = (new org.exolab.castor.xml.XMLFieldHandler() {
-            public java.lang.Object getValue( java.lang.Object object ) 
+            public java.lang.Object getValue( java.lang.Object object )
                 throws IllegalStateException
             {
                 Context target = (Context) object;
                 return target.getMessage();
             }
-            public void setValue( java.lang.Object object, java.lang.Object value) 
+            public void setValue( java.lang.Object object, java.lang.Object value)
                 throws IllegalStateException, IllegalArgumentException
             {
                 try {
@@ -164,7 +160,7 @@ public class ContextDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
         desc.setImmutable(true);
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
-        
+
         //-- validation code for: _message
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         { //-- local scope
@@ -173,13 +169,13 @@ public class ContextDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
         //-- _behaviour
         desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(org.exolab.jmscts.report.Behaviour.class, "_behaviour", "behaviour", org.exolab.castor.xml.NodeType.Element);
         handler = (new org.exolab.castor.xml.XMLFieldHandler() {
-            public java.lang.Object getValue( java.lang.Object object ) 
+            public java.lang.Object getValue( java.lang.Object object )
                 throws IllegalStateException
             {
                 Context target = (Context) object;
                 return target.getBehaviour();
             }
-            public void setValue( java.lang.Object object, java.lang.Object value) 
+            public void setValue( java.lang.Object object, java.lang.Object value)
                 throws IllegalStateException, IllegalArgumentException
             {
                 try {
@@ -197,7 +193,7 @@ public class ContextDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
         desc.setHandler(handler);
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
-        
+
         //-- validation code for: _behaviour
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         { //-- local scope
@@ -216,7 +212,7 @@ public class ContextDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
     public org.exolab.castor.mapping.AccessMode getAccessMode()
     {
         return null;
-    } //-- org.exolab.castor.mapping.AccessMode getAccessMode() 
+    } //-- org.exolab.castor.mapping.AccessMode getAccessMode()
 
     /**
      * Method getExtends
@@ -224,7 +220,7 @@ public class ContextDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
     public org.exolab.castor.mapping.ClassDescriptor getExtends()
     {
         return null;
-    } //-- org.exolab.castor.mapping.ClassDescriptor getExtends() 
+    } //-- org.exolab.castor.mapping.ClassDescriptor getExtends()
 
     /**
      * Method getIdentity
@@ -232,15 +228,15 @@ public class ContextDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
     public org.exolab.castor.mapping.FieldDescriptor getIdentity()
     {
         return identity;
-    } //-- org.exolab.castor.mapping.FieldDescriptor getIdentity() 
+    } //-- org.exolab.castor.mapping.FieldDescriptor getIdentity()
 
     /**
      * Method getJavaClass
      */
-    public java.lang.Class getJavaClass()
+    public java.lang.Class<Context> getJavaClass()
     {
         return org.exolab.jmscts.report.Context.class;
-    } //-- java.lang.Class getJavaClass() 
+    } //-- java.lang.Class getJavaClass()
 
     /**
      * Method getNameSpacePrefix
@@ -248,7 +244,7 @@ public class ContextDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
     public java.lang.String getNameSpacePrefix()
     {
         return nsPrefix;
-    } //-- java.lang.String getNameSpacePrefix() 
+    } //-- java.lang.String getNameSpacePrefix()
 
     /**
      * Method getNameSpaceURI
@@ -256,7 +252,7 @@ public class ContextDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
     public java.lang.String getNameSpaceURI()
     {
         return nsURI;
-    } //-- java.lang.String getNameSpaceURI() 
+    } //-- java.lang.String getNameSpaceURI()
 
     /**
      * Method getValidator
@@ -264,7 +260,7 @@ public class ContextDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
     public org.exolab.castor.xml.TypeValidator getValidator()
     {
         return this;
-    } //-- org.exolab.castor.xml.TypeValidator getValidator() 
+    } //-- org.exolab.castor.xml.TypeValidator getValidator()
 
     /**
      * Method getXMLName
@@ -272,6 +268,6 @@ public class ContextDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
     public java.lang.String getXMLName()
     {
         return xmlName;
-    } //-- java.lang.String getXMLName() 
+    } //-- java.lang.String getXMLName()
 
 }

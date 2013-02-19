@@ -1,5 +1,5 @@
 /*
- * This class was automatically generated with 
+ * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
  * $Id$
@@ -11,23 +11,16 @@ package org.exolab.jmscts.core.filter;
  //- Imported classes and packages -/
 //---------------------------------/
 
-import java.io.IOException;
-import java.io.Reader;
-import java.io.Serializable;
-import java.io.Writer;
 import java.util.ArrayList;
-import java.util.Enumeration;
-import org.exolab.castor.xml.MarshalException;
+
 import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.xml.Unmarshaller;
-import org.exolab.castor.xml.ValidationException;
-import org.xml.sax.ContentHandler;
 
 /**
  * The filter element is the root element of all test case filter
  *  documents.
- *  
- * 
+ *
+ *
  * @version $Revision$ $Date$
  */
 public class Filter implements java.io.Serializable {
@@ -38,20 +31,25 @@ public class Filter implements java.io.Serializable {
     //--------------------------/
 
     /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
+    /**
      * This element specifies to include the specified test cases
      * when running
      *  the test suite
-     *  
+     *
      */
-    private java.util.ArrayList _includeList;
+    private java.util.ArrayList<Selector> _includeList;
 
     /**
      * This element specifies to exclude the specified test cases
      * when running
      *  the test suite
-     *  
+     *
      */
-    private java.util.ArrayList _excludeList;
+    private java.util.ArrayList<Selector> _excludeList;
 
 
       //----------------/
@@ -60,8 +58,8 @@ public class Filter implements java.io.Serializable {
 
     public Filter() {
         super();
-        _includeList = new ArrayList();
-        _excludeList = new ArrayList();
+        _includeList = new ArrayList<Selector>();
+        _excludeList = new ArrayList<Selector>();
     } //-- org.exolab.jmscts.core.filter.Filter()
 
 
@@ -71,18 +69,18 @@ public class Filter implements java.io.Serializable {
 
     /**
      * Method addExclude
-     * 
+     *
      * @param vExclude
      */
     public void addExclude(org.exolab.jmscts.core.filter.Exclude vExclude)
         throws java.lang.IndexOutOfBoundsException
     {
         _excludeList.add(vExclude);
-    } //-- void addExclude(org.exolab.jmscts.core.filter.Exclude) 
+    } //-- void addExclude(org.exolab.jmscts.core.filter.Exclude)
 
     /**
      * Method addExclude
-     * 
+     *
      * @param index
      * @param vExclude
      */
@@ -90,22 +88,22 @@ public class Filter implements java.io.Serializable {
         throws java.lang.IndexOutOfBoundsException
     {
         _excludeList.add(index, vExclude);
-    } //-- void addExclude(int, org.exolab.jmscts.core.filter.Exclude) 
+    } //-- void addExclude(int, org.exolab.jmscts.core.filter.Exclude)
 
     /**
      * Method addInclude
-     * 
+     *
      * @param vInclude
      */
     public void addInclude(org.exolab.jmscts.core.filter.Include vInclude)
         throws java.lang.IndexOutOfBoundsException
     {
         _includeList.add(vInclude);
-    } //-- void addInclude(org.exolab.jmscts.core.filter.Include) 
+    } //-- void addInclude(org.exolab.jmscts.core.filter.Include)
 
     /**
      * Method addInclude
-     * 
+     *
      * @param index
      * @param vInclude
      */
@@ -113,7 +111,7 @@ public class Filter implements java.io.Serializable {
         throws java.lang.IndexOutOfBoundsException
     {
         _includeList.add(index, vInclude);
-    } //-- void addInclude(int, org.exolab.jmscts.core.filter.Include) 
+    } //-- void addInclude(int, org.exolab.jmscts.core.filter.Include)
 
     /**
      * Method clearExclude
@@ -121,7 +119,7 @@ public class Filter implements java.io.Serializable {
     public void clearExclude()
     {
         _excludeList.clear();
-    } //-- void clearExclude() 
+    } //-- void clearExclude()
 
     /**
      * Method clearInclude
@@ -129,47 +127,47 @@ public class Filter implements java.io.Serializable {
     public void clearInclude()
     {
         _includeList.clear();
-    } //-- void clearInclude() 
+    } //-- void clearInclude()
 
     /**
      * Method enumerateExclude
      */
-    public java.util.Enumeration enumerateExclude()
+    public java.util.Enumeration<?> enumerateExclude()
     {
         return new org.exolab.castor.util.IteratorEnumeration(_excludeList.iterator());
-    } //-- java.util.Enumeration enumerateExclude() 
+    } //-- java.util.Enumeration enumerateExclude()
 
     /**
      * Method enumerateInclude
      */
-    public java.util.Enumeration enumerateInclude()
+    public java.util.Enumeration<?> enumerateInclude()
     {
         return new org.exolab.castor.util.IteratorEnumeration(_includeList.iterator());
-    } //-- java.util.Enumeration enumerateInclude() 
+    } //-- java.util.Enumeration enumerateInclude()
 
     /**
      * Note: hashCode() has not been overriden
-     * 
+     *
      * @param obj
      */
     public boolean equals(java.lang.Object obj)
     {
         if ( this == obj )
             return true;
-        
+
         if (obj instanceof Filter) {
-        
+
             Filter temp = (Filter)obj;
             if (this._includeList != null) {
                 if (temp._includeList == null) return false;
-                else if (!(this._includeList.equals(temp._includeList))) 
+                else if (!(this._includeList.equals(temp._includeList)))
                     return false;
             }
             else if (temp._includeList != null)
                 return false;
             if (this._excludeList != null) {
                 if (temp._excludeList == null) return false;
-                else if (!(this._excludeList.equals(temp._excludeList))) 
+                else if (!(this._excludeList.equals(temp._excludeList)))
                     return false;
             }
             else if (temp._excludeList != null)
@@ -177,11 +175,11 @@ public class Filter implements java.io.Serializable {
             return true;
         }
         return false;
-    } //-- boolean equals(java.lang.Object) 
+    } //-- boolean equals(java.lang.Object)
 
     /**
      * Method getExclude
-     * 
+     *
      * @param index
      */
     public org.exolab.jmscts.core.filter.Exclude getExclude(int index)
@@ -191,9 +189,9 @@ public class Filter implements java.io.Serializable {
         if ((index < 0) || (index > _excludeList.size())) {
             throw new IndexOutOfBoundsException();
         }
-        
+
         return (org.exolab.jmscts.core.filter.Exclude) _excludeList.get(index);
-    } //-- org.exolab.jmscts.core.filter.Exclude getExclude(int) 
+    } //-- org.exolab.jmscts.core.filter.Exclude getExclude(int)
 
     /**
      * Method getExclude
@@ -206,7 +204,7 @@ public class Filter implements java.io.Serializable {
             mArray[index] = (org.exolab.jmscts.core.filter.Exclude) _excludeList.get(index);
         }
         return mArray;
-    } //-- org.exolab.jmscts.core.filter.Exclude[] getExclude() 
+    } //-- org.exolab.jmscts.core.filter.Exclude[] getExclude()
 
     /**
      * Method getExcludeCount
@@ -214,11 +212,11 @@ public class Filter implements java.io.Serializable {
     public int getExcludeCount()
     {
         return _excludeList.size();
-    } //-- int getExcludeCount() 
+    } //-- int getExcludeCount()
 
     /**
      * Method getInclude
-     * 
+     *
      * @param index
      */
     public org.exolab.jmscts.core.filter.Include getInclude(int index)
@@ -228,9 +226,9 @@ public class Filter implements java.io.Serializable {
         if ((index < 0) || (index > _includeList.size())) {
             throw new IndexOutOfBoundsException();
         }
-        
+
         return (org.exolab.jmscts.core.filter.Include) _includeList.get(index);
-    } //-- org.exolab.jmscts.core.filter.Include getInclude(int) 
+    } //-- org.exolab.jmscts.core.filter.Include getInclude(int)
 
     /**
      * Method getInclude
@@ -243,7 +241,7 @@ public class Filter implements java.io.Serializable {
             mArray[index] = (org.exolab.jmscts.core.filter.Include) _includeList.get(index);
         }
         return mArray;
-    } //-- org.exolab.jmscts.core.filter.Include[] getInclude() 
+    } //-- org.exolab.jmscts.core.filter.Include[] getInclude()
 
     /**
      * Method getIncludeCount
@@ -251,7 +249,7 @@ public class Filter implements java.io.Serializable {
     public int getIncludeCount()
     {
         return _includeList.size();
-    } //-- int getIncludeCount() 
+    } //-- int getIncludeCount()
 
     /**
      * Method isValid
@@ -265,57 +263,57 @@ public class Filter implements java.io.Serializable {
             return false;
         }
         return true;
-    } //-- boolean isValid() 
+    } //-- boolean isValid()
 
     /**
      * Method marshal
-     * 
+     *
      * @param out
      */
     public void marshal(java.io.Writer out)
         throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
     {
-        
+
         Marshaller.marshal(this, out);
-    } //-- void marshal(java.io.Writer) 
+    } //-- void marshal(java.io.Writer)
 
     /**
      * Method marshal
-     * 
+     *
      * @param handler
      */
     public void marshal(org.xml.sax.ContentHandler handler)
         throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
     {
-        
+
         Marshaller.marshal(this, handler);
-    } //-- void marshal(org.xml.sax.ContentHandler) 
+    } //-- void marshal(org.xml.sax.ContentHandler)
 
     /**
      * Method removeExclude
-     * 
+     *
      * @param vExclude
      */
     public boolean removeExclude(org.exolab.jmscts.core.filter.Exclude vExclude)
     {
         boolean removed = _excludeList.remove(vExclude);
         return removed;
-    } //-- boolean removeExclude(org.exolab.jmscts.core.filter.Exclude) 
+    } //-- boolean removeExclude(org.exolab.jmscts.core.filter.Exclude)
 
     /**
      * Method removeInclude
-     * 
+     *
      * @param vInclude
      */
     public boolean removeInclude(org.exolab.jmscts.core.filter.Include vInclude)
     {
         boolean removed = _includeList.remove(vInclude);
         return removed;
-    } //-- boolean removeInclude(org.exolab.jmscts.core.filter.Include) 
+    } //-- boolean removeInclude(org.exolab.jmscts.core.filter.Include)
 
     /**
      * Method setExclude
-     * 
+     *
      * @param index
      * @param vExclude
      */
@@ -327,11 +325,11 @@ public class Filter implements java.io.Serializable {
             throw new IndexOutOfBoundsException();
         }
         _excludeList.set(index, vExclude);
-    } //-- void setExclude(int, org.exolab.jmscts.core.filter.Exclude) 
+    } //-- void setExclude(int, org.exolab.jmscts.core.filter.Exclude)
 
     /**
      * Method setExclude
-     * 
+     *
      * @param excludeArray
      */
     public void setExclude(org.exolab.jmscts.core.filter.Exclude[] excludeArray)
@@ -341,11 +339,11 @@ public class Filter implements java.io.Serializable {
         for (int i = 0; i < excludeArray.length; i++) {
             _excludeList.add(excludeArray[i]);
         }
-    } //-- void setExclude(org.exolab.jmscts.core.filter.Exclude) 
+    } //-- void setExclude(org.exolab.jmscts.core.filter.Exclude)
 
     /**
      * Method setInclude
-     * 
+     *
      * @param index
      * @param vInclude
      */
@@ -357,11 +355,11 @@ public class Filter implements java.io.Serializable {
             throw new IndexOutOfBoundsException();
         }
         _includeList.set(index, vInclude);
-    } //-- void setInclude(int, org.exolab.jmscts.core.filter.Include) 
+    } //-- void setInclude(int, org.exolab.jmscts.core.filter.Include)
 
     /**
      * Method setInclude
-     * 
+     *
      * @param includeArray
      */
     public void setInclude(org.exolab.jmscts.core.filter.Include[] includeArray)
@@ -371,18 +369,18 @@ public class Filter implements java.io.Serializable {
         for (int i = 0; i < includeArray.length; i++) {
             _includeList.add(includeArray[i]);
         }
-    } //-- void setInclude(org.exolab.jmscts.core.filter.Include) 
+    } //-- void setInclude(org.exolab.jmscts.core.filter.Include)
 
     /**
      * Method unmarshal
-     * 
+     *
      * @param reader
      */
     public static org.exolab.jmscts.core.filter.Filter unmarshal(java.io.Reader reader)
         throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
     {
         return (org.exolab.jmscts.core.filter.Filter) Unmarshaller.unmarshal(org.exolab.jmscts.core.filter.Filter.class, reader);
-    } //-- org.exolab.jmscts.core.filter.Filter unmarshal(java.io.Reader) 
+    } //-- org.exolab.jmscts.core.filter.Filter unmarshal(java.io.Reader)
 
     /**
      * Method validate
@@ -392,6 +390,6 @@ public class Filter implements java.io.Serializable {
     {
         org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
         validator.validate(this);
-    } //-- void validate() 
+    } //-- void validate()
 
 }
