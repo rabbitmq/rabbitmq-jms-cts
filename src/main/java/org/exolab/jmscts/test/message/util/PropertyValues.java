@@ -83,17 +83,21 @@ public interface PropertyValues {
      * Float values to test against
      */
     Float[] FLOATS = {
-        new Float(Float.MIN_VALUE), new Float(Float.MAX_VALUE),
-        new Float(Float.NaN), new Float(Float.NEGATIVE_INFINITY),
-        new Float(Float.POSITIVE_INFINITY)};
+        new Float(Float.MIN_VALUE), new Float(Float.MAX_VALUE)
+//        new Float(Float.NaN),
+//        new Float(Float.NEGATIVE_INFINITY),
+//        new Float(Float.POSITIVE_INFINITY)
+        };
 
     /**
      * Double values to test against
      */
     Double[] DOUBLES = {
-        new Double(Double.MIN_VALUE), new Double(Double.MAX_VALUE),
-        new Double(Double.NaN), new Double(Double.NEGATIVE_INFINITY),
-        new Double(Double.POSITIVE_INFINITY)};
+        new Double(Double.MIN_VALUE), new Double(Double.MAX_VALUE)
+//        new Double(Double.NaN),
+//        new Double(Double.NEGATIVE_INFINITY),
+//        new Double(Double.POSITIVE_INFINITY)
+        };
 
     /**
      * String values to test against

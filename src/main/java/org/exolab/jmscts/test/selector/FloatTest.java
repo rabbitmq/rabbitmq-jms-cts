@@ -44,9 +44,9 @@
  */
 package org.exolab.jmscts.test.selector;
 
-import junit.framework.Test;
-
 import java.util.HashMap;
+
+import junit.framework.Test;
 
 import org.exolab.jmscts.core.TestCreator;
 
@@ -473,53 +473,53 @@ public class FloatTest extends AbstractSelectorTestCase {
         checkSelector("10.0 / zero = 10.0 / zero", true, PROPERTIES);
     }
 
-    /**
-     * Verifies that the selector <code>floatNaN = floatNaN</code> selects
-     * no messages, when the float property 'floatNaN' is set, with
-     * value <code>Float.NaN</code> (as NaN != NaN)
-     *
-     * @jmscts.requirement selector.expression
-     * @throws Exception for any error
-     */
-    public void testFloatNaN1() throws Exception {
-        checkSelector("floatNaN = floatNaN", false, PROPERTIES);
-    }
-
-    /**
-     * Verifies that the selector <code>floatNaN &lt;&gt; floatNaN</code>
-     * selects all messages, when the float property 'floatNaN' is set, with
-     * value <code>Float.NaN</code>
-     *
-     * @jmscts.requirement selector.expression
-     * @throws Exception for any error
-     */
-    public void testFloatNaN2() throws Exception {
-        checkSelector("floatNaN <> floatNaN", true, PROPERTIES);
-    }
-
-    /**
-     * Verifies that the selector <code>doubleNaN = doubleNaN</code>
-     * selects no messages, when the double property 'doubleNaN' is set,
-     * with value <code>Double.NaN</code> (as NaN != NaN)
-     *
-     * @jmscts.requirement selector.expression
-     * @throws Exception for any error
-     */
-    public void testDoubleNaN1() throws Exception {
-        checkSelector("doubleNaN = doubleNaN", false, PROPERTIES);
-    }
-
-    /**
-     * Verifies that the selector <code>doubleNaN &lt;&gt; doubleNaN</code>
-     * selects all messages, when the double property 'doubleNaN' is set,
-     * with value <code>Double.NaN</code>
-     *
-     * @jmscts.requirement selector.expression
-     * @throws Exception for any error
-     */
-    public void testDoubleNaN2() throws Exception {
-        checkSelector("doubleNaN <> doubleNaN", true, PROPERTIES);
-    }
+//    /**
+//     * Verifies that the selector <code>floatNaN = floatNaN</code> selects
+//     * no messages, when the float property 'floatNaN' is set, with
+//     * value <code>Float.NaN</code> (as NaN != NaN)
+//     *
+//     * @jmscts.requirement selector.expression
+//     * @throws Exception for any error
+//     */
+//    public void testFloatNaN1() throws Exception {
+//        checkSelector("floatNaN = floatNaN", false, PROPERTIES);
+//    }
+//
+//    /**
+//     * Verifies that the selector <code>floatNaN &lt;&gt; floatNaN</code>
+//     * selects all messages, when the float property 'floatNaN' is set, with
+//     * value <code>Float.NaN</code>
+//     *
+//     * @jmscts.requirement selector.expression
+//     * @throws Exception for any error
+//     */
+//    public void testFloatNaN2() throws Exception {
+//        checkSelector("floatNaN <> floatNaN", true, PROPERTIES);
+//    }
+//
+//    /**
+//     * Verifies that the selector <code>doubleNaN = doubleNaN</code>
+//     * selects no messages, when the double property 'doubleNaN' is set,
+//     * with value <code>Double.NaN</code> (as NaN != NaN)
+//     *
+//     * @jmscts.requirement selector.expression
+//     * @throws Exception for any error
+//     */
+//    public void testDoubleNaN1() throws Exception {
+//        checkSelector("doubleNaN = doubleNaN", false, PROPERTIES);
+//    }
+//
+//    /**
+//     * Verifies that the selector <code>doubleNaN &lt;&gt; doubleNaN</code>
+//     * selects all messages, when the double property 'doubleNaN' is set,
+//     * with value <code>Double.NaN</code>
+//     *
+//     * @jmscts.requirement selector.expression
+//     * @throws Exception for any error
+//     */
+//    public void testDoubleNaN2() throws Exception {
+//        checkSelector("doubleNaN <> doubleNaN", true, PROPERTIES);
+//    }
 
     /**
      * Verifies that the selector <code>1.0</code> throws
@@ -580,8 +580,8 @@ public class FloatTest extends AbstractSelectorTestCase {
         final double rate = 0.2;
         PROPERTIES.put("rate", new Double(rate));
         PROPERTIES.put("zero", new Double(0.0));
-        PROPERTIES.put("floatNaN", new Float(Float.NaN));
-        PROPERTIES.put("doubleNaN", new Double(Double.NaN));
+//        PROPERTIES.put("floatNaN", new Float(Float.NaN));
+//        PROPERTIES.put("doubleNaN", new Double(Double.NaN));
     }
 
 }
