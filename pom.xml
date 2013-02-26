@@ -10,15 +10,18 @@
   <description>Compliance Test Suite for RabbitMQ JMS</description>
 
   <properties>
-
+    <!-- overridable property -->
     <rabbitmq.version>3.0.1</rabbitmq.version>
+
+    <!-- project fixed property -->
     <jms-spec.version>1.1</jms-spec.version>
 
+    <!-- project pervasive properties -->
     <java-compile-version>1.6</java-compile-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <!-- Project build dependencies -->
-    <amqp-client.version>3.0.1</amqp-client.version>
+    <amqp-client.version>${rabbitmq.version}</amqp-client.version>
 
     <jcip-annotations.version>1.0</jcip-annotations.version>
 
