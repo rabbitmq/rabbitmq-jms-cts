@@ -82,12 +82,16 @@ public final class ComplianceTestSuite {
     public static void main(String[] args) {
         JMSTestRunner test = new JMSTestRunner(suite(), args);
         TestResult testResult = JUnitTestRunner.run(test);
-        boolean hasErrors = testResult.errors().hasMoreElements();
-        boolean hasFailures = testResult.failures().hasMoreElements();
-        if (hasErrors || hasFailures) {
+        int numErrors = testResult.errorCount();
+        int numFailures = testResult.failureCount();
+        if (numErrors!=0 || numErrors!=0) {
             StringBuilder sb = new StringBuilder("ComplianceTestSuite: reports ");
-            sb.append(hasFailures?"Failure(s) and ":"NO Failures but ");
-            sb.append(hasErrors?"Error(s)":"NO Errors");
+            sb.append(numFailures==0 ? "NO Failures but "
+                     :numFailures==1 ? "ONE Failure and "
+                     :    ""+numFailures+ " Failures and ");
+            sb.append(numErrors==0 ? "NO Errors."
+                     :numErrors==1 ? "ONE Error."
+                     :    ""+numErrors+ " Errors.");
             fail(sb.toString());
         }
     }
