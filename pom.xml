@@ -23,8 +23,6 @@
     <!-- Project build dependencies -->
     <amqp-client.version>${rabbitmq.version}</amqp-client.version>
 
-    <jcip-annotations.version>1.0</jcip-annotations.version>
-
     <geronimo-spec.version>1.1.1</geronimo-spec.version>
 
     <junit.version>4.10</junit.version>
