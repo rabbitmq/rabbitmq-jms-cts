@@ -68,8 +68,16 @@
   <exclude> <test>org.exolab.jmscts.test.topic.DuplicateDurableSubscriberTest.*</test>        </exclude>
   <exclude> <test>org.exolab.jmscts.test.topic.DurableSubscriberTest.*</test>                 </exclude>
 
-  <exclude> <factory>QueueConnectionFactory</factory>                                         </exclude>
-  <include> <test>org.exolab.jmscts.test.selector.StringTest.*</test>                         </include> <!-- We implement topic selectors -->
+  <exclude> <factory>QueueConnectionFactory</factory>                                         </exclude> <!-- RJMS client only supports topic selectors -->
+  <include> <test>org.exolab.jmscts.test.selector.StringTest.*</test>                         </include> <!-- RJMS client only supports topic selectors -->
+  <include> <test>org.exolab.jmscts.test.selector.AndOperatorTest.*</test>                    </include> <!-- RJMS client only supports topic selectors -->
+  <include> <test>org.exolab.jmscts.test.selector.BetweenOperatorTest.*</test>                </include> <!-- RJMS client only supports topic selectors -->
+  <include> <test>org.exolab.jmscts.test.selector.BooleanTest.*</test>                        </include> <!-- RJMS client only supports topic selectors -->
+  <include> <test>org.exolab.jmscts.test.selector.EmptySelectorTest.*</test>                  </include> <!-- RJMS client only supports topic selectors -->
+  <include> <test>org.exolab.jmscts.test.selector.FloatTest.*</test>                          </include> <!-- RJMS client only supports topic selectors -->
+  <include> <test>org.exolab.jmscts.test.selector.IdentifierTest.*</test>                     </include> <!-- RJMS client only supports topic selectors -->
+  <include> <test>org.exolab.jmscts.test.selector.JMSDeliveryModeTest.*</test>                </include> <!-- RJMS client only supports topic selectors -->
+  <include> <test>org.exolab.jmscts.test.selector.JMSPriorityTest.*</test>                    </include> <!-- RJMS client only supports topic selectors -->
 
   <!-- ====================================================================== -->
   <!-- Below are tests we yet have to test                                    -->
@@ -82,14 +90,6 @@
   <exclude> <test>org.exolab.jmscts.test.topic.NoLocalTest.*</test>                           </exclude> <!-- RabbitMQ doesn't support noLocal -->
   <exclude> <test>org.exolab.jmscts.test.message.foreign.ForeignMessageTest.*</test>          </exclude> <!-- we don't allow 'foreign' messages created outside of our implementation -->
   <exclude> <test>org.exolab.jmscts.test.asf.ConnectionConsumerTest.test</test>               </exclude> <!-- we don't support Connection Consumers -->
-  <exclude> <test>org.exolab.jmscts.test.selector.AndOperatorTest</test>                      </exclude> <!-- RJMS client only supports topic selectors -->
-  <exclude> <test>org.exolab.jmscts.test.selector.BetweenOperatorTest</test>                  </exclude> <!-- RJMS client only supports topic selectors -->
-  <exclude> <test>org.exolab.jmscts.test.selector.BooleanTest</test>                          </exclude> <!-- RJMS client only supports topic selectors -->
-  <exclude> <test>org.exolab.jmscts.test.selector.EmptySelectorTest</test>                    </exclude> <!-- RJMS client only supports topic selectors -->
-  <exclude> <test>org.exolab.jmscts.test.selector.FloatTest</test>                            </exclude> <!-- RJMS client only supports topic selectors -->
-  <exclude> <test>org.exolab.jmscts.test.selector.IdentifierTest</test>                       </exclude> <!-- RJMS client only supports topic selectors -->
-  <exclude> <test>org.exolab.jmscts.test.selector.JMSDeliveryModeTest</test>                  </exclude> <!-- RJMS client only supports topic selectors -->
-  <exclude> <test>org.exolab.jmscts.test.selector.JMSPriorityTest</test>                      </exclude> <!-- RJMS client only supports topic selectors -->
   <exclude> <receiver>browser</receiver>                                                      </exclude> <!-- QueueBrowsers - we don't support those -->
 
   <!-- ====================================================================== -->
