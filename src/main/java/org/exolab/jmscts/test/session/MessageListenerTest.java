@@ -49,10 +49,9 @@ import javax.jms.MessageConsumer;
 import javax.jms.MessageListener;
 import javax.jms.Session;
 
-import org.apache.log4j.Logger;
-
 import junit.framework.Test;
 
+import org.apache.log4j.Logger;
 import org.exolab.jmscts.core.AbstractSendReceiveTestCase;
 import org.exolab.jmscts.core.MessageSender;
 import org.exolab.jmscts.core.TestContext;
@@ -120,7 +119,7 @@ public class MessageListenerTest extends AbstractSendReceiveTestCase {
      * @throws Exception for any error
      */
     public void testSerialInvocation() throws Exception {
-        final int send = 50;
+        final int send = 25;
         final int expected = send * DESTINATIONS.length;
         final long sleep = 100;
 
@@ -144,10 +143,14 @@ public class MessageListenerTest extends AbstractSendReceiveTestCase {
             session.commit();
         }
 
-        // wait for the messages to be received
+        // wait for the messages to be received; max wait time expected*sleep*2
+        long maxWait = expected * sleep * 2;
         synchronized (listener) {
-            if (listener.getReceived() != expected) {
-                listener.wait(expected * sleep * 2);
+            int rcvd;
+            while (maxWait > 0 && (rcvd = listener.getReceived()) < expected) {
+                long startWait = System.currentTimeMillis();
+                listener.wait((expected-rcvd) * sleep);  // wait for a bit more
+                maxWait -= (System.currentTimeMillis() - startWait);
             }
         }
         close(consumers);
@@ -179,7 +182,7 @@ public class MessageListenerTest extends AbstractSendReceiveTestCase {
         private final int _expected;
 
         /**
-         * The time to wait for in onMessage(), before returning
+         * The time to wait for in onMessage() in ms, before returning
          */
         private final long _sleep;
 
@@ -208,7 +211,7 @@ public class MessageListenerTest extends AbstractSendReceiveTestCase {
          * Construct a new <code>TestListener</code>
          *
          * @param expected the no.of messages to receive
-         * @param sleep the time to wait in onMessage()
+         * @param sleep the time to wait in onMessage() in ms
          */
         public TestListener(int expected, long sleep) {
             _expected = expected;
