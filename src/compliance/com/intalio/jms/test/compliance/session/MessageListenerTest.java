@@ -182,11 +182,17 @@ public class MessageListenerTest extends AbstractSendReceiveTestCase {
             session.commit();
         }
         
+        // wait for the messages to be received; max wait time expected*sleep*2
+        long maxWait = expected * sleep * 2;
         synchronized (listener) {
-            if (listener.getReceived() != expected) {
-                listener.wait(expected * sleep * 2);
+            int rcvd;
+            while (maxWait > 0 && (rcvd = listener.getReceived()) < expected) {
+                long startWait = System.currentTimeMillis();
+                listener.wait((expected-rcvd) * sleep);  // wait for a bit more
+                maxWait -= (System.currentTimeMillis() - startWait);
             }
         }
+        
         for (int i = 0; i < consumers.length; ++i) {
             consumers[i].close();
         }
