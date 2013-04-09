@@ -47,10 +47,9 @@ package org.exolab.jmscts.test.session;
 import javax.jms.MessageConsumer;
 import javax.jms.Session;
 
-import org.apache.log4j.Logger;
-
 import junit.framework.Test;
 
+import org.apache.log4j.Logger;
 import org.exolab.jmscts.core.AbstractSendReceiveTestCase;
 import org.exolab.jmscts.core.DelayedAction;
 import org.exolab.jmscts.core.EchoListener;
@@ -163,8 +162,8 @@ public class ListenerCloseTest extends AbstractSendReceiveTestCase {
      */
     public void testSessionClose() throws Exception {
         final int count = 10; // the number of messages to send
-        final long delayTime = 500; // 500 ms
-        final int maxWaitTime = 5000; // 5000 ms
+        final long delayTime = 500; // 500 ms == half second
+        final int maxWaitTime = 5000; // 5000 ms == 5 seconds
         TestContext context = getContext();
         Session session = context.getSession();
 
