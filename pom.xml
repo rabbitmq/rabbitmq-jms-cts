@@ -12,7 +12,7 @@
   <parent>
     <groupId>com.rabbitmq.jms</groupId>
     <artifactId>rabbitmq-jms-parent</artifactId>
-    <version>1.0.2</version> <!-- release -->
+    <version>1.0.3-SNAPSHOT</version> <!-- snapshot -->
   </parent>
 
   <properties>
@@ -221,6 +221,9 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
 
+        <configuration>
+          <commandlineArgs>${rabbitmq.version}</commandlineArgs>
+        </configuration>
         <executions>
           <execution>
             <id>set-up-rabbit</id>
