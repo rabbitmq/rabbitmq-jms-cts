@@ -84,7 +84,7 @@ public final class ComplianceTestSuite {
         TestResult testResult = JUnitTestRunner.run(test);
         int numErrors = testResult.errorCount();
         int numFailures = testResult.failureCount();
-        if (numErrors!=0 || numErrors!=0) {
+        if (numErrors!=0 || numFailures!=0) {
             StringBuilder sb = new StringBuilder("ComplianceTestSuite: reports ");
             sb.append(numFailures==0 ? "NO Failures but "
                      :numFailures==1 ? "ONE Failure and "
