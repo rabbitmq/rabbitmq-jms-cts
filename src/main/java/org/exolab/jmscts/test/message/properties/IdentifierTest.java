@@ -72,14 +72,14 @@ public class IdentifierTest extends AbstractMessageTestCase
      * Valid identifiers
      */
     private static final String[] VALID_IDENTIFIERS = {
-        "A", "_A", "$A", "a1", "_a1", "$a1", "a_a", "a$a",
+        "A", "_A", "$A", "a1", "_a1", "$a1", "a_a", "a$a", "a.b",
         "\u0041\u0061\u0391\u0430\u0301"};
 
     /**
      * Invalid identifiers
      */
     private static final String[] INVALID_IDENTIFIERS = {
-        null, "1", "+1", "-1", "'1'", "a.b", "\u0030"};
+        null, "1", "+1", "-1", "'1'", "a!b", "\u0030"};
 
     /**
      * Names reserved for message selectors. These are case-insensitive.
