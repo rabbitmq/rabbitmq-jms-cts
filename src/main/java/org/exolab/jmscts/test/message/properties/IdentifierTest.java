@@ -79,7 +79,7 @@ public class IdentifierTest extends AbstractMessageTestCase
      * Invalid identifiers
      */
     private static final String[] INVALID_IDENTIFIERS = {
-        null, "1", "+1", "-1", "'1'", "a!b", "\u0030"};
+        null, "1", "+1", "-1", "'1'", ".a.b", "\u0030"};
 
     /**
      * Names reserved for message selectors. These are case-insensitive.
