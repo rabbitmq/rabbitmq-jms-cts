@@ -2307,12 +2307,12 @@
       <attribute name="jmscts.requirement" value="selector.validation"/>
     </method-meta>
     <method-meta>
-      <name>testInvalid2</name>
+      <name>testPeriods</name>
       <description>
-        Verifies that the selector <code>Country.name = 'Australia'</code> throws InvalidSelectorException
+        (Extension) Verifies that identifiers may contain periods, using the selector <code>Country.name = 'New Zealand'</code> and property 'Country.name' with value 'New Zealand'. This should select all messages.
       </description>
       <attribute name="jmscts.requirement" value="selector.identifier.name"/>
-      <attribute name="jmscts.requirement" value="selector.validation"/>
+      <attribute name="jmscts.requirement" value="selector.expression"/>
     </method-meta>
     <method-meta>
       <name>testUnderscores</name>
