@@ -138,18 +138,21 @@ public class IdentifierTest extends AbstractSelectorTestCase {
     }
 
     /**
-     * Verifies that the selector <code>Country.name = 'Australia'</code>
-     * throws InvalidSelectorException
+     * (Extension) Verifies that identifiers may contain periods,
+     * using the selector <code>Country.name = 'New Zealand'</code> and
+     * property 'Country.name' with value 'New Zealand'. This should
+     * select all messages.
      *
      * @jmscts.requirement selector.identifier.name
-     * @jmscts.requirement selector.validation
+     * @jmscts.requirement selector.expression
      * @throws Exception for any error
      */
-    public void testInvalid2() throws Exception {
-        checkInvalidSelector("Country.name = 'Australia'");
+    public void testPeriods() throws Exception {
+        checkSelector("Country.name = 'New Zealand'", true, PROPERTIES);
     }
 
     static {
+        PROPERTIES.put("Country.name", "New Zealand");
         PROPERTIES.put("Country", "Australia");
         PROPERTIES.put("$State", "VIC");
         PROPERTIES.put("_postcode_", "3001");
