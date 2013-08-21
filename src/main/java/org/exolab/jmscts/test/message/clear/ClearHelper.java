@@ -51,12 +51,10 @@ import javax.jms.MessageNotReadableException;
 import javax.jms.StreamMessage;
 
 import org.apache.log4j.Logger;
-
-import junit.framework.Assert;
-
 import org.exolab.jmscts.core.MessageVerifier;
 import org.exolab.jmscts.test.message.util.EmptyMessageVerifier;
 import org.exolab.jmscts.test.message.util.EmptyPropertyVerifier;
+import org.junit.Assert;
 
 
 /**

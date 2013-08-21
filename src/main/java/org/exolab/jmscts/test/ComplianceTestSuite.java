@@ -44,7 +44,7 @@
  */
 package org.exolab.jmscts.test;
 
-import static junit.framework.Assert.fail;
+import static org.junit.Assert.fail;
 import junit.framework.Test;
 import junit.framework.TestResult;
 import junit.framework.TestSuite;
