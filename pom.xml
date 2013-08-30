@@ -143,7 +143,6 @@
         <artifactId>maven-failsafe-plugin</artifactId>
 
         <configuration>
-          <forkCount>2</forkCount>
           <argLine>-Xms1024m -Xmx4096m</argLine>
         </configuration>
 
