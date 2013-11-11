@@ -178,7 +178,7 @@ public abstract class AbstractTestRunner extends TestSetup {
     /**
      * The services
      */
-    private ServiceGroup _services = new ServiceGroup();
+    private static ServiceGroup _services;
 
     /**
      * The logger
@@ -401,7 +401,11 @@ public abstract class AbstractTestRunner extends TestSetup {
      * @throws Exception for any error
      */
     protected void startServices() throws Exception {
-        registerServices(_services);
+        if (_services == null) {
+            ServiceGroup services = new ServiceGroup();
+            registerServices(services);
+            _services = services;
+        }
         _services.startAll();
     }
 
