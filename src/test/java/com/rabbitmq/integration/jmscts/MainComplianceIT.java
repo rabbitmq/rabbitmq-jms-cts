@@ -11,16 +11,33 @@ import org.exolab.jmscts.test.ComplianceTestSuite;
  */
 public class MainComplianceIT extends TestCase {
 
-    public void testAll() throws Exception {
+    static {
         if (System.getProperty("basedir")==null) {
             System.setProperty("basedir",".");
         }
         System.setProperty("jmscts.home", System.getProperty("basedir"));
+    }
+
+    public void testAll() throws Exception {
         if (System.getProperty("rabbit.jms.terminationTimeout") == null) {
             System.setProperty("rabbit.jms.terminationTimeout", "5000");
         }
-        ComplianceTestSuite.main(new String[] { "-filter",
-                                                new File(System.getProperty("basedir"), "config/filter.xml").getAbsolutePath() });
+        String basedir = System.getProperty("basedir");
+        ComplianceTestSuite.main(new String[] { "-output",
+                                                new File(basedir, "target/jmscts-report").getAbsolutePath(),
+                                                "-filter",
+                                                new File(basedir, "config/filter.xml").getAbsolutePath() });
+    }
+
+    public void testSelector() throws Exception {
+        if (System.getProperty("rabbit.jms.terminationTimeout") == null) {
+            System.setProperty("rabbit.jms.terminationTimeout", "5000");
+        }
+        String basedir = System.getProperty("basedir");
+        ComplianceTestSuite.main(new String[] { "-output",
+                                                new File(basedir, "target/jmscts-selector-report").getAbsolutePath(),
+                                                "-filter",
+                                                new File(basedir, "config/selector-filter.xml").getAbsolutePath() });
     }
 
 }
