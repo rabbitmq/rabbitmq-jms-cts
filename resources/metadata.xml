@@ -2754,12 +2754,13 @@
       <attribute name="jmscts.requirement" value="selector.validation"/>
     </method-meta>
     <method-meta>
-      <name>testInvalid2</name>
+      <name>testJMSDeliveryMode2</name>
       <description>
-        Verifies that the selector <code>JMSDeliveryMode = 'non_persistent'</code> throws InvalidSelectorException.
+        Verifies that the selector <code>JMSDeliveryMode = 'non_persistent'</code> selects no messages.
       </description>
       <attribute name="jmscts.requirement" value="selector.JMSDeliveryMode"/>
-      <attribute name="jmscts.requirement" value="selector.validation"/>
+      <attribute name="jmscts.requirement" value="selector.identifier.header"/>
+      <attribute name="jmscts.requirement" value="selector.expression"/>
     </method-meta>
     <method-meta>
       <name>testJMSDeliveryMode</name>

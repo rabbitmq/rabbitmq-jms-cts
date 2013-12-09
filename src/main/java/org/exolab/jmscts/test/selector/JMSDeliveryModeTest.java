@@ -116,14 +116,15 @@ public class JMSDeliveryModeTest extends AbstractSelectorTestCase {
     /**
      * Verifies that the selector
      * <code>JMSDeliveryMode = 'non_persistent'</code>
-     * throws InvalidSelectorException.
+     * selects no messages.
      *
      * @jmscts.requirement selector.JMSDeliveryMode
-     * @jmscts.requirement selector.validation
+     * @jmscts.requirement selector.identifier.header
+     * @jmscts.requirement selector.expression
      * @throws Exception for any error
      */
-    public void testInvalid2() throws Exception {
-        checkInvalidSelector("JMSDeliveryMode = 'non-persistent'");
+    public void testJMSDeliveryMode2() throws Exception {
+        checkSelector("JMSDeliveryMode = 'non-persistent'", false);
     }
 
 }

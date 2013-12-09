@@ -540,7 +540,7 @@
   <requirement requirementId="selector.JMSDeliveryMode">
     <description>
       When used in a message selector JMSDeliveryMode is treated as having the
-      values 'PERSISTENT' and 'NON_PERSISTENT'.
+      values 'PERSISTENT' or 'NON_PERSISTENT'.
     </description>
     <referenceId>section.3.8.1.3</referenceId>
   </requirement>

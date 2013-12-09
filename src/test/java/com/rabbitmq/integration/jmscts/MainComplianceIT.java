@@ -18,7 +18,7 @@ public class MainComplianceIT extends TestCase {
         System.setProperty("jmscts.home", System.getProperty("basedir"));
     }
 
-    public void testAll() throws Exception {
+    public void tostAll() throws Exception {
         if (System.getProperty("rabbit.jms.terminationTimeout") == null) {
             System.setProperty("rabbit.jms.terminationTimeout", "2000");
         }
