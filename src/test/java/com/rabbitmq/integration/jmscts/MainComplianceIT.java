@@ -18,9 +18,9 @@ public class MainComplianceIT extends TestCase {
         System.setProperty("jmscts.home", System.getProperty("basedir"));
     }
 
-    public void tostAll() throws Exception {
+    public void testAll() throws Exception {
         if (System.getProperty("rabbit.jms.terminationTimeout") == null) {
-            System.setProperty("rabbit.jms.terminationTimeout", "2000");
+            System.setProperty("rabbit.jms.terminationTimeout", "1500");
         }
         String basedir = System.getProperty("basedir");
         ComplianceTestSuite.main(new String[] { "-output",
@@ -31,7 +31,7 @@ public class MainComplianceIT extends TestCase {
 
     public void testSelector() throws Exception {
         if (System.getProperty("rabbit.jms.terminationTimeout") == null) {
-            System.setProperty("rabbit.jms.terminationTimeout", "2000");
+            System.setProperty("rabbit.jms.terminationTimeout", "1500");
         }
         String basedir = System.getProperty("basedir");
         ComplianceTestSuite.main(new String[] { "-output",

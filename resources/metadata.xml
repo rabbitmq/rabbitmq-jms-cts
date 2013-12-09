@@ -1135,6 +1135,118 @@
   </class-meta>
 
   <class-meta>
+    <name>org.exolab.jmscts.test.selector.InOperatorTest</name>
+    <description>
+      This class tests selectors containing the IN operator.
+    </description>
+    <attribute name="jmscts.message" value="Message"/>
+    <method-meta>
+      <name>testIn1</name>
+      <description>
+        Verifies that the selector <code>Country in ('France')</code> selects all messages, for the property Country = 'France'
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.in"/>
+      <attribute name="jmscts.requirement" value="selector.expression"/>
+    </method-meta>
+    <method-meta>
+      <name>testIn2</name>
+      <description>
+        Verifies that the selector <code>Country not in ('France')</code> selects no messages, for the property Country = 'France'
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.in"/>
+      <attribute name="jmscts.requirement" value="selector.expression"/>
+    </method-meta>
+    <method-meta>
+      <name>testIn3</name>
+      <description>
+        Verifies that the selector <code>Country in ('UK', 'US', 'France')</code> selects all messages, for the property Country = 'France'
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.in"/>
+      <attribute name="jmscts.requirement" value="selector.expression"/>
+    </method-meta>
+    <method-meta>
+      <name>testIn4</name>
+      <description>
+        Verifies that the selector <code>Country in ('UK', 'US', 'Peru')</code> selects no messages, for the property Country = 'France'
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.in"/>
+      <attribute name="jmscts.requirement" value="selector.expression"/>
+    </method-meta>
+    <method-meta>
+      <name>testIn5</name>
+      <description>
+        Verifies that the selector <code>Country in ('FRANCE')</code> selects no messages, for the property Country = 'France'
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.in"/>
+      <attribute name="jmscts.requirement" value="selector.expression"/>
+    </method-meta>
+    <method-meta>
+      <name>testIn6</name>
+      <description>
+        Verifies that the selector <code>Country in ('France')</code> selects no messages when Country is unknown
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.in"/>
+      <attribute name="jmscts.requirement" value="selector.expression"/>
+    </method-meta>
+    <method-meta>
+      <name>testInvalid1</name>
+      <description>
+        Verifies that the selector <code>age in (21, 22, 23)</code> throws InvalidSelectorException
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.in"/>
+      <attribute name="jmscts.requirement" value="selector.validation"/>
+    </method-meta>
+    <method-meta>
+      <name>testInvalid2</name>
+      <description>
+        Verifies that the selector <code>Country in 'France', 'UK'</code> throws InvalidSelectorException
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.in"/>
+      <attribute name="jmscts.requirement" value="selector.validation"/>
+    </method-meta>
+    <method-meta>
+      <name>testInvalid3</name>
+      <description>
+        Verifies that the selector <code>Country in ('France', 'UK'</code> throws InvalidSelectorException
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.in"/>
+      <attribute name="jmscts.requirement" value="selector.validation"/>
+    </method-meta>
+    <method-meta>
+      <name>testInvalid4</name>
+      <description>
+        Verifies that the selector <code>in Country ('France', 'UK')</code> throws InvalidSelectorException
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.in"/>
+      <attribute name="jmscts.requirement" value="selector.validation"/>
+    </method-meta>
+    <method-meta>
+      <name>testInvalid5</name>
+      <description>
+        Verifies that the selector <code>Country in ('France' 'UK')</code> throws InvalidSelectorException
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.in"/>
+      <attribute name="jmscts.requirement" value="selector.validation"/>
+    </method-meta>
+    <method-meta>
+      <name>testInvalid6</name>
+      <description>
+        Verifies that the selector <code>Country in (France)</code> throws InvalidSelectorException
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.in"/>
+      <attribute name="jmscts.requirement" value="selector.validation"/>
+    </method-meta>
+    <method-meta>
+      <name>testInvalid7</name>
+      <description>
+        Verifies that the selector <code>Country in ()</code> throws InvalidSelectorException
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.in"/>
+      <attribute name="jmscts.requirement" value="selector.validation"/>
+    </method-meta>
+  </class-meta>
+
+  <class-meta>
     <name>org.exolab.jmscts.test.selector.AndOperatorTest</name>
     <description>
       This class tests selectors containing the AND operator.

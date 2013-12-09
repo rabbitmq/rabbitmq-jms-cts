@@ -72,6 +72,7 @@ public final class SelectorTestSuite {
 
         suite.addTest(AndOperatorTest.suite());
         suite.addTest(OrOperatorTest.suite());
+        suite.addTest(InOperatorTest.suite());
         suite.addTest(BetweenOperatorTest.suite());
         suite.addTest(BooleanTest.suite());
         suite.addTest(JMSTimestampTest.suite());

@@ -81,6 +81,7 @@
   <exclude> <test>org.exolab.jmscts.test.asf.ConnectionConsumerTest.test</test>               </exclude> <!-- we don't support Connection Consumers -->
   <exclude> <test>org.exolab.jmscts.test.selector.AndOperatorTest</test>                      </exclude> <!-- RJMS client only supports topic selectors -->
   <exclude> <test>org.exolab.jmscts.test.selector.OrOperatorTest.*</test>                     </exclude> <!-- RJMS client only supports topic selectors -->
+  <exclude> <test>org.exolab.jmscts.test.selector.InOperatorTest.*</test>                     </exclude> <!-- RJMS client only supports topic selectors -->
   <exclude> <test>org.exolab.jmscts.test.selector.BetweenOperatorTest</test>                  </exclude> <!-- RJMS client only supports topic selectors -->
   <exclude> <test>org.exolab.jmscts.test.selector.BooleanTest</test>                          </exclude> <!-- RJMS client only supports topic selectors -->
   <exclude> <test>org.exolab.jmscts.test.selector.EmptySelectorTest</test>                    </exclude> <!-- RJMS client only supports topic selectors -->
