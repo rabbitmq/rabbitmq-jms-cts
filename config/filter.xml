@@ -79,15 +79,16 @@
   <exclude> <test>org.exolab.jmscts.test.topic.NoLocalTest.*</test>                           </exclude> <!-- RabbitMQ doesn't support noLocal -->
   <exclude> <test>org.exolab.jmscts.test.message.foreign.ForeignMessageTest.*</test>          </exclude> <!-- we don't allow 'foreign' messages created outside of our implementation -->
   <exclude> <test>org.exolab.jmscts.test.asf.ConnectionConsumerTest.test</test>               </exclude> <!-- we don't support Connection Consumers -->
-  <exclude> <test>org.exolab.jmscts.test.selector.AndOperatorTest</test>                      </exclude> <!-- RabbitMQ doesn't support selectors -->
-  <exclude> <test>org.exolab.jmscts.test.selector.BetweenOperatorTest</test>                  </exclude> <!-- RabbitMQ doesn't support selectors -->
-  <exclude> <test>org.exolab.jmscts.test.selector.BooleanTest</test>                          </exclude> <!-- RabbitMQ doesn't support selectors -->
-  <exclude> <test>org.exolab.jmscts.test.selector.EmptySelectorTest</test>                    </exclude> <!-- RabbitMQ doesn't support selectors -->
-  <exclude> <test>org.exolab.jmscts.test.selector.FloatTest</test>                            </exclude> <!-- RabbitMQ doesn't support selectors -->
-  <exclude> <test>org.exolab.jmscts.test.selector.IdentifierTest</test>                       </exclude> <!-- RabbitMQ doesn't support selectors -->
-  <exclude> <test>org.exolab.jmscts.test.selector.JMSDeliveryModeTest</test>                  </exclude> <!-- RabbitMQ doesn't support selectors -->
-  <exclude> <test>org.exolab.jmscts.test.selector.JMSPriorityTest</test>                      </exclude> <!-- RabbitMQ doesn't support selectors -->
-  <exclude> <test>org.exolab.jmscts.test.selector.StringTest</test>                           </exclude> <!-- RabbitMQ doesn't support selectors -->
+  <exclude> <test>org.exolab.jmscts.test.selector.AndOperatorTest</test>                      </exclude> <!-- RJMS client only supports topic selectors -->
+  <exclude> <test>org.exolab.jmscts.test.selector.OrOperatorTest.*</test>                     </exclude> <!-- RJMS client only supports topic selectors -->
+  <exclude> <test>org.exolab.jmscts.test.selector.BetweenOperatorTest</test>                  </exclude> <!-- RJMS client only supports topic selectors -->
+  <exclude> <test>org.exolab.jmscts.test.selector.BooleanTest</test>                          </exclude> <!-- RJMS client only supports topic selectors -->
+  <exclude> <test>org.exolab.jmscts.test.selector.EmptySelectorTest</test>                    </exclude> <!-- RJMS client only supports topic selectors -->
+  <exclude> <test>org.exolab.jmscts.test.selector.FloatTest</test>                            </exclude> <!-- RJMS client only supports topic selectors -->
+  <exclude> <test>org.exolab.jmscts.test.selector.IdentifierTest</test>                       </exclude> <!-- RJMS client only supports topic selectors -->
+  <exclude> <test>org.exolab.jmscts.test.selector.JMSDeliveryModeTest</test>                  </exclude> <!-- RJMS client only supports topic selectors -->
+  <exclude> <test>org.exolab.jmscts.test.selector.JMSPriorityTest</test>                      </exclude> <!-- RJMS client only supports topic selectors -->
+  <exclude> <test>org.exolab.jmscts.test.selector.StringTest</test>                           </exclude> <!-- RJMS client only supports topic selectors -->
   <exclude> <receiver>browser</receiver>                                                      </exclude> <!-- QueueBrowsers - we don't support those -->
 
   <!-- ====================================================================== -->

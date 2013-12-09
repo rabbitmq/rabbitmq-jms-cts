@@ -71,6 +71,7 @@
   <exclude> <factory>QueueConnectionFactory</factory>                                         </exclude> <!-- RJMS client only supports topic selectors -->
   <include> <test>org.exolab.jmscts.test.selector.StringTest.*</test>                         </include> <!-- RJMS client only supports topic selectors -->
   <include> <test>org.exolab.jmscts.test.selector.AndOperatorTest.*</test>                    </include> <!-- RJMS client only supports topic selectors -->
+  <include> <test>org.exolab.jmscts.test.selector.OrOperatorTest.*</test>                     </include> <!-- RJMS client only supports topic selectors -->
   <include> <test>org.exolab.jmscts.test.selector.BetweenOperatorTest.*</test>                </include> <!-- RJMS client only supports topic selectors -->
   <include> <test>org.exolab.jmscts.test.selector.BooleanTest.*</test>                        </include> <!-- RJMS client only supports topic selectors -->
   <include> <test>org.exolab.jmscts.test.selector.EmptySelectorTest.*</test>                  </include> <!-- RJMS client only supports topic selectors -->

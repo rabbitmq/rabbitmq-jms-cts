@@ -8,7 +8,7 @@
   <!-- . add test for durable subscriber where subscription starts with a
          a selector, but is subsequently changed to no selector -->
   <!-- . likewise for queues -->
-  <!-- . verify JMSXDeliveryCount is set/incremented for providers that 
+  <!-- . verify JMSXDeliveryCount is set/incremented for providers that
          support it -->
   <!-- . verify that JMSXUserID, JMSXAppID, JMSXProducerTXID, JMSXConsumerTXID
          and JMSXRcvTimestamp are set for those providers that support it.
@@ -22,7 +22,7 @@
   <!-- . add coverage of sections 4.4.12 - 4.4.15 -->
   <!-- . add coverage of sections 4.5 - 4.10 -->
   <!-- . add coverage of sections 5, 6 -->
-  
+
   <reference referenceId="implied">
     <section name="Undefined" title="An implied requirement"/>
   </reference>
@@ -104,17 +104,17 @@
   </reference>
 
   <reference referenceId="section.3.11">
-    <section name="3.11" 
+    <section name="3.11"
              title="JMS Message Body" />
   </reference>
 
   <reference referenceId="section.3.11.3">
-    <section name="3.11.3" 
+    <section name="3.11.3"
              title="Conversions Provided by StreamMessage and MapMessage" />
   </reference>
 
   <reference referenceId="section.3.12">
-    <section name="3.12" 
+    <section name="3.12"
              title="Provider Implementations of JMS Message Interfaces" />
   </reference>
 
@@ -188,7 +188,7 @@
 
   <requirement requirementId="selector.null">
     <description>
-      A null message selector indicates that there is no message selector for 
+      A null message selector indicates that there is no message selector for
       the message consumer.
     </description>
     <referenceId>section.3.8.1.1</referenceId>
@@ -196,8 +196,8 @@
 
   <requirement requirementId="selector.empty">
     <description>
-      If the value of a message selector is an empty string, the value is 
-      treated as a null and indicates that there is no message selector for 
+      If the value of a message selector is an empty string, the value is
+      treated as a null and indicates that there is no message selector for
       the message consumer.
     </description>
     <referenceId>section.3.8.1.1</referenceId>
@@ -205,16 +205,16 @@
 
   <requirement requirementId="selector.evaluation.order">
     <description>
-      The order of evaluation of a message selector is from left to right 
+      The order of evaluation of a message selector is from left to right
       within precedence level. Parentheses can be used to change this order.
     </description>
     <referenceId>section.3.8.1.1</referenceId>
   </requirement>
 
   <requirement requirementId="selector.literal.string">
-    <description>      
-      A string literal is enclosed in single quotes, with an included single 
-      quote represented by doubled single quote; for example, 'literal' and 
+    <description>
+      A string literal is enclosed in single quotes, with an included single
+      quote represented by doubled single quote; for example, 'literal' and
       'literal''s'.<br/>
       String literals use the Unicode character encoding.
     </description>
@@ -223,8 +223,8 @@
 
   <requirement requirementId="selector.literal.exactnumeric">
     <description>
-      An exact numeric literal is a numeric value without a decimal point, 
-      such as 57, -957, +62; numbers in the range of Java long are supported. 
+      An exact numeric literal is a numeric value without a decimal point,
+      such as 57, -957, +62; numbers in the range of Java long are supported.
       Exact numeric literals use the Java integer literal syntax.
     </description>
     <referenceId>section.3.8.1.1</referenceId>
@@ -233,7 +233,7 @@
   <requirement requirementId="selector.literal.approxnumeric">
     <description>
       An approximate numeric literal is a numeric value in scientific notation,
-      such as 7E3 and -57.9E2, or a numeric value with a decimal, such as 7., 
+      such as 7E3 and -57.9E2, or a numeric value with a decimal, such as 7.,
       -95.7, and +6.2; numbers in the range of Java double are supported.
       Approximate literals use the Java floating-point literal syntax.
     </description>
@@ -251,10 +251,10 @@
     <description>
       An identifier is an unlimited-length character sequence that must begin
       with a Java identifier start character; all following characters must be
-      Java identifier part characters. An identifier start character is any 
-      character for which the method Character.isJavaIdentifierStart returns 
-      true. This includes '_' and '$'. An identifier part character is any 
-      character for which the method Character.isJavaIdentifierPart returns 
+      Java identifier part characters. An identifier start character is any
+      character for which the method Character.isJavaIdentifierStart returns
+      true. This includes '_' and '$'. An identifier part character is any
+      character for which the method Character.isJavaIdentifierPart returns
       true.
     </description>
     <referenceId>section.3.8.1.1</referenceId>
@@ -283,7 +283,7 @@
   </requirement>
 
   <requirement requirementId="selector.property.conversion">
-    <description>      
+    <description>
       The conversions that apply to the get methods for properties do not
       apply when a property is used in a message selector expression. For
       example, suppose you set a property as a string value, as in the
@@ -293,7 +293,7 @@
       because a string cannot be used in an arithmetic expression:
       <tt>"NumberOfOrders > 1"</tt>
     </description>
-    <referenceId>section.3.8.1.1</referenceId>   
+    <referenceId>section.3.8.1.1</referenceId>
   </requirement>
 
   <requirement requirementId="selector.identifier.header">
@@ -308,7 +308,7 @@
   </requirement>
 
   <requirement requirementId="selector.properties.JMSprefixed">
-    <description>      
+    <description>
       Any name beginning with 'JMSX' is a JMS defined property name.<br/>
       Any name beginning with 'JMS_' is a provider-specific property name.<br/>
       Any name that does not begin with 'JMS' is an application-specific
@@ -320,7 +320,7 @@
 
   <requirement requirementId="selector.whitespace">
     <description>
-      Whitespace is the same as that defined for Java: space, horizontal tab, 
+      Whitespace is the same as that defined for Java: space, horizontal tab,
       form feed and line terminator.
     </description>
     <referenceId>section.3.8.1.1</referenceId>
@@ -352,8 +352,8 @@
   </requirement>
 
   <requirement requirementId="selector.operator.logical.precedence">
-    <description>      
-      Logical operators in order of precedence: 
+    <description>
+      Logical operators in order of precedence:
       <ul>
         <li>NOT</li>
         <li>AND</li>
@@ -364,22 +364,22 @@
   </requirement>
 
   <requirement requirementId="selector.operator.comparison.precedence">
-    <description>      
-      Comparison operators in order of precedence: 
+    <description>
+      Comparison operators in order of precedence:
       <ul>
         <li>=</li>
         <li>&gt;</li>
         <li>&gt;=</li>
         <li>&lt;</li>
         <li>&lt;=</li>
-        <li>&lt;&gt; (not equal)</li>        
+        <li>&lt;&gt; (not equal)</li>
       </ul>
     </description>
     <referenceId>section.3.8.1.1</referenceId>
   </requirement>
 
   <requirement requirementId="selector.operator.arithmetic.precedence">
-    <description>      
+    <description>
       Arithmetic operators in order of precedence are:
       <ul>
         <li>+, - (unary)</li>
@@ -394,7 +394,7 @@
     <description>
       Only like type values can be compared. One exception is that it is valid
       to compare exact numeric values and approximate numeric values (the type
-      conversion required is defined by the rules of Java numeric promotion). 
+      conversion required is defined by the rules of Java numeric promotion).
       If the comparison of non-like type values is attempted, the value of the
       operation is false. If either of the type values evaluates to NULL, the
       value of the expression is unknown.
@@ -431,7 +431,6 @@
         identifier [NOT] IN (string-literal1, string-literal2, ...)
       where identifier has a String or NULL value.
       If identifier is NULL, the value of the operation is unknown.
-      TODO - add tests where identifier is known to be a non-string value
     </description>
     <referenceId>section.3.8.1.1</referenceId>
   </requirement>
@@ -439,12 +438,12 @@
   <requirement requirementId="selector.operator.like">
     <description>
       LIKE expressions are of the form:
-        identifier [NOT] LIKE pattern-value [ESCAPE escape-character] 
+        identifier [NOT] LIKE pattern-value [ESCAPE escape-character]
       where identifier has a String value; pattern-value is a string literal
       where '_' stands for any single character; '%' stands for any sequence of
-      characters, including the empty sequence, and all other characters stand 
-      for themselves. The optional escape-character is a single-character 
-      string literal whose character is used to escape the special meaning of 
+      characters, including the empty sequence, and all other characters stand
+      for themselves. The optional escape-character is a single-character
+      string literal whose character is used to escape the special meaning of
       the '_' and '%' in pattern-value.
     </description>
     <referenceId>section.3.8.1.1</referenceId>
@@ -453,13 +452,13 @@
   <requirement requirementId="selector.operator.is">
     <description>
       IS expressions are of the form:
-        identifier IS [NOT] NULL 
-      The IS NULL form tests for a null header field value or a missing 
+        identifier IS [NOT] NULL
+      The IS NULL form tests for a null header field value or a missing
       property value.
-      The IS NOT NULL form tests for the existence of a non-null header field 
+      The IS NOT NULL form tests for the existence of a non-null header field
       value or property value
       The IS NULL and IS NOT NULL operators convert an unknown header or
-      property value into the respective TRUE and FALSE values.    
+      property value into the respective TRUE and FALSE values.
     </description>
     <referenceId>section.3.8.1.1</referenceId>
     <referenceId>section.3.8.1.2</referenceId>
@@ -467,9 +466,9 @@
 
   <requirement requirementId="selector.validation">
     <description>
-      JMS providers are required to verify the syntactic correctness of a 
-      message selector at the time it is presented. A method providing a 
-      syntactically incorrect selector must result in a JMS 
+      JMS providers are required to verify the syntactic correctness of a
+      message selector at the time it is presented. A method providing a
+      syntactically incorrect selector must result in a JMS
       InvalidSelectorException.
     </description>
     <referenceId>section.3.8.1.1</referenceId>
@@ -484,14 +483,14 @@
 
   <requirement requirementId="selector.values.null">
     <description>
-      Header fields and property values may be NULL. Comparison or arithmetic 
+      Header fields and property values may be NULL. Comparison or arithmetic
       with an unknown value always yields an unknown value.
     </description>
     <referenceId>section.3.8.1.2</referenceId>
   </requirement>
-  
+
   <requirement requirementId="selector.operator.and">
-    <description>      
+    <description>
       The AND operator evaluates as follows:
       <table border="1">
         <tr><th>AND</th><td>T</td><td>F</td><td>U</td></tr>
@@ -507,7 +506,7 @@
   </requirement>
 
   <requirement requirementId="selector.operator.or">
-    <description>      
+    <description>
       The OR operator evaluates as follows:
       <table border="1">
         <tr><th>OR</th><td>T</td><td>F</td><td>U</td></tr>
@@ -523,7 +522,7 @@
   </requirement>
 
   <requirement requirementId="selector.operator.not">
-    <description>      
+    <description>
       The NOT operator evaluates as follows:
       <table border="1">
         <tr><th>NOT</th><td></td></tr>
@@ -548,7 +547,7 @@
 
   <requirement requirementId="selector.datetime">
     <description>
-      Date and time values should use the standard Java long millis value. 
+      Date and time values should use the standard Java long millis value.
       When a date or time literal is included in a message selector, it should
       be an integer literal for a millis value.
     </description>
@@ -559,7 +558,7 @@
     <description>
       When creating a connection, a client may specify its credentials
       as a name/password.
-      JMSSecurityException must be thrown when a provider rejects a 
+      JMSSecurityException must be thrown when a provider rejects a
       user name/password submitted by a client
     </description>
     <referenceId>section.4.3.1</referenceId>
@@ -569,9 +568,9 @@
   <requirement requirementId="connection.clientID.administered">
     <description>
       The facility to explicitly set a connection's client identifier is not a
-      mechanism for overriding the identifier that has been administratively 
-      configured. It is provided for the case where no administratively 
-      specified identifier exists. If one does exist, an attempt to change it 
+      mechanism for overriding the identifier that has been administratively
+      configured. It is provided for the case where no administratively
+      specified identifier exists. If one does exist, an attempt to change it
       by setting it must throw an IllegalStateException.
     </description>
     <referenceId>section.4.3.2</referenceId>
@@ -579,7 +578,7 @@
 
   <requirement requirementId="connection.method.setClientID">
     <description>
-      If a client explicitly sets the client identifer it must do this 
+      If a client explicitly sets the client identifer it must do this
       immediately after creating the connection and before any other action on
       the connection is taken. After this point, setting the client identifier
       is a programming error that should throw an IllegalStateException.
@@ -590,12 +589,12 @@
   <requirement requirementId="connection.clientID.duplicate">
     <description>
       The client state identified by a client identifier can be in use by only
-      one client at a time. A JMS provider must prevent concurrently executing 
+      one client at a time. A JMS provider must prevent concurrently executing
       clients from using it.
-      This prevention may take the form of JMSExceptions thrown when such use 
-      is attempted; it may result in the offending client being blocked; or 
-      some other solution. A JMS provider must insure that such attempted 
-      'sharing' of an individual client state does not result in messages 
+      This prevention may take the form of JMSExceptions thrown when such use
+      is attempted; it may result in the offending client being blocked; or
+      some other solution. A JMS provider must insure that such attempted
+      'sharing' of an individual client state does not result in messages
       being lost or doubly processed.
       TODO - don't handle the blocked scenario
     </description>
@@ -604,7 +603,7 @@
 
   <requirement requirementId="connection.creation">
     <description>
-      When a Connection is created, it is in stopped mode. That means that no 
+      When a Connection is created, it is in stopped mode. That means that no
       messages are being delivered to it.
     </description>
     <referenceId>section.4.3.3</referenceId>
@@ -628,16 +627,16 @@
   <requirement requirementId="connection.stop.listeners">
     <description>
       A stop method call must not return until delivery of messages has paused.
-      This means a client can rely on the fact that none of its message 
-      listeners will be called and all threads of control waiting for receive 
-      to return will not return with a message until the connection is 
+      This means a client can rely on the fact that none of its message
+      listeners will be called and all threads of control waiting for receive
+      to return will not return with a message until the connection is
       restarted.
-      If MessageListeners are running when stop is invoked, stop must wait 
-      until all of them have returned before it may return. While these 
+      If MessageListeners are running when stop is invoked, stop must wait
+      until all of them have returned before it may return. While these
       MessageListeners are completing, they must have the full services of the
       connection available to them.
       TODO - test behaviour of sending messages while a listener is active,
-      using a different session (i.e, not from the listener - undefined?)      
+      using a different session (i.e, not from the listener - undefined?)
       TODO - add test where a thread stops a connection and another starts it
       as the stop is in progress.
     </description>
@@ -646,8 +645,8 @@
 
   <requirement requirementId="connection.stop.receivers">
     <description>
-      The receive timers for a stopped connection continue to advance, so 
-      receives may time out and return a null message while the connection is 
+      The receive timers for a stopped connection continue to advance, so
+      receives may time out and return a null message while the connection is
       stopped.
     </description>
     <referenceId>section.4.3.5</referenceId>
@@ -657,31 +656,31 @@
     <description>
       Stopping a stopped connection is ignored.
     </description>
-    <referenceId>section.4.3.5</referenceId>   
+    <referenceId>section.4.3.5</referenceId>
   </requirement>
 
   <requirement requirementId="connection.start.started">
     <description>
       Starting a started connection is ignored.
     </description>
-    <referenceId>section.4.3.5</referenceId>   
+    <referenceId>section.4.3.5</referenceId>
   </requirement>
 
   <requirement requirementId="connection.close.receivers">
     <description>
-      A close terminates all pending message receives on the connection's 
-      session's consumers. The receives may return with a message or null 
+      A close terminates all pending message receives on the connection's
+      session's consumers. The receives may return with a message or null
       depending on whether or not there was a message available at the time of
-      the close.    
+      the close.
     </description>
-    <referenceId>section.4.3.5</referenceId>   
+    <referenceId>section.4.3.5</referenceId>
   </requirement>
 
   <requirement requirementId="connection.close.listeners">
     <description>
-      If one or more of the connection's session's message listeners is 
-      processing a message at the point when connection close is invoked, all 
-      the facilities of the connection and its sessions must remain available 
+      If one or more of the connection's session's message listeners is
+      processing a message at the point when connection close is invoked, all
+      the facilities of the connection and its sessions must remain available
       to those listeners until they return control to the JMS provider.
     </description>
     <referenceId>section.4.3.5</referenceId>
@@ -689,9 +688,9 @@
 
   <requirement requirementId="connection.close">
     <description>
-      Once a connection has been closed, an attempt to use it or its sessions 
-      or their message consumers and producers must throw an 
-      IllegalStateException (calls to the close method of these objects must 
+      Once a connection has been closed, an attempt to use it or its sessions
+      or their message consumers and producers must throw an
+      IllegalStateException (calls to the close method of these objects must
       be ignored).
     </description>
     <referenceId>section.4.3.5</referenceId>
@@ -699,10 +698,10 @@
 
   <requirement requirementId="connection.close.resources">
     <description>
-      If a connection is closed, there is no need to close its constituent 
-      objects. The connection close is sufficient to signal the JMS provider 
+      If a connection is closed, there is no need to close its constituent
+      objects. The connection close is sufficient to signal the JMS provider
       that all resources for the connection should be released.
-      TODO: probably the only meaningful way to test this in a provider 
+      TODO: probably the only meaningful way to test this in a provider
       independent fashion is to attempt to use a temporary destination created
       by the closed connection, on another connection. This should throw
       InvalidDestinationException?
@@ -720,7 +719,7 @@
 
   <requirement requirementId="connection.close.session.CLIENT_ACKNOWLEDGE">
     <description>
-      Closing a connection does NOT force an acknowledgement of 
+      Closing a connection does NOT force an acknowledgement of
       client-acknowledged sessions.
     </description>
     <referenceId>section.4.3.5</referenceId>
@@ -729,7 +728,7 @@
   <requirement requirementId="connection.close.message">
     <description>
       It is valid to continue to use message objects created or received after
-      a connection has been closed with the exception of a received message's 
+      a connection has been closed with the exception of a received message's
       acknowledge method.
       Invoking the acknowledge method of a received message must throw an
       IllegalStateException.
@@ -738,7 +737,7 @@
   </requirement>
 
   <requirement requirementId="connection.close.closed">
-    <description>  
+    <description>
       Closing a closed connection must NOT throw an exception.
     </description>
     <referenceId>section.4.3.5</referenceId>
@@ -760,8 +759,8 @@
 
   <requirement requirementId="session.close">
     <description>
-      Once a session has been closed, an attempt to use it or its message 
-      consumers and producers must throw an IllegalStateException (calls to 
+      Once a session has been closed, an attempt to use it or its message
+      consumers and producers must throw an IllegalStateException (calls to
       the close method of these objects must be ignored).
     </description>
     <referenceId>section.4.4.1</referenceId>
@@ -769,7 +768,7 @@
 
   <requirement requirementId="session.close.message">
     <description>
-      It is valid to continue to use message objects created or received via 
+      It is valid to continue to use message objects created or received via
       the session, with the exception of a received message'acknowledge method.
       Invoking the acknowledge method of a received message must throw an
       IllegalStateException.
@@ -778,7 +777,7 @@
   </requirement>
 
   <requirement requirementId="session.close.closed">
-    <description>  
+    <description>
       Closing a closed session must NOT throw an exception.
     </description>
     <referenceId>section.4.4.1</referenceId>
@@ -786,19 +785,19 @@
 
   <requirement requirementId="session.close.receivers">
     <description>
-      A close terminates all pending message receives on the connection's 
-      session's consumers. The receives may return with a message or null 
+      A close terminates all pending message receives on the connection's
+      session's consumers. The receives may return with a message or null
       depending on whether or not there was a message available at the time of
-      the close.    
+      the close.
     </description>
-    <referenceId>section.4.4.1</referenceId>   
+    <referenceId>section.4.4.1</referenceId>
   </requirement>
 
   <requirement requirementId="session.close.listeners">
     <description>
-      If one or more of the connection's session's message listeners is 
-      processing a message at the point when connection close is invoked, all 
-      the facilities of the connection and its sessions must remain available 
+      If one or more of the connection's session's message listeners is
+      processing a message at the point when connection close is invoked, all
+      the facilities of the connection and its sessions must remain available
       to those listeners until they return control to the JMS provider.
     </description>
     <referenceId>section.4.4.1</referenceId>
@@ -806,12 +805,12 @@
 
   <requirement requirementId="session.transactions">
     <description>
-      Each transacted session supports a single series of transactions. 
+      Each transacted session supports a single series of transactions.
       Each transaction groups a set of produced messages and a set of consumed
-      messages into an atomic unit of work. 
+      messages into an atomic unit of work.
       In effect, transactions organize a session's input message stream and
       output message stream into series of atomic units. When a transaction
-      commits, its atomic unit of input is acknowledged and its associated 
+      commits, its atomic unit of input is acknowledged and its associated
       atomic unit of output is sent.
     </description>
     <referenceId>section.4.4.7</referenceId>
@@ -819,7 +818,7 @@
 
   <requirement requirementId="session.rollback">
     <description>
-      If a transacted session is rolled back, its produced messages are 
+      If a transacted session is rolled back, its produced messages are
       destroyed and its consumed messages are automatically recovered.
     </description>
     <referenceId>section.4.4.7</referenceId>
@@ -827,11 +826,11 @@
 
   <requirement requirementId="session.DUPS_OK_ACKNOWLEDGE">
     <description>
-      With the DUPS_OK_ACKNOWLEDGE session acknowledgement mode, the session 
-      lazily acknowledges the delivery of messages. This is likely to result 
+      With the DUPS_OK_ACKNOWLEDGE session acknowledgement mode, the session
+      lazily acknowledges the delivery of messages. This is likely to result
       in the delivery of some duplicate messages if JMS fails, so it should be
-      used only by consumers that are tolerant of duplicate messages. Its 
-      benefit is the reduction of session overhead achieved by minimizing the 
+      used only by consumers that are tolerant of duplicate messages. Its
+      benefit is the reduction of session overhead achieved by minimizing the
       work the session does to prevent duplicates.
     </description>
     <referenceId>section.4.4.11</referenceId>
@@ -839,10 +838,10 @@
 
   <requirement requirementId="session.AUTO_ACKNOWLEDGE">
     <description>
-      With the AUTO_ACKNOWLEDGE session acknowledgement mode, the session 
-      automatically acknowledges a client's receipt of a message when it has 
-      either successfully returned from a call to receive or the 
-      MessageListener it has called to process the message successfully 
+      With the AUTO_ACKNOWLEDGE session acknowledgement mode, the session
+      automatically acknowledges a client's receipt of a message when it has
+      either successfully returned from a call to receive or the
+      MessageListener it has called to process the message successfully
       returns.
     </description>
     <referenceId>section.4.4.11</referenceId>
@@ -850,21 +849,21 @@
 
   <requirement requirementId="session.CLIENT_ACKNOWLEDGE">
     <description>
-      With the CLIENT_ACKNOWLEDGE session acknowledgement mode, a client 
-      acknowledges a message by calling the message's acknowledge method. 
-      Acknowledging a consumed message automatically acknowledges the receipt 
+      With the CLIENT_ACKNOWLEDGE session acknowledgement mode, a client
+      acknowledges a message by calling the message's acknowledge method.
+      Acknowledging a consumed message automatically acknowledges the receipt
       of all messages that have been delivered by its session.
     </description>
     <referenceId>section.4.4.11</referenceId>
   </requirement>
 
   <requirement requirementId="session.recover">
-    <description>      
+    <description>
       A session's recover method is used to stop a session and restart it with
-      its first unacknowledged message. In effect, the session's series of 
-      delivered messages is reset to the point after its last acknowledged 
-      message. The messages it now delivers may be different from those that 
-      were originally delivered due to message expiration and the arrival of 
+      its first unacknowledged message. In effect, the session's series of
+      delivered messages is reset to the point after its last acknowledged
+      message. The messages it now delivers may be different from those that
+      were originally delivered due to message expiration and the arrival of
       higher-priority messages.<br/>
       A session must set the redelivered flag of messages it redelivers due to
       a recovery.
@@ -876,8 +875,8 @@
   <requirement requirementId="session.transactions.transactioninprogress">
     <description>
       A TransactionInProgressException exception is thrown when an operation
-      is invalid because a transaction is in progress. For instance, 
-      attempting to call Session.commit() when a session is part of a 
+      is invalid because a transaction is in progress. For instance,
+      attempting to call Session.commit() when a session is part of a
       distributed transaction.
     </description>
     <referenceId>section.7.3</referenceId>
@@ -906,7 +905,7 @@
   <requirement requirementId="session.listener.serialization">
     <description>
       A session serializes all asynchronous delivery of messages.
-      While the session is busy executing one listener, all other messages to 
+      While the session is busy executing one listener, all other messages to
       be asynchronously delivered to the session must wait.
     </description>
     <reference>
@@ -916,7 +915,7 @@
 
   <requirement requirementId="session.commit.IllegalStateException">
     <description>
-      Invoking commit() on a non-transacted session should throw 
+      Invoking commit() on a non-transacted session should throw
       IllegalStateException
     </description>
     <reference>
@@ -927,7 +926,7 @@
 
   <requirement requirementId="session.rollback.IllegalStateException">
     <description>
-      Invoking rollback() on a non-transacted session should throw 
+      Invoking rollback() on a non-transacted session should throw
       IllegalStateException
     </description>
     <reference>
@@ -937,7 +936,7 @@
 
   <requirement requirementId="session.recover.IllegalStateException">
     <description>
-      Invoking recover() on a transacted session should throw 
+      Invoking recover() on a transacted session should throw
       IllegalStateException
     </description>
     <reference>
@@ -947,7 +946,7 @@
 
   <requirement requirementId="producer.ttl.default">
     <description>
-      If not specified, the default time-to-live for a producer equals 
+      If not specified, the default time-to-live for a producer equals
       <code>0</code>
     </description>
     <reference>
@@ -960,8 +959,8 @@
 
   <requirement requirementId="producer.ttl.set">
     <description>
-      A client can specify a default time-to-live for messages sent by a 
-      message producer, to be used when a time-to-live isn't specified per 
+      A client can specify a default time-to-live for messages sent by a
+      message producer, to be used when a time-to-live isn't specified per
       message.
       <p>
         <strong>Note:</strong> the specification doesn't mention min or max
@@ -988,7 +987,7 @@
 
   <requirement requirementId="message.destination">
     <description>
-      When a message is sent, JMSDestination is ignored. After completion of 
+      When a message is sent, JMSDestination is ignored. After completion of
       the send it holds the destination object specified by the sending method.
       When a message is received, its destination value must be equivalent to
       the value assigned when it was sent.
@@ -1015,10 +1014,10 @@
 
   <requirement requirementId="message.correlation">
     <description>
-      The JMSCorrelationID header field may be used to link one message with 
-      another. It can contain a provider-specific message ID, an 
+      The JMSCorrelationID header field may be used to link one message with
+      another. It can contain a provider-specific message ID, an
       application-specific string, or a provider-native byte[] value.
-      The application-specific string must not start with the 'ID:' prefix: 
+      The application-specific string must not start with the 'ID:' prefix:
       this is reserved for provider generated messages Ids.
     </description>
     <referenceId>section.2.10</referenceId>
@@ -1028,11 +1027,11 @@
 
   <requirement requirementId="message.correlation.bytes" optional="true">
     <description>
-      If a provider supports the native concept of correlation ID, a JMS 
-      client may need to assign specific JMSCorrelationID values to match 
-      those expected by non-JMS clients. A byte[] value is used for this 
-      purpose. JMS providers without native correlation ID values are not 
-      required to support byte[] values - in this case 
+      If a provider supports the native concept of correlation ID, a JMS
+      client may need to assign specific JMSCorrelationID values to match
+      those expected by non-JMS clients. A byte[] value is used for this
+      purpose. JMS providers without native correlation ID values are not
+      required to support byte[] values - in this case
       setJMSCorrelationIDAsBytes() and getJMSCorrelationIDAsBytes() may throw
       java.lang.UnsupportedOperationException.
     </description>
@@ -1042,18 +1041,18 @@
   <requirement requirementId="message.redelivered.receive">
     <description>
       If a client receives a message with the JMSRedelivered indicator set, it
-      is likely, but not guaranteed, that this message was delivered but not 
-      acknowledged in the past. In general, a provider must set the 
-      JMSRedelivered message header field of a message whenever it is 
-      redelivering a message. 
+      is likely, but not guaranteed, that this message was delivered but not
+      acknowledged in the past. In general, a provider must set the
+      JMSRedelivered message header field of a message whenever it is
+      redelivering a message.
     </description>
     <referenceId>section.3.4.7</referenceId>
     <referenceId>section.3.4.11</referenceId>
   </requirement>
- 
+
   <requirement requirementId="message.redelivered.send">
     <description>
-      The JMSRedelivered header field has no meaning on send and is left 
+      The JMSRedelivered header field has no meaning on send and is left
       unassigned by the sending method.
     </description>
     <referenceId>section.3.4.7</referenceId>
@@ -1061,8 +1060,8 @@
 
   <requirement requirementId="message.expiration.send">
     <description>
-      When a message is sent, its expiration time is calculated as the sum of 
-      the time-to-live value specified on the send method and the current GMT 
+      When a message is sent, its expiration time is calculated as the sum of
+      the time-to-live value specified on the send method and the current GMT
       value. On return from the send method, the message's JMSExpiration header
       field contains this value.
     </description>
@@ -1079,16 +1078,16 @@
 
   <requirement requirementId="message.expiration.zero">
     <description>
-      If the time-to-live is specified as zero, expiration is set to zero to 
+      If the time-to-live is specified as zero, expiration is set to zero to
       indicate that the message does not expire.
     </description>
     <referenceId>section.3.4.9</referenceId>
   </requirement>
 
   <requirement requirementId="message.expiration.expired">
-    <description>  
+    <description>
       When GMT is later than an undelivered message's expiration time, the
-      message should be destroyed. 
+      message should be destroyed.
       Clients should not receive messages that have expired; however, JMS does
       not guarantee that this will not happen.
     </description>
@@ -1096,9 +1095,9 @@
   </requirement>
 
   <requirement requirementId="message.replyTo">
-    <description>      
-      The JMSReplyTo header field contains a Destination supplied by a client 
-      when a message is sent. It is the destination where a reply to the 
+    <description>
+      The JMSReplyTo header field contains a Destination supplied by a client
+      when a message is sent. It is the destination where a reply to the
       message should be  sent.<br/>
       Messages sent with a null JMSReplyTo value may be a notification of some
       event or they may just be some data the sender thinks is of interest.
@@ -1121,15 +1120,15 @@
   <requirement requirementId="properties.identifier">
     <description>
       An identifier is an unlimited-length character sequence that must begin
-      with a Java identifier start character; all following characters must be 
-      Java identifier part characters. An identifier start character is any 
-      character for which the method Character.isJavaIdentifierStart returns 
+      with a Java identifier start character; all following characters must be
+      Java identifier part characters. An identifier start character is any
+      character for which the method Character.isJavaIdentifierStart returns
       true. An identifier part character is any character for which the
       method Character.isJavaIdentifierPart returns true.
     </description>
     <referenceId>section.3.8.1.1</referenceId>
   </requirement>
-  
+
   <requirement requirementId="properties.identifier.reserved">
     <description>
       Identifiers cannot be the words NULL, TRUE, FALSE, NOT, AND, OR, BETWEEN,
@@ -1144,22 +1143,22 @@
     </description>
     <referenceId>section.3.8.1.1</referenceId>
   </requirement>
-   
+
   <requirement requirementId="properties.types">
     <description>
-      Property values can be boolean, byte, short, int, long, float, double, 
+      Property values can be boolean, byte, short, int, long, float, double,
       and String.
     </description>
     <referenceId>section.3.5.2</referenceId>
   </requirement>
 
   <requirement requirementId="properties.objects">
-    <description>      
-      The setObjectProperty method accepts values of Boolean, Byte, Short, 
-      Integer, Long, Float, Double and String. An attempt to use any other 
+    <description>
+      The setObjectProperty method accepts values of Boolean, Byte, Short,
+      Integer, Long, Float, Double and String. An attempt to use any other
       class must throw a JMS MessageFormatException.<br/>
       The getObjectProperty method only returns values of null, Boolean, Byte,
-      Short, Integer, Long, Float, Double and String. A null value is returned 
+      Short, Integer, Long, Float, Double and String. A null value is returned
       if a property by the specified name does not exist.
     </description>
     <referenceId>section.3.5.5</referenceId>
@@ -1174,13 +1173,13 @@
   </requirement>
 
   <requirement requirementId="properties.conversion">
-    <description>      
+    <description>
       Properties support the following conversion table. The marked cases must
-      be supported. The unmarked cases must throw the JMS 
+      be supported. The unmarked cases must throw the JMS
       MessageFormatException.<br/>
-      The String to numeric conversions must throw the 
-      java.lang.NumberFormatException if the numeric's valueOf() method does 
-      not accept the String value as a valid representation. 
+      The String to numeric conversions must throw the
+      java.lang.NumberFormatException if the numeric's valueOf() method does
+      not accept the String value as a valid representation.
       A value set as the row type can be read as the column type.<br/>
       <table border="1">
         <tr>
@@ -1235,8 +1234,8 @@
 
   <requirement requirementId="properties.conversion.null">
     <description>
-      Attempting to read a null value as a Java primitive type must be treated 
-      as calling the primitive's corresponding valueOf(String) conversion 
+      Attempting to read a null value as a Java primitive type must be treated
+      as calling the primitive's corresponding valueOf(String) conversion
       method with a null value.
     </description>
     <referenceId>section.3.5.4</referenceId>
@@ -1245,9 +1244,9 @@
 
   <requirement requirementId="properties.method.getPropertyNames">
     <description>
-      The order of property values is not defined. To iterate through a 
-      message's property values, use getPropertyNames to retrieve a property 
-      name enumeration and then use the various property get methods to 
+      The order of property values is not defined. To iterate through a
+      message's property values, use getPropertyNames to retrieve a property
+      name enumeration and then use the various property get methods to
       retrieve their values.
       The getPropertyNames method does not return the names of the JMS standard
       header fields.
@@ -1257,29 +1256,29 @@
 
   <requirement requirementId="message.send">
     <description>
-      After sending a message, a client may retain and modify it without 
+      After sending a message, a client may retain and modify it without
       affecting the message that has been sent. The same message object may be
       sent multiple times.
     </description>
     <reference>
       <section name="3.9" title="Access to sent messages" />
-    </reference>  
+    </reference>
   </requirement>
- 
+
   <requirement requirementId="message.receive">
     <description>
-      When a message is received its body is read only. If an attempt is made 
-      to change them, a MessageNotWriteableException must be thrown. 
-      If its properties or body are subsequently cleared, they are in the same 
+      When a message is received its body is read only. If an attempt is made
+      to change them, a MessageNotWriteableException must be thrown.
+      If its properties or body are subsequently cleared, they are in the same
       state as a newly created message.
       TODO - need to test in transaction context
     </description>
     <reference>
       <section name="3.5.3" title="Using Properties" />
-    </reference>  
+    </reference>
     <reference>
       <section name="3.10" title="Changing the Value of a Received Message" />
-    </reference>  
+    </reference>
     <reference>
       <section name="3.11.2" title="Read-Only Message Body" />
     </reference>
@@ -1287,10 +1286,10 @@
 
   <requirement requirementId="message.method.clearBody">
     <description>
-     The clearBody method of Message resets the value of the message body to 
+     The clearBody method of Message resets the value of the message body to
      the empty initial message value as set by the message type's create method
      provided by Session. Clearing a message's body does not clear its property
-     entries. When a message is cleared, its message body and properties may 
+     entries. When a message is cleared, its message body and properties may
      be set.
     </description>
     <reference>
@@ -1302,7 +1301,7 @@
     <description>
       Clearing a message's properties leaves the message with an empty set of
       properties. New property entries can then be both created and read.
-      Clearing a message's property entries does not clear the value of its 
+      Clearing a message's property entries does not clear the value of its
       body.
     </description>
     <reference>
@@ -1312,8 +1311,8 @@
 
   <requirement requirementId="message.bytes.creation">
     <description>
-      When the message is first created, the body of the message is in 
-      write-only mode. If a client attempts to read a message in write-only 
+      When the message is first created, the body of the message is in
+      write-only mode. If a client attempts to read a message in write-only
       mode, a MessageNotReadableException is thrown.
     </description>
     <referenceId>url.message.bytes</referenceId>
@@ -1338,8 +1337,8 @@
 
   <requirement requirementId="message.stream.creation">
     <description>
-      When the message is first created, the body of the message is in 
-      write-only mode. If a client attempts to read a message in write-only 
+      When the message is first created, the body of the message is in
+      write-only mode. If a client attempts to read a message in write-only
       mode, a MessageNotReadableException is thrown.
     </description>
     <referenceId>url.message.stream</referenceId>
@@ -1354,24 +1353,24 @@
   </requirement>
 
   <requirement requirementId="message.bytes.read">
-    <description>      
-      If a read method of a BytesMessage throws a MessageFormatException or 
+    <description>
+      If a read method of a BytesMessage throws a MessageFormatException or
       NumberFormatException, the current position of the read pointer must not
       be incremented. A subsequent read must be capable of recovering from the
       exception by re-reading the data as a different type.<br/>
-      NOTE: With the exception of the readUTF() method, it is difficult to 
+      NOTE: With the exception of the readUTF() method, it is difficult to
       conceive test cases for read methods.
       <ul>
         <li>
-          A provider that implements BytesMessage using a DataInputStream 
-          or equivalent, is likely to only throw MessageFormatException for 
+          A provider that implements BytesMessage using a DataInputStream
+          or equivalent, is likely to only throw MessageFormatException for
           the readUTF() method.<br/>
-          The other likely exceptions are MessageEOFException for stream 
+          The other likely exceptions are MessageEOFException for stream
           overruns, and JMSException for any other error.
         </li>
         <li>
-          As BytesMessage does not support conversion, NumberFormatException 
-          is unlikely to be thrown. 
+          As BytesMessage does not support conversion, NumberFormatException
+          is unlikely to be thrown.
         </li>
       </ul>
     </description>
@@ -1380,7 +1379,7 @@
 
   <requirement requirementId="message.stream.read">
     <description>
-      If a read method of a StreamMessage throws a MessageFormatException or 
+      If a read method of a StreamMessage throws a MessageFormatException or
       NumberFormatException, the current position of the read pointer must not
       be incremented. A subsequent read must be capable of recovering from the
       exception by re-reading the data as a different type.
@@ -1393,21 +1392,21 @@
     <description>
       A MapMessage is a message whose body contains a set of name-value pairs
       where names are Strings and values are Java primitive types. The entries
-      can be accessed sequentially by enumerator or randomly by name. The 
-      order of the entries is undefined.      
+      can be accessed sequentially by enumerator or randomly by name. The
+      order of the entries is undefined.
     </description>
     <referenceId>section.3.11</referenceId>
   </requirement>
 
   <requirement requirementId="message.map.conversion">
-    <description>      
+    <description>
       MapMessage supports the following conversion table.
       The marked cases must be supported. The unmarked cases must throw a JMS
       MessageFormatException. The String to numeric conversions must throw a
-      java.lang.NumberFormatException if the numeric's valueOf() method does 
+      java.lang.NumberFormatException if the numeric's valueOf() method does
       not accept the String value as a valid representation.
-      MapMessage must implement the String to boolean conversion as 
-      specified by the valueOf(String) method of Boolean as defined by the 
+      MapMessage must implement the String to boolean conversion as
+      specified by the valueOf(String) method of Boolean as defined by the
       Java language.<br/>
       A value written as the row type can be read as the column type.<br/>
       <table border="1">
@@ -1475,10 +1474,10 @@
 
   <requirement requirementId="message.map.null">
     <description>
-      For MapMessage, attempting to read a null value as a Java primitive 
-      type must be treated as calling the primitive's corresponding 
+      For MapMessage, attempting to read a null value as a Java primitive
+      type must be treated as calling the primitive's corresponding
       valueOf(String) conversion method with a null value. Since char does not
-      support a String conversion, attempting to read a null value as a char 
+      support a String conversion, attempting to read a null value as a char
       must throw NullPointerException.
     </description>
     <referenceId>section.3.11.3</referenceId>
@@ -1486,21 +1485,21 @@
 
   <requirement requirementId="message.map.unset">
     <description>
-      Getting a MapMessage field for a field name that has not been set is 
+      Getting a MapMessage field for a field name that has not been set is
       handled as if the field exists with a null value.
     </description>
     <referenceId>section.3.11.3</referenceId>
   </requirement>
 
   <requirement requirementId="message.stream.conversion">
-    <description>      
+    <description>
       StreamMessage supports the following conversion table.
       The marked cases must be supported. The unmarked cases must throw a JMS
       MessageFormatException. The String to numeric conversions must throw a
-      java.lang.NumberFormatException if the numeric's valueOf() method does 
+      java.lang.NumberFormatException if the numeric's valueOf() method does
       not accept the String value as a valid representation.
-      StreamMessage must implement the String to boolean conversion as 
-      specified by the valueOf(String) method of Boolean as defined by the 
+      StreamMessage must implement the String to boolean conversion as
+      specified by the valueOf(String) method of Boolean as defined by the
       Java language.<br/>
       A value written as the row type can be read as the column type.<br/>
       <table border="1">
@@ -1567,7 +1566,7 @@
   </requirement>
 
   <requirement requirementId="message.map.case">
-    <description>      
+    <description>
       MapMessage field names are case sensitive.<br/>
       NOTE: the specification does not explicitly mention this requirement,
       but it is in keeping with property name requirements.
@@ -1576,12 +1575,12 @@
   </requirement>
 
   <requirement requirementId="message.stream.null">
-    <description>      
-      For StreamMessage, attempting to read a null value as a Java primitive 
-      type must be treated as calling the primitive's corresponding 
+    <description>
+      For StreamMessage, attempting to read a null value as a Java primitive
+      type must be treated as calling the primitive's corresponding
       valueOf(String) conversion method with a null value. Since char does not
-      support a String conversion, attempting to read a null value as a char 
-      must throw NullPointerException.<br/> 
+      support a String conversion, attempting to read a null value as a char
+      must throw NullPointerException.<br/>
       NOTE: the specification is not explicit on the behaviour of invoking
       writeBytes() or writeString() with a null value, but an acceptable policy
       is to throw a NullPointerException. This is in keeping with the behaviour
@@ -1593,11 +1592,11 @@
   <requirement requirementId="message.foreign">
     <description>
       A provider must be prepared to accept, from a client, a
-      message whose implementation is not one of its own. 
+      message whose implementation is not one of its own.
       A message with a 'foreign' implementation may not be handled as
-      efficiently as a provider's own implementation; however, it must be 
+      efficiently as a provider's own implementation; however, it must be
       handled.<br/>
-      Note that if the foreign message implementation contains a 
+      Note that if the foreign message implementation contains a
       <em>JMSReplyTo</em> header field that is set to a foreign destination
       implementation, the provider is not required to handle or preserve the
       value of this field.
@@ -1607,8 +1606,8 @@
 
   <requirement requirementId="message.copy">
     <description>
-      The JMS message interfaces provide read/get methods for accessing 
-      objects in a message body. All of these methods must be implemented to 
+      The JMS message interfaces provide read/get methods for accessing
+      objects in a message body. All of these methods must be implemented to
       return a copy of the accessed objects.
     </description>
     <referenceId>section.3.12</referenceId>
@@ -1616,18 +1615,18 @@
 
   <requirement requirementId="properties.copy">
     <description>
-      The JMS message interfaces provide read/get methods for accessing 
-      message object properties. All of these methods must be implemented to 
+      The JMS message interfaces provide read/get methods for accessing
+      message object properties. All of these methods must be implemented to
       return a copy of the accessed objects.
     </description>
     <referenceId>section.3.12</referenceId>
   </requirement>
 
   <requirement requirementId="message.bytes.method.clearBody">
-    <description>      
+    <description>
       When clearBody is called on a BytesMessage, the body of the message is in
       write-only mode.<br/>
-      If clearBody is called on a message in read-only mode, the message body 
+      If clearBody is called on a message in read-only mode, the message body
       is cleared and the message is in write-only mode.
     </description>
     <referenceId>url.message.bytes</referenceId>
@@ -1689,9 +1688,9 @@
 
   <requirement requirementId="message.stream.method.clearBody">
     <description>
-      When clearBody is called on a StreamMessage, the body of the message is 
+      When clearBody is called on a StreamMessage, the body of the message is
       in write-only mode.<br/>
-      If clearBody is called on a message in read-only mode, the message body 
+      If clearBody is called on a message in read-only mode, the message body
       is cleared and the message is in write-only mode.
     </description>
     <referenceId>url.message.stream</referenceId>
@@ -1735,9 +1734,9 @@
 
   <requirement requirementId="properties.group">
     <description>
-      JMSXGroupID and JMSXGroupSeq are standard properties clients should use 
+      JMSXGroupID and JMSXGroupSeq are standard properties clients should use
       if they want to group messages. All providers must support them.
-      JMSXGroupID is a string property. JMSXGroupSeq is an int property, 
+      JMSXGroupID is a string property. JMSXGroupSeq is an int property,
       starting at 1. @todo - need to verify if the range is applicable
     </description>
     <referenceId>section.3.5.9</referenceId>
@@ -1746,11 +1745,11 @@
 
   <requirement requirementId="properties.provider">
     <description>
-      JMS reserves the 'JMSX' property name prefix for JMS defined properties. 
+      JMS reserves the 'JMSX' property name prefix for JMS defined properties.
       Unless noted otherwise, support for these properties is optional. The
       Enumeration ConnectionMetaData.getJMSXPropertyNames() method returns the
-      names of the JMSX properties supported by a connection.   
-      Properties that may only be set by the provider include JMSXUserID, 
+      names of the JMSX properties supported by a connection.
+      Properties that may only be set by the provider include JMSXUserID,
       JMSXAppID, JMSXDeliveryCount, JMSXProducerTXID, JMSXConsumerTXID,
       JMSXRcvTimestamp and JMSXState.
     </description>
@@ -1760,8 +1759,8 @@
 
   <requirement requirementId="connection.metadata.properties">
     <description>
-      ConnectionMetaData provides a list of the JMS defined property names 
-      supported by the connection. This must include JMSXGroupID and 
+      ConnectionMetaData provides a list of the JMS defined property names
+      supported by the connection. This must include JMSXGroupID and
       JMSXGroupSeq
     </description>
     <referenceId>section.3.5.9</referenceId>
@@ -1769,8 +1768,8 @@
 
   <requirement requirementId="subscriber.nolocal">
     <description>
-      In some cases, a connection may both publish and subscribe to a topic. 
-      The subscriber NoLocal attribute allows a subscriber to inhibit the 
+      In some cases, a connection may both publish and subscribe to a topic.
+      The subscriber NoLocal attribute allows a subscriber to inhibit the
       delivery of messages published by its own connection.
     </description>
     <referenceId>section.6.11</referenceId>
@@ -1778,11 +1777,11 @@
 
   <requirement requirementId="subscriber.durable">
     <description>
-      If a client needs to receive all the messages published on a topic, 
+      If a client needs to receive all the messages published on a topic,
       including the ones published while the subscriber is inactive, it uses a
-      durable TopicSubscriber. JMS retains a record of this durable 
-      subscription and insures that all messages from the topic's publishers 
-      are retained until either they are acknowledged by this durable 
+      durable TopicSubscriber. JMS retains a record of this durable
+      subscription and insures that all messages from the topic's publishers
+      are retained until either they are acknowledged by this durable
       subscriber or they have expired.
     </description>
     <referenceId>section.6.11.1</referenceId>
@@ -1792,8 +1791,8 @@
   <requirement requirementId="subscriber.durable.clientId">
     <description>
       Sessions with durable subscribers must always provide the same client
-      identifier. In addition, each client must specify a name that uniquely 
-      identifies (within client identifier) each durable subscription it 
+      identifier. In addition, each client must specify a name that uniquely
+      identifies (within client identifier) each durable subscription it
       creates.
     </description>
     <referenceId>section.6.11.1</referenceId>
@@ -1801,18 +1800,18 @@
 
   <requirement requirementId="subscriber.durable.unique">
     <description>
-      Only one session at a time can have a TopicSubscriber for a 
-      particular durable subscription. 
+      Only one session at a time can have a TopicSubscriber for a
+      particular durable subscription.
     </description>
     <referenceId>section.6.11.1</referenceId>
     <referenceId>section.4.3.2</referenceId>
-  </requirement>  
+  </requirement>
 
   <requirement requirementId="subscriber.durable.changing">
     <description>
-      A client can change an existing durable subscription by creating a 
-      durable TopicSubscriber with the same name and a new topic and/or 
-      message selector. Changing a durable subscription is equivalent to 
+      A client can change an existing durable subscription by creating a
+      durable TopicSubscriber with the same name and a new topic and/or
+      message selector. Changing a durable subscription is equivalent to
       deleting and recreating it.
     </description>
     <referenceId>section.6.11.1</referenceId>
@@ -1821,14 +1820,14 @@
   <requirement requirementId="subscriber.durable.unsubscribe">
     <description>
       TopicSessions provide the unsubscribe method for deleting a durable
-      subscription created by their client. This deletes the state being 
-      maintained on behalf of the subscriber by its provider. 
-      It is erroneous for a client to delete a durable subscription while it 
-      has an active TopicSubscriber for it or while a message received by it 
-      is part of a current transaction or has not been acknowledged in the 
+      subscription created by their client. This deletes the state being
+      maintained on behalf of the subscriber by its provider.
+      It is erroneous for a client to delete a durable subscription while it
+      has an active TopicSubscriber for it or while a message received by it
+      is part of a current transaction or has not been acknowledged in the
       session.
       (Note: this last sentence suggests that a provider doesn't need to check
-       that a client can remove a subscription)   
+       that a client can remove a subscription)
     </description>
     <referenceId>section.6.11.1</referenceId>
   </requirement>

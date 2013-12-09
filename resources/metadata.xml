@@ -1014,6 +1014,127 @@
   </class-meta>
 
   <class-meta>
+    <name>org.exolab.jmscts.test.selector.OrOperatorTest</name>
+    <description>
+      This class tests selectors containing the OR operator.
+    </description>
+    <attribute name="jmscts.message" value="Message"/>
+    <method-meta>
+      <name>suite</name>
+      <description>
+        Sets up the test suite
+      </description>
+    </method-meta>
+    <method-meta>
+      <name>testOr1</name>
+      <description>
+        Verifies that the selector <code>true or true</code> selects all messages
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.or"/>
+      <attribute name="jmscts.requirement" value="selector.expression"/>
+    </method-meta>
+    <method-meta>
+      <name>testOr2</name>
+      <description>
+        Verifies that the selector <code>true or false</code> selects all messages
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.or"/>
+      <attribute name="jmscts.requirement" value="selector.expression"/>
+    </method-meta>
+    <method-meta>
+      <name>testOr3</name>
+      <description>
+        Verifies that the selector <code>false or true</code> selects all messages
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.or"/>
+      <attribute name="jmscts.requirement" value="selector.expression"/>
+    </method-meta>
+    <method-meta>
+      <name>testOr4</name>
+      <description>
+        Verifies that the selector <code>false or false</code> selects no messages
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.or"/>
+      <attribute name="jmscts.requirement" value="selector.expression"/>
+    </method-meta>
+    <method-meta>
+      <name>testOrCase</name>
+      <description>
+        Verifies that the selector <code>true or true</code> selects all messages
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.or"/>
+      <attribute name="jmscts.requirement" value="selector.expression"/>
+      <attribute name="jmscts.requirement" value="selector.reservedwords.case"/>
+    </method-meta>
+    <method-meta>
+      <name>testInvalidOr1</name>
+      <description>
+        Verifies that the selector <code>or</code> throws InvalidSelectorException
+      </description>
+      <attribute name="jmscts.requirement" value="selector.validation"/>
+    </method-meta>
+    <method-meta>
+      <name>testInvalidOr2</name>
+      <description>
+        Verifies that the selector <code>true or</code> throws InvalidSelectorException
+      </description>
+      <attribute name="jmscts.requirement" value="selector.validation"/>
+    </method-meta>
+    <method-meta>
+      <name>testInvalidOr3</name>
+      <description>
+        Verifies that the selector <code>false or</code> throws InvalidSelectorException
+      </description>
+      <attribute name="jmscts.requirement" value="selector.validation"/>
+    </method-meta>
+    <method-meta>
+      <name>testUnsetProperty1</name>
+      <description>
+        Verifies that the selector <code>true or dummy</code> selects all messages, for the unset property 'dummy'
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.or"/>
+      <attribute name="jmscts.requirement" value="selector.expression"/>
+      <attribute name="jmscts.requirement" value="selector.values.null"/>
+    </method-meta>
+    <method-meta>
+      <name>testUnsetProperty2</name>
+      <description>
+        Verifies that the selector <code>false or dummy</code> selects no messages, for the unset property 'dummy'
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.or"/>
+      <attribute name="jmscts.requirement" value="selector.expression"/>
+      <attribute name="jmscts.requirement" value="selector.values.null"/>
+    </method-meta>
+    <method-meta>
+      <name>testUnsetProperty3</name>
+      <description>
+        Verifies that the selector <code>dummy or true</code> selects all messages, for the unset property 'dummy'
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.or"/>
+      <attribute name="jmscts.requirement" value="selector.expression"/>
+      <attribute name="jmscts.requirement" value="selector.values.null"/>
+    </method-meta>
+    <method-meta>
+      <name>testUnsetProperty4</name>
+      <description>
+        Verifies that the selector <code>dummy or false</code> selects no messages, for the unset property 'dummy'
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.or"/>
+      <attribute name="jmscts.requirement" value="selector.expression"/>
+      <attribute name="jmscts.requirement" value="selector.values.null"/>
+    </method-meta>
+    <method-meta>
+      <name>testUnsetProperty5</name>
+      <description>
+        Verifies that the selector <code>dummy or dummy</code> selects no messages, for the unset property 'dummy'
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.or"/>
+      <attribute name="jmscts.requirement" value="selector.expression"/>
+      <attribute name="jmscts.requirement" value="selector.values.null"/>
+    </method-meta>
+  </class-meta>
+
+  <class-meta>
     <name>org.exolab.jmscts.test.selector.AndOperatorTest</name>
     <description>
       This class tests selectors containing the AND operator.
@@ -1534,6 +1655,14 @@
       </description>
       <attribute name="jmscts.requirement" value="selector.literal.boolean"/>
       <attribute name="jmscts.requirement" value="selector.reservedwords.case"/>
+      <attribute name="jmscts.requirement" value="selector.expression"/>
+    </method-meta>
+    <method-meta>
+      <name>testNotUnknown</name>
+      <description>
+        Verifies that the selector <code>not dummy</code> selects no messages
+      </description>
+      <attribute name="jmscts.requirement" value="selector.operator.not"/>
       <attribute name="jmscts.requirement" value="selector.expression"/>
     </method-meta>
   </class-meta>

@@ -38,9 +38,9 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * Copyright 2003-2004 (C) Exoffice Technologies Inc. All Rights Reserved.
+ * Copyright 2001-2004 (C) Exoffice Technologies Inc. All Rights Reserved.
  *
- * $Id: BooleanTest.java,v 1.4 2004/02/03 21:52:11 tanderson Exp $
+ * $Id: AndOperatorTest.java,v 1.4 2004/02/03 21:52:11 tanderson Exp $
  */
 package org.exolab.jmscts.test.selector;
 
@@ -50,21 +50,21 @@ import org.exolab.jmscts.core.TestCreator;
 
 
 /**
- * This class tests selectors containing boolean literals.
+ * This class tests selectors containing the OR operator.
  *
- * @author <a href="mailto:tma@netspace.net.au">Tim Anderson</a>
- * @version $Revision: 1.4 $
+ * @author Steve Powell
  * @see AbstractSelectorTestCase
- * @jmscts.message ObjectMessage
+ * @jmscts.message Message
  */
-public class BooleanTest extends AbstractSelectorTestCase {
+public class OrOperatorTest extends AbstractSelectorTestCase {
 
     /**
-     * Create an instance of this class for a specific test case
+     * Create an instance of this class for a specific test case, testing
+     * against all delivery types
      *
      * @param name the name of test case
      */
-    public BooleanTest(String name) {
+    public OrOperatorTest(String name) {
         super(name);
     }
 
@@ -75,167 +75,166 @@ public class BooleanTest extends AbstractSelectorTestCase {
      * {@link org.exolab.jmscts.core.JMSTestRunner}
      */
     public static Test suite() {
-        return TestCreator.createSendReceiveTest(BooleanTest.class);
+        return TestCreator.createSendReceiveTest(OrOperatorTest.class);
     }
 
     /**
-     * Verifies that the selector <code>true</code> selects all
-     * messages
-     *
-     * @jmscts.requirement selector.literal.boolean
-     * @jmscts.requirement selector.reservedwords.case
-     * @jmscts.requirement selector.expression
-     * @throws Exception for any error
-     */
-    public void testTrue() throws Exception {
-        checkSelector("true", true);
-    }
-
-    /**
-     * Verifies that the selector <code>false</code> selects no
-     * messages
-     *
-     * @jmscts.requirement selector.literal.boolean
-     * @jmscts.requirement selector.reservedwords.case
-     * @jmscts.requirement selector.expression
-     * @throws Exception for any error
-     */
-    public void testFalse() throws Exception {
-        checkSelector("false", false);
-    }
-
-    /**
-     * Verifies that the selector <code>TrUe</code> selects all
-     * messages
-     *
-     * @jmscts.requirement selector.literal.boolean
-     * @jmscts.requirement selector.reservedwords.case
-     * @jmscts.requirement selector.expression
-     * @throws Exception for any error
-     */
-    public void testTrueCase() throws Exception {
-        checkSelector("TrUe", true);
-    }
-
-    /**
-     * Verifies that the selector <code>FALSE</code> selects all
-     * messages
-     *
-     * @jmscts.requirement selector.literal.boolean
-     * @jmscts.requirement selector.reservedwords.case
-     * @jmscts.requirement selector.expression
-     * @throws Exception for any error
-     */
-    public void testFalseCase() throws Exception {
-        checkSelector("False", false);
-    }
-
-    /**
-     * Verifies that the selector <code>true = true</code> selects
+     * Verifies that the selector <code>true or true</code> selects
      * all messages
      *
-     * @jmscts.requirement selector.comparison.boolean
+     * @jmscts.requirement selector.operator.or
      * @jmscts.requirement selector.expression
      * @throws Exception for any error
      */
-    public void testEquals1() throws Exception {
-        checkSelector("true = true", true);
+    public void testOr1() throws Exception {
+        checkSelector("true or true", true);
     }
 
     /**
-     * Verifies that the selector <code>true = false</code> selects
-     * no messages
-     *
-     * @jmscts.requirement selector.comparison.boolean
-     * @jmscts.requirement selector.expression
-     * @throws Exception for any error
-     */
-    public void testEquals2() throws Exception {
-        checkSelector("true = false", false);
-    }
-
-    /**
-     * Verifies that the selector <code>false &lt;&gt; true</code> selects
+     * Verifies that the selector <code>true or false</code> selects
      * all messages
      *
-     * @jmscts.requirement selector.comparison.boolean
+     * @jmscts.requirement selector.operator.or
      * @jmscts.requirement selector.expression
      * @throws Exception for any error
      */
-    public void testNotEquals1() throws Exception {
-        checkSelector("false <> true", true);
+    public void testOr2() throws Exception {
+        checkSelector("true or false", true);
     }
 
     /**
-     * Verifies that the selector <code>false &lt;&gt; false</code> selects
+     * Verifies that the selector <code>false or true</code> selects
+     * all messages
+     *
+     * @jmscts.requirement selector.operator.or
+     * @jmscts.requirement selector.expression
+     * @throws Exception for any error
+     */
+    public void testOr3() throws Exception {
+        checkSelector("false or true", true);
+    }
+
+    /**
+     * Verifies that the selector <code>false or false</code> selects
      * no messages
      *
-     * @jmscts.requirement selector.comparison.boolean
+     * @jmscts.requirement selector.operator.or
      * @jmscts.requirement selector.expression
      * @throws Exception for any error
      */
-    public void testNotEquals2() throws Exception {
-        checkSelector("false <> false", false);
+    public void testOr4() throws Exception {
+        checkSelector("false or false", false);
     }
 
     /**
-     * Verifies that the selector <code>not dummy</code> selects
-     * no messages
+     * Verifies that the selector <code>true or true</code> selects
+     * all messages
      *
-     * @jmscts.requirement selector.operator.not
+     * @jmscts.requirement selector.operator.or
      * @jmscts.requirement selector.expression
+     * @jmscts.requirement selector.reservedwords.case
      * @throws Exception for any error
      */
-    public void testNotUnknown() throws Exception {
-        checkSelector("not dummy", false);
+    public void testOrCase() throws Exception {
+        checkSelector("true or true", true);
     }
 
     /**
-     * Verifies that the selector <code>false &lt; true</code> throws
-     * InvalidSelectorException
+     * Verifies that the selector <code>true or dummy</code> selects
+     * all messages, for the unset property 'dummy'
      *
-     * @jmscts.requirement selector.comparison.boolean
-     * @jmscts.requirement selector.validation
+     * @jmscts.requirement selector.operator.or
+     * @jmscts.requirement selector.expression
+     * @jmscts.requirement selector.values.null
      * @throws Exception for any error
      */
-    public void testLessThan() throws Exception {
-        checkInvalidSelector("false < true");
+    public void testUnsetProperty1() throws Exception {
+        checkSelector("true or dummy", true);
     }
 
     /**
-     * Verifies that the selector <code>false &gt; true</code> throws
-     * InvalidSelectorException
+     * Verifies that the selector <code>false or dummy</code> selects
+     * no messages, for the unset property 'dummy'
      *
-     * @jmscts.requirement selector.comparison.boolean
-     * @jmscts.requirement selector.validation
+     * @jmscts.requirement selector.operator.or
+     * @jmscts.requirement selector.expression
+     * @jmscts.requirement selector.values.null
      * @throws Exception for any error
      */
-    public void testGreaterThan() throws Exception {
-        checkInvalidSelector("false > true");
+    public void testUnsetProperty2() throws Exception {
+        checkSelector("false or dummy", false);
     }
 
     /**
-     * Verifies that the selector <code>false &lt;= true</code> throws
-     * InvalidSelectorException
+     * Verifies that the selector <code>dummy or true</code> selects
+     * all messages, for the unset property 'dummy'
      *
-     * @jmscts.requirement selector.comparison.boolean
-     * @jmscts.requirement selector.validation
+     * @jmscts.requirement selector.operator.or
+     * @jmscts.requirement selector.expression
+     * @jmscts.requirement selector.values.null
      * @throws Exception for any error
      */
-    public void testLessEquals() throws Exception {
-        checkInvalidSelector("false <= true");
+    public void testUnsetProperty3() throws Exception {
+        checkSelector("dummy or true", true);
     }
 
     /**
-     * Verifies that the selector <code>false &gt;= true</code> throws
+     * Verifies that the selector <code>dummy or false</code> selects
+     * no messages, for the unset property 'dummy'
+     *
+     * @jmscts.requirement selector.operator.or
+     * @jmscts.requirement selector.expression
+     * @jmscts.requirement selector.values.null
+     * @throws Exception for any error
+     */
+    public void testUnsetProperty4() throws Exception {
+        checkSelector("dummy or false", false);
+    }
+
+    /**
+     * Verifies that the selector <code>dummy or dummy</code> selects
+     * no messages, for the unset property 'dummy'
+     *
+     * @jmscts.requirement selector.operator.or
+     * @jmscts.requirement selector.expression
+     * @jmscts.requirement selector.values.null
+     * @throws Exception for any error
+     */
+    public void testUnsetProperty5() throws Exception {
+        checkSelector("dummy or dummy", false);
+    }
+
+    /**
+     * Verifies that the selector <code>or</code> throws
      * InvalidSelectorException
      *
-     * @jmscts.requirement selector.comparison.boolean
      * @jmscts.requirement selector.validation
      * @throws Exception for any error
      */
-    public void testGreaterEquals() throws Exception {
-        checkInvalidSelector("false >= true");
+    public void testInvalidOr1() throws Exception {
+        checkInvalidSelector("or");
+    }
+
+    /**
+     * Verifies that the selector <code>true and</code> throws
+     * InvalidSelectorException
+     *
+     * @jmscts.requirement selector.validation
+     * @throws Exception for any error
+     */
+    public void testInvalidOr2() throws Exception {
+        checkInvalidSelector("true or");
+    }
+
+    /**
+     * Verifies that the selector <code>false and</code> throws
+     * InvalidSelectorException
+     *
+     * @jmscts.requirement selector.validation
+     * @throws Exception for any error
+     */
+    public void testInvalidOr3() throws Exception {
+        checkInvalidSelector("or true");
     }
 
 }
