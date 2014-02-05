@@ -20,7 +20,7 @@ public class MainComplianceIT extends TestCase {
 
     public void testAll() throws Exception {
         if (System.getProperty("rabbit.jms.terminationTimeout") == null) {
-            System.setProperty("rabbit.jms.terminationTimeout", "1500");
+            System.setProperty("rabbit.jms.terminationTimeout", "1000");
         }
         String basedir = System.getProperty("basedir");
         ComplianceTestSuite.main(new String[] { "-output",
@@ -31,7 +31,7 @@ public class MainComplianceIT extends TestCase {
 
     public void testSelector() throws Exception {
         if (System.getProperty("rabbit.jms.terminationTimeout") == null) {
-            System.setProperty("rabbit.jms.terminationTimeout", "1500");
+            System.setProperty("rabbit.jms.terminationTimeout", "1000");
         }
         String basedir = System.getProperty("basedir");
         ComplianceTestSuite.main(new String[] { "-output",
