@@ -13,7 +13,7 @@
         run and which are not. This is useful to:
         <ul>
           <li>Help locate problems in a JMS implementation</li>
-          <li>Exclude tests that invoke features not supported by an 
+          <li>Exclude tests that invoke features not supported by an
               implementation.
           </li>
         </ul>
@@ -35,8 +35,8 @@
         </ul>
       </p>
       <p>
-        The following example excludes all test cases that use 
-        XAQueueConnectionFactory and XATopicConnectionFactory. 
+        The following example excludes all test cases that use
+        XAQueueConnectionFactory and XATopicConnectionFactory.
         <source>
 &lt;filter&gt;
   &lt;exclude&gt;
@@ -65,7 +65,7 @@
 
     <section name="Combining filters">
       <p>
-        Test cases can be filtered on more than one criteria. The following 
+        Test cases can be filtered on more than one criteria. The following
         example excludes all tests using NON_PERSISTENT message delivery mode,
         and administered destinations.
         <source>
@@ -78,14 +78,14 @@
         </source>
       </p>
       <p>
-        <strong>Note:</strong> the above does not exclude test cases using administered 
+        <strong>Note:</strong> the above does not exclude test cases using administered
         destinations <strong>and</strong> PERSISTENT delivery mode.
       </p>
     </section>
- 
+
     <section name="Using a filter">
       <p>
-        To run the JMS CTS with a filter, specify the <strong>-filter</strong> 
+        To run the JMS CTS with a filter, specify the <strong>-filter</strong>
         argument. E.g:
       </p>
       <p>
@@ -104,14 +104,14 @@
 
     <section name="Filter elements">
       <p>
-        The following elements may be set in an 
-        <strong>&lt;include&gt;</strong> or <strong>&lt;exclude&gt;</strong> 
+        The following elements may be set in an
+        <strong>&lt;include&gt;</strong> or <strong>&lt;exclude&gt;</strong>
         filter:
         <ul>
           <li><strong>factory</strong>
             <p>
-              The <strong>&lt;factory&gt;</strong> element specifies the 
-              type of connection factory (i.e. javax.jms.ConnectionFactory) to 
+              The <strong>&lt;factory&gt;</strong> element specifies the
+              type of connection factory (i.e. javax.jms.ConnectionFactory) to
               filter. Valid values for this element are:
               <ul>
                 <li>QueueConnectionFactory</li>
@@ -131,8 +131,8 @@
           </li>
           <li><strong>session</strong>
             <p>
-              The <strong>&lt;session&gt;</strong> element specifies the 
-              type of session message acknowledgement behaviour to filter. 
+              The <strong>&lt;session&gt;</strong> element specifies the
+              type of session message acknowledgement behaviour to filter.
               Valid values for this element are:
               <ul>
                 <li>TRANSACTED</li>
@@ -144,7 +144,7 @@
           </li>
           <li><strong>destination</strong>
             <p>
-              The <strong>&lt;destination&gt;</strong> element specifies the 
+              The <strong>&lt;destination&gt;</strong> element specifies the
               type of destination to filter. Valid values for this element
               are:
               <ul>
@@ -156,7 +156,7 @@
           <li><strong>deliveryMode</strong>
             <p>
               The <strong>&lt;deliveryMode&gt;</strong> element specifies the
-              type of message delivery mode to filter (as specified by 
+              type of message delivery mode to filter (as specified by
               javax.jms.DeliveryMode).
               Valid values for this element are:
               <ul>
@@ -167,18 +167,18 @@
           </li>
           <li><strong>receiver</strong>
             <p>
-              The <strong>&lt;receiver&gt;</strong> element specifies the 
-              type of message receiver to filter. Valid values for this 
+              The <strong>&lt;receiver&gt;</strong> element specifies the
+              type of message receiver to filter. Valid values for this
               element are:
               <ul>
                 <li>asynchronous <i>- specifies asynchonous message receipt</i>
                 </li>
                 <li>synchronous <i>- specifies synchronous message receipt</i>
                 </li>
-                <li>asynchronous_durable <i>- specifies asynchronous message 
+                <li>durable_asynchronous <i>- specifies asynchronous message
                   receipt by durable topic subscribers</i>
                 </li>
-                <li>synchronous_durable <i>- specifies synchronous message 
+                <li>durable_synchronous <i>- specifies synchronous message
                    receipt by durable topic subscribers</i>
                 </li>
                 <li>browser <i>- specifies queue browser receipt</i></li>
@@ -187,8 +187,8 @@
           </li>
           <li><strong>message</strong>
             <p>
-              The <strong>&lt;message&gt;</strong> element specifies the 
-              type of message (i.e. javax.jms.Message) to filter. 
+              The <strong>&lt;message&gt;</strong> element specifies the
+              type of message (i.e. javax.jms.Message) to filter.
               Valid values for this element are:
               <ul>
                 <li>BytesMessage</li>
@@ -201,7 +201,7 @@
           </li>
           <li><strong>test</strong>
             <p>
-              The <strong>&lt;test&gt;</strong> element specifies a fully 
+              The <strong>&lt;test&gt;</strong> element specifies a fully
               qualified test case name, without any brackets.
             </p>
           </li>

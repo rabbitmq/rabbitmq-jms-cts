@@ -130,6 +130,10 @@
  </include>
   <include> <receiver>asynchronous</receiver>
  </include>
+  <include> <receiver>durable_synchronous</receiver>
+ </include>
+  <include> <receiver>durable_asynchronous</receiver>
+ </include>
   <include> <receiver>browser</receiver>
  </include>
 

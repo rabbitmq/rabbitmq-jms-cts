@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <!-- ====================================================================== -->
-<!-- RabbitMQ JMS test case filter 2013-NOV-11 - selector tests only        -->
+<!-- RabbitMQ JMS test case filter 2014-FEB-25 - browse tests only          -->
 <!-- ====================================================================== -->
 
 <filter>
@@ -10,10 +10,10 @@
  </exclude>                                                                          <!-- We have not yet implemented XA, we may never -->
   <exclude> <factory>XATopicConnectionFactory</factory>
  </exclude>                                                                          <!-- We have not yet implemented XA, we may never -->
-  <exclude> <factory>QueueConnectionFactory</factory>
- </exclude>                                                                          <!-- We do not test queue selectors, we may never -->
-  <include> <factory>TopicConnectionFactory</factory>
+  <include> <factory>QueueConnectionFactory</factory>
  </include>
+  <exclude> <factory>TopicConnectionFactory</factory>
+ </exclude>                                                                          <!-- We don't use browse on Topic destinations    -->
 
   <!-- ====================================================================== -->
   <!-- The tests below are known to pass                                      -->
@@ -126,14 +126,14 @@
   <exclude> <test>org.exolab.jmscts.test.topic.DurableSubscriberTest.*</test>
  </exclude>
 
-  <include> <receiver>synchronous</receiver>
- </include>
-  <include> <receiver>asynchronous</receiver>
- </include>
+  <exclude> <receiver>synchronous</receiver>
+ </exclude>                                                 <!-- no queue receivers when selecting with browsers -->
+  <exclude> <receiver>asynchronous</receiver>
+ </exclude>                                                 <!-- no queue receivers when selecting with browsers -->
   <exclude> <receiver>durable_synchronous</receiver>
- </exclude>                                                 <!-- no point in using durable subscribers on queues -->
+ </exclude>                                                 <!-- no topic subscribers with browsers              -->
   <exclude> <receiver>durable_asynchronous</receiver>
- </exclude>                                                 <!-- no point in using durable subscribers on queues -->
+ </exclude>                                                 <!-- no topic subscribers with browsers              -->
   <include> <receiver>browser</receiver>
  </include>
 
@@ -155,29 +155,29 @@
   <!-- ====================================================================== -->
 
   <include> <test>org.exolab.jmscts.test.selector.AndOperatorTest.*</test>
- </include>                                                                          <!-- RJMS client does support topic selectors -->
+ </include>                                                                          <!-- RJMS client does support browse selectors -->
   <include> <test>org.exolab.jmscts.test.selector.OrOperatorTest.*</test>
- </include>                                                                          <!-- RJMS client does support topic selectors -->
+ </include>                                                                          <!-- RJMS client does support browse selectors -->
   <include> <test>org.exolab.jmscts.test.selector.InOperatorTest.*</test>
- </include>                                                                          <!-- RJMS client does support topic selectors -->
+ </include>                                                                          <!-- RJMS client does support browse selectors -->
   <include> <test>org.exolab.jmscts.test.selector.BetweenOperatorTest.*</test>
- </include>                                                                          <!-- RJMS client does support topic selectors -->
+ </include>                                                                          <!-- RJMS client does support browse selectors -->
   <include> <test>org.exolab.jmscts.test.selector.BooleanTest.*</test>
- </include>                                                                          <!-- RJMS client does support topic selectors -->
+ </include>                                                                          <!-- RJMS client does support browse selectors -->
   <include> <test>org.exolab.jmscts.test.selector.EmptySelectorTest.*</test>
- </include>                                                                          <!-- RJMS client does support topic selectors -->
+ </include>                                                                          <!-- RJMS client does support browse selectors -->
   <include> <test>org.exolab.jmscts.test.selector.FloatTest.*</test>
- </include>                                                                          <!-- RJMS client does support topic selectors -->
+ </include>                                                                          <!-- RJMS client does support browse selectors -->
   <include> <test>org.exolab.jmscts.test.selector.IdentifierTest.*</test>
- </include>                                                                          <!-- RJMS client does support topic selectors -->
+ </include>                                                                          <!-- RJMS client does support browse selectors -->
   <include> <test>org.exolab.jmscts.test.selector.JMSDeliveryModeTest.*</test>
- </include>                                                                          <!-- RJMS client does support topic selectors -->
+ </include>                                                                          <!-- RJMS client does support browse selectors -->
   <include> <test>org.exolab.jmscts.test.selector.JMSPriorityTest.*</test>
- </include>                                                                          <!-- RJMS client does support topic selectors -->
+ </include>                                                                          <!-- RJMS client does support browse selectors -->
   <include> <test>org.exolab.jmscts.test.selector.JMSTimestampTest.*</test>
- </include>                                                                          <!-- RJMS client does support topic selectors -->
+ </include>                                                                          <!-- RJMS client does support browse selectors -->
   <include> <test>org.exolab.jmscts.test.selector.StringTest.*</test>
- </include>                                                                          <!-- RJMS client does support topic selectors -->
+ </include>                                                                          <!-- RJMS client does support browse selectors -->
 
   <!-- ====================================================================== -->
   <!-- and here are tests that we think should never pass                     -->

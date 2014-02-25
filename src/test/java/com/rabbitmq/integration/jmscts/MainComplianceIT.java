@@ -40,4 +40,14 @@ public class MainComplianceIT extends TestCase {
                                                 new File(basedir, "config/selector-filter.xml").getAbsolutePath() });
     }
 
+    public void testBrowse() throws Exception {
+        if (System.getProperty("rabbit.jms.terminationTimeout") == null) {
+            System.setProperty("rabbit.jms.terminationTimeout", "1000");
+        }
+        String basedir = System.getProperty("basedir");
+        ComplianceTestSuite.main(new String[] { "-output",
+                                                new File(basedir, "target/jmscts-browse-report").getAbsolutePath(),
+                                                "-filter",
+                                                new File(basedir, "config/browse-filter.xml").getAbsolutePath() });
+    }
 }
