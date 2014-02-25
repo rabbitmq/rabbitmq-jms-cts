@@ -44,6 +44,7 @@
   <exclude> <test>org.exolab.jmscts.test.message.properties.JMSXGroupTest.*</test>            </exclude>
   <exclude> <test>org.exolab.jmscts.test.message.properties.PropertyConversionTest.*</test>   </exclude>
   <exclude> <test>org.exolab.jmscts.test.message.properties.PropertyTest.*</test>             </exclude>
+  <exclude> <test>org.exolab.jmscts.test.message.properties.PropertyTypeTest.*</test>         </exclude>
   <exclude> <test>org.exolab.jmscts.test.message.readwrite.ReadWriteTest.*</test>             </exclude>
   <exclude> <test>org.exolab.jmscts.test.message.readwrite.SendReceiveReadWriteTest.*</test>  </exclude>
   <exclude> <test>org.exolab.jmscts.test.message.stream.StreamMessageTest.*</test>            </exclude>
@@ -68,8 +69,10 @@
   <exclude> <test>org.exolab.jmscts.test.topic.DuplicateDurableSubscriberTest.*</test>        </exclude>
   <exclude> <test>org.exolab.jmscts.test.topic.DurableSubscriberTest.*</test>                 </exclude>
 
+  <exclude> <receiver>browser</receiver>                                                      </exclude> <!-- QueueBrowsers - from RJMS 1.2.0 -->
+
   <exclude> <factory>QueueConnectionFactory</factory>                                         </exclude> <!-- RJMS client only supports topic selectors -->
-  <include> <test>org.exolab.jmscts.test.selector.StringTest.*</test>                         </include> <!-- RJMS client only supports topic selectors -->
+
   <include> <test>org.exolab.jmscts.test.selector.AndOperatorTest.*</test>                    </include> <!-- RJMS client only supports topic selectors -->
   <include> <test>org.exolab.jmscts.test.selector.OrOperatorTest.*</test>                     </include> <!-- RJMS client only supports topic selectors -->
   <include> <test>org.exolab.jmscts.test.selector.InOperatorTest.*</test>                     </include> <!-- RJMS client only supports topic selectors -->
@@ -80,6 +83,8 @@
   <include> <test>org.exolab.jmscts.test.selector.IdentifierTest.*</test>                     </include> <!-- RJMS client only supports topic selectors -->
   <include> <test>org.exolab.jmscts.test.selector.JMSDeliveryModeTest.*</test>                </include> <!-- RJMS client only supports topic selectors -->
   <include> <test>org.exolab.jmscts.test.selector.JMSPriorityTest.*</test>                    </include> <!-- RJMS client only supports topic selectors -->
+  <include> <test>org.exolab.jmscts.test.selector.JMSTimestampTest.*</test>                   </include> <!-- RJMS client only supports topic selectors -->
+  <include> <test>org.exolab.jmscts.test.selector.StringTest.*</test>                         </include> <!-- RJMS client only supports topic selectors -->
 
   <!-- ====================================================================== -->
   <!-- Below are tests we yet have to test                                    -->
@@ -92,7 +97,6 @@
   <exclude> <test>org.exolab.jmscts.test.topic.NoLocalTest.*</test>                           </exclude> <!-- RabbitMQ doesn't support noLocal -->
   <exclude> <test>org.exolab.jmscts.test.message.foreign.ForeignMessageTest.*</test>          </exclude> <!-- we don't allow 'foreign' messages created outside of our implementation -->
   <exclude> <test>org.exolab.jmscts.test.asf.ConnectionConsumerTest.test</test>               </exclude> <!-- we don't support Connection Consumers -->
-  <exclude> <receiver>browser</receiver>                                                      </exclude> <!-- QueueBrowsers - we don't support those -->
 
   <!-- ====================================================================== -->
   <!-- and here are tests that we think should never pass                     -->
