@@ -150,7 +150,7 @@ public class BetweenOperatorTest extends AbstractSelectorTestCase {
     /**
      * Verifies that the selector <code>two between one and three</code>
      * selects all messages, where one, two and three are integer properties
-     * with with corresponding values
+     * with with corresponding values 1, 2 and 3.
      *
      * @jmscts.requirement selector.operator.between
      * @jmscts.requirement selector.expression
@@ -211,8 +211,8 @@ public class BetweenOperatorTest extends AbstractSelectorTestCase {
 
     /**
      * Verifies that the selector <code>two not between one and three</code>
-     * selects all messages, where one, two and three are integer properties
-     * with with corresponding values
+     * selects no messages, where one, two and three are integer properties
+     * with with corresponding values 1, 2 and 3.
      *
      * @jmscts.requirement selector.operator.between
      * @jmscts.requirement selector.expression
