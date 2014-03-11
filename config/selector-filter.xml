@@ -130,10 +130,10 @@
  </include>
   <include> <receiver>asynchronous</receiver>
  </include>
-  <exclude> <receiver>durable_synchronous</receiver>
- </exclude>                                                 <!-- no point in using durable subscribers on queues -->
-  <exclude> <receiver>durable_asynchronous</receiver>
- </exclude>                                                 <!-- no point in using durable subscribers on queues -->
+  <include> <receiver>durable_synchronous</receiver>
+ </include>
+  <include> <receiver>durable_asynchronous</receiver>
+ </include>
   <include> <receiver>browser</receiver>
  </include>
 
