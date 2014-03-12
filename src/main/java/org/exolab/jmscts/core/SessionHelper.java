@@ -44,8 +44,6 @@
  */
 package org.exolab.jmscts.core;
 
-import java.lang.reflect.Method;
-
 import javax.jms.Destination;
 import javax.jms.JMSException;
 import javax.jms.MessageConsumer;
@@ -104,7 +102,7 @@ public final class SessionHelper {
             session = ((XATopicSession) session).getTopicSession();
         }
 
-        if (isQueue(destination)) {
+        if (isQueueType(sessionType)) {
             Queue queue = (Queue) destination;
             result = ((QueueSession) session).createReceiver(queue);
         } else {
@@ -147,7 +145,7 @@ public final class SessionHelper {
             session = ((XATopicSession) session).getTopicSession();
         }
 
-        if (isQueue(destination)) {
+        if (isQueueType(sessionType)) {
             Queue queue = (Queue) destination;
             result = ((QueueSession) session).createReceiver(queue, selector);
         } else {
@@ -161,16 +159,6 @@ public final class SessionHelper {
             }
         }
         return result;
-    }
-
-    private final static boolean isQueue(Object o) {
-        try {
-            Method m = o.getClass().getMethod("isQueue", new Class[0]);
-            return (Boolean)m.invoke(o, new Object[0]);
-        }catch (Exception x) {
-            x.printStackTrace();
-        }
-        return false;
     }
 
     /**
@@ -191,7 +179,7 @@ public final class SessionHelper {
             session = ((XATopicSession) session).getTopicSession();
         }
 
-        if (isQueue(destination)) {
+        if (isQueueType(sessionType)) {
             Queue queue = (Queue) destination;
             result = ((QueueSession) session).createSender(queue);
         } else {
@@ -340,6 +328,10 @@ public final class SessionHelper {
         return result;
     }
 
+    private static final boolean isQueueType(Class<?> sessionType) {
+        return (sessionType == XAQueueSession.class || sessionType == QueueSession.class);
+    }
+
     /**
      * Create a {@link MessageReceiver} for the supplied test context and
      * destination
@@ -432,7 +424,7 @@ public final class SessionHelper {
             session = ((XATopicSession) session).getTopicSession();
         }
 
-        if (isQueue(destination)) {
+        if (isQueueType(sessionType)) {
             result = new QueueMessageSender((QueueSender) producer, behaviour);
         } else {
             result = new TopicMessageSender((TopicPublisher) producer,
