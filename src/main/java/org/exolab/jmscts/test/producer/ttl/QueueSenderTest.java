@@ -127,7 +127,7 @@ public class QueueSenderTest extends TimeToLiveTestCase {
 
         // construct a sender
         QueueSender sender = (QueueSender)
-            SessionHelper.createProducer(context.getSession(),
+            SessionHelper.createProducer(context,
                                          getDestination(DESTINATION));
 
         assertEquals("Default time-to-live incorrect for QueueSender",
@@ -155,7 +155,7 @@ public class QueueSenderTest extends TimeToLiveTestCase {
         TestContext context = getContext();
         Queue queue = (Queue) getDestination(DESTINATION);
         QueueSender sender = (QueueSender)
-            SessionHelper.createProducer(context.getSession(), null);
+            SessionHelper.createProducer(context, null);
 
         assertEquals("Default time-to-live incorrect for QueueSender "
                      + "created with an anonymous queue",
@@ -184,7 +184,7 @@ public class QueueSenderTest extends TimeToLiveTestCase {
 
         // construct a sender, and set its ttl
         QueueSender sender = (QueueSender)
-            SessionHelper.createProducer(context.getSession(),
+            SessionHelper.createProducer(context,
                                          getDestination(DESTINATION));
         sender.setTimeToLive(timeToLive);
         assertEquals("Failed to set the time-to-live on QueueSender",
@@ -213,7 +213,7 @@ public class QueueSenderTest extends TimeToLiveTestCase {
 
         // construct a sender, and set its ttl
         QueueSender sender = (QueueSender)
-            SessionHelper.createProducer(context.getSession(), null);
+            SessionHelper.createProducer(context, null);
         sender.setTimeToLive(timeToLive);
 
         assertEquals("Failed to set the time-to-live on QueueSender "
@@ -242,7 +242,7 @@ public class QueueSenderTest extends TimeToLiveTestCase {
 
         // construct a sender
         QueueSender sender = (QueueSender)
-            SessionHelper.createProducer(context.getSession(),
+            SessionHelper.createProducer(context,
                                          getDestination(DESTINATION));
 
         // construct a receiver to consume the message
@@ -283,7 +283,7 @@ public class QueueSenderTest extends TimeToLiveTestCase {
 
         // construct a sender
         QueueSender sender = (QueueSender)
-            SessionHelper.createProducer(context.getSession(), null);
+            SessionHelper.createProducer(context, null);
 
         // construct a receiver to consume the message
         MessageReceiver receiver = createReceiver(DESTINATION);

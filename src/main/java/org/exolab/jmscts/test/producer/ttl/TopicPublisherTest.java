@@ -127,7 +127,7 @@ public class TopicPublisherTest extends TimeToLiveTestCase {
 
         // construct a publisher
         TopicPublisher publisher = (TopicPublisher)
-            SessionHelper.createProducer(context.getSession(),
+            SessionHelper.createProducer(context,
                                          getDestination(DESTINATION));
 
         assertEquals("Default time-to-live incorrect for TopicPublisher",
@@ -155,7 +155,7 @@ public class TopicPublisherTest extends TimeToLiveTestCase {
         TestContext context = getContext();
         Topic topic = (Topic) getDestination(DESTINATION);
         TopicPublisher publisher = (TopicPublisher)
-            SessionHelper.createProducer(context.getSession(), null);
+            SessionHelper.createProducer(context, null);
 
         assertEquals("Default time-to-live incorrect for TopicPublisher "
                      + "created with an anonymous topic",
@@ -184,7 +184,7 @@ public class TopicPublisherTest extends TimeToLiveTestCase {
 
         // construct a publisher, and set its ttl
         TopicPublisher publisher = (TopicPublisher)
-            SessionHelper.createProducer(context.getSession(),
+            SessionHelper.createProducer(context,
                                          getDestination(DESTINATION));
         publisher.setTimeToLive(timeToLive);
         assertEquals("Failed to set the time-to-live on TopicPublisher",
@@ -213,7 +213,7 @@ public class TopicPublisherTest extends TimeToLiveTestCase {
 
         // construct a publisher, and set its ttl
         TopicPublisher publisher = (TopicPublisher)
-            SessionHelper.createProducer(context.getSession(), null);
+            SessionHelper.createProducer(context, null);
         publisher.setTimeToLive(timeToLive);
 
         assertEquals("Failed to set the time-to-live on TopicPublisher "
@@ -243,7 +243,7 @@ public class TopicPublisherTest extends TimeToLiveTestCase {
 
         // construct a publisher
         TopicPublisher publisher = (TopicPublisher)
-            SessionHelper.createProducer(context.getSession(),
+            SessionHelper.createProducer(context,
                                          getDestination(DESTINATION));
 
         // construct a receiver to consume the message
@@ -285,7 +285,7 @@ public class TopicPublisherTest extends TimeToLiveTestCase {
 
         // construct a publisher
         TopicPublisher publisher = (TopicPublisher)
-            SessionHelper.createProducer(context.getSession(), null);
+            SessionHelper.createProducer(context, null);
 
         // construct a receiver to consume the message
         MessageReceiver receiver = createReceiver(DESTINATION);

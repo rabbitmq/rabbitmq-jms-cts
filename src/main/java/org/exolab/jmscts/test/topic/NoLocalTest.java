@@ -139,8 +139,7 @@ public class NoLocalTest extends AbstractSendReceiveTestCase {
             // Use another session, in case the provider doesn't support
             // multiple receivers to the same topic per session
             session = ConnectionHelper.createSession(context);
-            receiver = SessionHelper.createReceiver(
-                session, destination, context.getMessagingBehaviour());
+            receiver = SessionHelper.createReceiver(context, destination);
 
             send(destination, count);
 
