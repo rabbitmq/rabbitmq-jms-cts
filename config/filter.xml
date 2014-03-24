@@ -57,6 +57,8 @@
  </include>
   <include> <test>org.exolab.jmscts.test.message.copy.StreamMessageTest.*</test>
  </include>
+  <include> <test>org.exolab.jmscts.test.message.foreign.ForeignMessageTest.*</test>
+ </include>
   <include> <test>org.exolab.jmscts.test.message.header.JMSCorrelationIDTest.*</test>
  </include>
   <include> <test>org.exolab.jmscts.test.message.header.JMSDestinationTest.*</test>
@@ -147,8 +149,6 @@
 
   <exclude> <test>org.exolab.jmscts.test.topic.NoLocalTest.*</test>
  </exclude>                                                                          <!-- RabbitMQ doesn't support noLocal -->
-  <exclude> <test>org.exolab.jmscts.test.message.foreign.ForeignMessageTest.*</test>
- </exclude>                                                                          <!-- we don't allow 'foreign' messages created outside of our implementation -->
 
   <!-- ====================================================================== -->
   <!-- Here are conditional tests that we think should pass in some cases     -->
