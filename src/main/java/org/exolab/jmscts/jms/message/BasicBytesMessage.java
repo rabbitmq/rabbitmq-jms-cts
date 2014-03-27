@@ -760,7 +760,19 @@ public class BasicBytesMessage extends BasicMessage implements BytesMessage {
     }
 
 public long getBodyLength() throws JMSException {
- return 0;
+    try {
+        if (getBodyReadOnly()) {
+            if (_bytes!=null) return _bytes.length;
+        } else {
+            if (_out!=null) {
+                _out.flush();
+                return _byteOut.size();
+            }
+        }
+    } catch (IOException ioe) {
+        raise(ioe);
+    }
+    return 0;
 }
     /**
      * Set the read-only mode of the message.
