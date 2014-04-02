@@ -186,7 +186,4 @@
   <exclude> <test>org.exolab.jmscts.test.asf.ConnectionConsumerTest.*</test>
  </exclude>                                                                          <!-- we don't support Connection Consumers -->
 
-  <exclude> <test>org.exolab.jmscts.test.session.clientack.ClientAcknowledgeTest.testPartialClientAcknowledge</test>
- </exclude>               <!-- The spec is pretty clear, ack one message in a session, and you ack them all; partial ack is not tested -->
-
 </filter>
