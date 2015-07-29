@@ -299,7 +299,7 @@ public final class AttributeHelper {
      * @return the formatted values
      */
     private static String format(String[] values) {
-        StringBuffer result = new StringBuffer();
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < values.length; ++i) {
             if (i > 0) {
                 result.append(", ");

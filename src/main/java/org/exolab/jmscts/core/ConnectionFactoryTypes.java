@@ -134,7 +134,7 @@ public final class ConnectionFactoryTypes {
      */
     @Override
     public String toString() {
-        StringBuffer result = new StringBuffer();
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < _types.length; ++i) {
             if (i >  0) {
                 result.append(",");

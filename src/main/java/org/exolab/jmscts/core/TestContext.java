@@ -671,7 +671,7 @@ public final class TestContext {
      */
     @Override
     public String toString() {
-        StringBuffer result = new StringBuffer();
+        StringBuilder result = new StringBuilder();
         String type = null;
 
         if (getConnectionFactoryType() != null) {

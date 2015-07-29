@@ -268,7 +268,7 @@ public class ConfigExpander implements EventProducer {
          * value unchanged.
          */
         private String expand(String name, String value) {
-            StringBuffer buffer = new StringBuffer();
+            StringBuilder buffer = new StringBuilder();
             int prev = 0;
             int pos;
             while ((pos = value.indexOf("${", prev)) >= 0) {
@@ -301,8 +301,7 @@ public class ConfigExpander implements EventProducer {
             if (prev < value.length()) {
                 buffer.append(value.substring(prev));
             }
-            String result = buffer.toString();
-            return result;
+            return buffer.toString();
         }
 
     }

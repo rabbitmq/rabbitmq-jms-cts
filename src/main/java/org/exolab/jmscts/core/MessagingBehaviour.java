@@ -277,7 +277,7 @@ public class MessagingBehaviour {
      */
     @Override
     public String toString() {
-        StringBuffer result = new StringBuffer("delivery mode=");
+        StringBuilder result = new StringBuilder("delivery mode=");
         result.append((_deliveryMode == DeliveryMode.PERSISTENT)
                       ? "PERSISTENT" : "NON_PERSISTENT");
         if (_receipt != null) {

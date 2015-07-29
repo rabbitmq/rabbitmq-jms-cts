@@ -2,29 +2,29 @@
  * Redistribution and use of this software and associated documentation
  * ("Software"), with or without modification, are permitted provided
  * that the following conditions are met:
- *
+ * <p/>
  * 1. Redistributions of source code must retain copyright
- *    statements and notices.  Redistributions must also contain a
- *    copy of this document.
- *
+ * statements and notices.  Redistributions must also contain a
+ * copy of this document.
+ * <p/>
  * 2. Redistributions in binary form must reproduce the
- *    above copyright notice, this list of conditions and the
- *    following disclaimer in the documentation and/or other
- *    materials provided with the distribution.
- *
+ * above copyright notice, this list of conditions and the
+ * following disclaimer in the documentation and/or other
+ * materials provided with the distribution.
+ * <p/>
  * 3. The name "Exolab" must not be used to endorse or promote
- *    products derived from this Software without prior written
- *    permission of Exoffice Technologies.  For written permission,
- *    please contact tma@netspace.net.au.
- *
+ * products derived from this Software without prior written
+ * permission of Exoffice Technologies.  For written permission,
+ * please contact tma@netspace.net.au.
+ * <p/>
  * 4. Products derived from this Software may not be called "Exolab"
- *    nor may "Exolab" appear in their names without prior written
- *    permission of Exoffice Technologies. Exolab is a registered
- *    trademark of Exoffice Technologies.
- *
+ * nor may "Exolab" appear in their names without prior written
+ * permission of Exoffice Technologies. Exolab is a registered
+ * trademark of Exoffice Technologies.
+ * <p/>
  * 5. Due credit should be given to the Exolab Project
- *    (http://www.exolab.org/).
- *
+ * (http://www.exolab.org/).
+ * <p/>
  * THIS SOFTWARE IS PROVIDED BY EXOFFICE TECHNOLOGIES AND CONTRIBUTORS
  * ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT
  * NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
@@ -37,9 +37,9 @@
  * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
  * OF THE POSSIBILITY OF SUCH DAMAGE.
- *
+ * <p/>
  * Copyright 2001-2004 (C) Exoffice Technologies Inc. All Rights Reserved.
- *
+ * <p/>
  * $Id: AsyncExecutor.java,v 1.4 2004/02/03 21:52:06 tanderson Exp $
  */
 package org.exolab.jmscts.core;
@@ -57,10 +57,10 @@ import org.exolab.jmscts.core.service.ExecutionMonitorService;
  * Clients can register a listener to be notified when the application
  * starts and stops.
  *
- * @version     $Revision: 1.4 $ $Date: 2004/02/03 21:52:06 $
- * @author      <a href="mailto:tma@netspace.net.au">Tim Anderson</a>
- * @see         Executor
- * @see         ExecutionListener
+ * @author <a href="mailto:tma@netspace.net.au">Tim Anderson</a>
+ * @version $Revision: 1.4 $ $Date: 2004/02/03 21:52:06 $
+ * @see Executor
+ * @see ExecutionListener
  */
 public class AsyncExecutor {
 
@@ -83,7 +83,7 @@ public class AsyncExecutor {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(AsyncExecutor.class.getName());
+            Logger.getLogger(AsyncExecutor.class.getName());
 
 
     /**
@@ -91,8 +91,8 @@ public class AsyncExecutor {
      * System.err
      *
      * @param application the class of the application to execute
-     * @param arguments any arguments to pass to the application
-     * @param port the RMI registry port
+     * @param arguments   any arguments to pass to the application
+     * @param port        the RMI registry port
      */
     public AsyncExecutor(Class<?> application, String arguments, int port) {
         this(application, arguments, System.out, System.err, port);
@@ -102,9 +102,9 @@ public class AsyncExecutor {
      * Constructor to execute a command, with all output going to a stream
      *
      * @param application the class of the application to execute
-     * @param arguments any arguments to pass to the application
-     * @param out the stream to log output to
-     * @param port the RMI registry port
+     * @param arguments   any arguments to pass to the application
+     * @param out         the stream to log output to
+     * @param port        the RMI registry port
      */
     public AsyncExecutor(Class<?> application, String arguments,
                          OutputStream out, int port) {
@@ -116,10 +116,10 @@ public class AsyncExecutor {
      * going to two separate streams
      *
      * @param application the class of the application to execute
-     * @param arguments any arguments to pass to the application
-     * @param out the stream to direct standard output to
-     * @param err the stream to direct standard error to
-     * @param port the RMI registry port
+     * @param arguments   any arguments to pass to the application
+     * @param out         the stream to direct standard output to
+     * @param err         the stream to direct standard error to
+     * @param port        the RMI registry port
      */
     public AsyncExecutor(Class<?> application, String arguments, OutputStream out,
                          OutputStream err, int port) {
@@ -134,30 +134,23 @@ public class AsyncExecutor {
         }
         _id = ExecutionMonitorService.instance().allocateId();
 
-        StringBuffer command = new StringBuffer();
-        command.append(System.getProperty("java.home"));
-        command.append("/bin/java ");
-        String policy = System.getProperty("java.security.policy");
-        if (policy != null) {
-            command.append(" -Djava.security.policy=");
-            command.append(policy);
-            command.append(" ");
+        StringBuilder sCommand = new StringBuilder(System.getProperty("java.home")).append("/bin/java");
+        {
+            String policy = System.getProperty("java.security.policy");
+            if (policy != null) {
+                sCommand.append(" -Djava.security.policy=").append(policy);
+            }
         }
-        command.append(" -classpath ");
-        command.append(System.getProperty("java.class.path"));
-        command.append(" ");
-        command.append(ApplicationRunner.class.getName());
-        command.append(" ");
-        command.append(_id);
-        command.append(" ");
-        command.append(port);
-        command.append(" ");
-        command.append(application.getName());
+        sCommand.append(" -classpath ").append(System.getProperty("java.class.path"))
+                .append(" ").append(ApplicationRunner.class.getName())
+                .append(" ").append(_id)
+                .append(" ").append(port)
+                .append(" ").append(application.getName());
         if (arguments != null) {
-            command.append(" ");
-            command.append(arguments);
+            sCommand.append(" ");
+            sCommand.append(arguments);
         }
-        _command = command.toString();
+        _command = sCommand.toString();
     }
 
     /**

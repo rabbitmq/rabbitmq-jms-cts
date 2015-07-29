@@ -258,7 +258,6 @@ public abstract class MessagingTool {
     protected void log(Message message) {
         String messageId = null;
         String mode = null;
-        new StringBuffer();
         try {
             messageId = message.getJMSMessageID();
             if (message.getJMSDeliveryMode() == DeliveryMode.PERSISTENT) {
