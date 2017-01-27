@@ -2,21 +2,30 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <groupId>com.rabbitmq.jms</groupId>
   <artifactId>jmscts</artifactId>
+  <version>1.6.06-SNAPSHOT</version>
 
   <name>rabbit-jmscts</name>
   <description>Compliance Test Suite for RabbitMQ JMS</description>
 
   <packaging>jar</packaging>
 
-  <parent>
-    <groupId>com.rabbitmq.jms</groupId>
-    <artifactId>rabbitmq-jms-parent</artifactId>
-    <version>1.4.7-SNAPSHOT</version>
-  </parent>
-
   <properties>
+    <!-- overridable parameter -->
+    <rabbitmq-jms.version>1.4.7</rabbitmq-jms.version>
+    <rabbitmq.version>3.6.6</rabbitmq.version>
+
+    <!-- pervasive properties -->
+    <java-compile-version>1.6</java-compile-version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
     <!-- private project build dependencies -->
+    <geronimo-spec.version>1.1.1</geronimo-spec.version>
+    <slf4j-api.version>1.7.5</slf4j-api.version>
+    <slf4j-simple.version>1.7.5</slf4j-simple.version>
+    <mockito-core.version>1.9.5</mockito-core.version>
+    <junit.version>4.11</junit.version>
     <commons-cli.version>1.2</commons-cli.version>
     <commons-collections.version>2.1.1</commons-collections.version>
     <commons-logging.version>1.0.4</commons-logging.version>
@@ -30,6 +39,36 @@
     <castor.version>0.9.4.3</castor.version>
     <xalan.version>2.5.1</xalan.version>
     <xerces-impl.version>2.9.0</xerces-impl.version>
+
+    <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+    <maven-failsafe-plugin.version>2.16</maven-failsafe-plugin.version>
+    <maven-antrun-plugin.version>1.7</maven-antrun-plugin.version>
+    <ant-junit.version>1.9.2</ant-junit.version>
+    <ant.version>1.9.2</ant.version>
+
+    <!--
+    These groovy scripts are used later in this POM file for the
+    testsuite.
+    -->
+    <groovy-scripts.dir>${basedir}/src/main/scripts</groovy-scripts.dir>
+    <!--
+    ${deps.dir} should point to a directory containing a working copy of
+    rabbitmq-server and of the JMS topic exchange plugin, named "rabbit"
+    and "rabbitmq_jms_topic_exchange", respectively.
+
+    "rabbit" and "rabbitmq_jms_topic_exchange" are used to automatically
+    setup a RabbitMQ node with the JMS topic exchange plugin for the testsuite.
+    -->
+    <deps.dir>${basedir}/deps</deps.dir>
+
+    <!-- For testing only -->
+    <make.bin>make</make.bin>
+    <rabbitmq.dir>${deps.dir}/rabbit</rabbitmq.dir>
+    <rabbitmqctl.bin>${rabbitmq.dir}/scripts/rabbitmqctl</rabbitmqctl.bin>
+
+    <test-broker.A.nodename>rabbit@localhost</test-broker.A.nodename>
+    <test-broker.A.node_port>5672</test-broker.A.node_port>
+    <test-broker.A.config_file>${project.build.directory}/test-classes/${test-broker.A.nodename}</test-broker.A.config_file>
   </properties>
 
   <dependencies>
@@ -37,6 +76,7 @@
     <dependency>
       <groupId>org.apache.geronimo.specs</groupId>
       <artifactId>geronimo-jms_1.1_spec</artifactId>
+      <version>${geronimo-spec.version}</version>
     </dependency>
 
     <dependency>
@@ -110,21 +150,15 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
     </dependency>
 
     <!-- test scope -->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>rabbitmq-jms</artifactId>
+      <version>${rabbitmq-jms.version}</version>
       <scope>test</scope>
-    </dependency>
-
-    <!-- runtime scope -->
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>rjms-topic-selector</artifactId>
-      <scope>runtime</scope>
-      <type>ez</type>
     </dependency>
 
   </dependencies>
@@ -136,14 +170,34 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+        <configuration>
+          <source>${java-compile-version}</source>
+          <target>${java-compile-version}</target>
+        </configuration>
       </plugin>
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
+        <version>${maven-failsafe-plugin.version}</version>
 
         <configuration>
+          <encoding>UTF-8</encoding>
+          <systemPropertyVariables>
+            <RABBITMQ_VERSION>${rabbitmq.version}</RABBITMQ_VERSION>
+            <make.bin>${make.bin}</make.bin>
+            <rabbitmq.dir>${rabbitmq.dir}</rabbitmq.dir>
+            <rabbitmqctl.bin>${rabbitmqctl.bin}</rabbitmqctl.bin>
+
+            <test-broker.A.nodename>${test-broker.A.nodename}</test-broker.A.nodename>
+            <test-broker.A.node_port>${test-broker.A.node_port}</test-broker.A.node_port>
+            <test-broker.A.config_file>${test-broker.A.config_file}</test-broker.A.config_file>
+          </systemPropertyVariables>
           <argLine>-Xms1024m -Xmx4096m</argLine>
+          <environmentVariables>
+            <DEPS_DIR>${deps.dir}</DEPS_DIR>
+          </environmentVariables>
         </configuration>
 
         <executions>
@@ -166,6 +220,20 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-antrun-plugin</artifactId>
+        <version>${maven-antrun-plugin.version}</version>
+
+        <dependencies>
+          <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant-junit</artifactId>
+            <version>${ant-junit.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant</artifactId>
+            <version>${ant.version}</version>
+          </dependency>
+        </dependencies>
 
         <executions>
           <execution>
@@ -189,85 +257,133 @@
 
       </plugin>
 
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-
-        <executions>
-          <execution>
-            <id>get-rabbitmq-plugin</id>
-            <phase>pre-integration-test</phase>
-            <goals>
-              <goal>copy</goal>
-            </goals>
-            <configuration>
-              <artifactItems>
-                <artifactItem>
-                  <groupId>${project.groupId}</groupId>
-                  <artifactId>rjms-topic-selector</artifactId>
-                  <version>${rjms-topic-selector.version}</version>
-                  <type>ez</type>
-                  <outputDirectory>${project.build.directory}/plugins</outputDirectory>
-                </artifactItem>
-              </artifactItems>
-            </configuration>
-          </execution>
-        </executions>
-
-      </plugin>
-
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-
-        <configuration>
-          <commandlineArgs>${rabbitmq.version}</commandlineArgs>
-        </configuration>
-        <executions>
-          <execution>
-            <id>set-up-rabbit</id>
-            <phase>pre-integration-test</phase>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <configuration>
-              <executable>../bin/setUpIntegrationTests</executable>
-            </configuration>
-          </execution>
-
-          <execution>
-            <id>tear-down-rabbit</id>
-            <phase>post-integration-test</phase>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <configuration>
-              <executable>../bin/tearDownIntegrationTests</executable>
-            </configuration>
-          </execution>
-        </executions>
-
-      </plugin>
 
     </plugins>
 
   </build>
+  <profiles>
+    <profile>
+      <!--
+      If we detect the RabbitMQ Umbrella project, use its dependencies
+      directory.
+      -->
+      <id>in-umbrella</id>
+      <activation>
+        <file>
+          <exists>../../UMBRELLA.md</exists>
+        </file>
+      </activation>
+      <properties>
+        <deps.dir>${basedir}/..</deps.dir>
+      </properties>
+    </profile>
+
+    <profile>
+      <!-- On FreeBSD, GNU Make is installed as "gmake". -->
+      <id>use-gmake</id>
+      <activation>
+        <os><name>FreeBSD</name></os>
+      </activation>
+      <properties>
+        <make.bin>gmake</make.bin>
+      </properties>
+    </profile>
+
+    <profile>
+      <!-- On Windows, use the Batch version of rabbitmqctl. -->
+      <id>use-rabbitmqctl.bat</id>
+      <activation>
+        <os><family>Windows</family></os>
+      </activation>
+      <properties>
+        <rabbitmqctl.bin>${rabbitmq.dir}/scripts/rabbitmqctl.bat</rabbitmqctl.bin>
+      </properties>
+    </profile>
+
+    <profile>
+      <!--
+      To ease testing, this POM can setup a RabbitMQ
+      node automatically.
+
+      It depends on the presence of ${rabbitmq.dir} which points to
+      a working copy of the rabbitmq-server Git repository. If it
+      is missing, nothing is setup and the testsuite relies on an
+      externally provided broker/cluster.
+
+      If you want to explicitely disable the automatic cluster setup,
+      you must disable this profile:
+
+          mvn verify -P '!setup-test-node'
+
+      -->
+      <id>setup-test-node</id>
+      <activation>
+        <property>
+          <name>!skipTests</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.gmaven</groupId>
+            <artifactId>groovy-maven-plugin</artifactId>
+            <version>2.0</version>
+            <executions>
+              <!--
+              Start a broker.
+
+              Currently, this test broker will listen to the default
+              TCP ports of 5672 for AMQP. Unfortunately, this means
+              no other standard RabbitMQ can run on the same host at the same time.
+              -->
+              <execution>
+                <phase>pre-integration-test</phase>
+                <id>start-test-broker-A</id>
+                <goals>
+                  <goal>execute</goal>
+                </goals>
+                <configuration>
+                  <properties>
+                    <nodename>${test-broker.A.nodename}</nodename>
+                    <node_port>${test-broker.A.node_port}</node_port>
+                  </properties>
+                  <source>
+                    ${groovy-scripts.dir}/manage_test_broker.groovy
+                  </source>
+                </configuration>
+              </execution>
+
+              <!--
+              After the testsuite, no matter the result, stop both the test broker.
+              -->
+              <execution>
+                <phase>post-integration-test</phase>
+                <id>stop-test-broker-A</id>
+                <goals>
+                  <goal>execute</goal>
+                </goals>
+                <configuration>
+                  <properties>
+                    <nodename>${test-broker.A.nodename}</nodename>
+                  </properties>
+                  <source>
+                    ${groovy-scripts.dir}/manage_test_broker.groovy
+                  </source>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
   <repositories>
     <repository>
       <id>jboss.org</id>
       <name>Jboss Maven 2 Repository</name>
       <url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
-    </repository>
-    <repository>
-      <id>vmware-release</id>
-      <name>VMware Release repository</name>
-      <url>http://private.maven.vmware.com.s3.amazonaws.com/release</url>
-    </repository>
-    <repository>
-      <id>vmware-snapshot</id>
-      <name>VMware Snapshot repository</name>
-      <url>http://private.maven.vmware.com.s3.amazonaws.com/snapshot</url>
     </repository>
   </repositories>
 
