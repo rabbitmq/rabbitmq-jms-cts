@@ -4,7 +4,7 @@
 
   <groupId>com.rabbitmq.jms</groupId>
   <artifactId>jmscts</artifactId>
-  <version>1.6.06-SNAPSHOT</version>
+  <version>1.7.0-SNAPSHOT</version>
 
   <name>rabbit-jmscts</name>
   <description>Compliance Test Suite for RabbitMQ JMS</description>
@@ -13,7 +13,7 @@
 
   <properties>
     <!-- overridable parameter -->
-    <rabbitmq-jms.version>1.4.7</rabbitmq-jms.version>
+    <rabbitmq-jms.version>1.7.0-SNAPSHOT</rabbitmq-jms.version>
     <rabbitmq.version>3.6.6</rabbitmq.version>
 
     <!-- pervasive properties -->
