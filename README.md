@@ -3,7 +3,7 @@
 ## Overview
 
 This a test harness for exercising the RabbitMQ JMS Client against the JMS 1.1 specification.
-It is based on the [Java Message Service Compliance Test Suite](http://jmscts.sourceforge.net/).
+It uses the [Java Message Service Compliance Test Suite](http://jmscts.sourceforge.net/).
 
 The [JMS Client Reference webpage](http://www.rabbitmq.com/jms-client-compliance.html)
 lists the supported interfaces.
@@ -26,6 +26,14 @@ You can then run the test suite with Maven (the build process will and stop a br
 node with the appropriate configuration):
 
     mvn clean verify
+    
+### Reading the results
+
+Results can be found in:
+
+ * `target/jmscts-report/html/coverage.html`
+ * `target/jmscts-selector-report/html/coverage.html`
+ * `target/jmscts-browse-report/html/coverage.html`
 
 ## License and Copyright
 
