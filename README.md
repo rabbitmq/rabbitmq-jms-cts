@@ -39,8 +39,7 @@ Results can be found in:
 
 (c) Pivotal Software, Inc., 2007-2017.
 
-This package, the RabbitMQ JMS client library, is double-licensed
-under the Apache License version 2 ("ASL") and the Mozilla Public License
+This package, the RabbitMQ JMS client CTS, is licensed the Mozilla Public License
 1.1 ("MPL").
 
 See [LICENSE](./LICENSE).

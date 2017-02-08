@@ -22,9 +22,6 @@
 
     <!-- private project build dependencies -->
     <geronimo-spec.version>1.1.1</geronimo-spec.version>
-    <slf4j-api.version>1.7.5</slf4j-api.version>
-    <slf4j-simple.version>1.7.5</slf4j-simple.version>
-    <mockito-core.version>1.9.5</mockito-core.version>
     <junit.version>4.11</junit.version>
     <commons-cli.version>1.2</commons-cli.version>
     <commons-collections.version>2.1.1</commons-collections.version>
