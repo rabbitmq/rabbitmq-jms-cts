@@ -2,7 +2,7 @@
 
 ## Overview
 
-This a test harness for exercising the RabbitMQ JMS Client against the JMS 1.1 specification.
+This a test harness for exercising the [RabbitMQ JMS client](https://github.com/rabbitmq/rabbitmq-jms-client) against the JMS 1.1 specification.
 It uses the [Java Message Service Compliance Test Suite](http://jmscts.sourceforge.net/).
 
 The [JMS Client Reference webpage](http://www.rabbitmq.com/jms-client-compliance.html)
