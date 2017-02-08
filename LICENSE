@@ -1,0 +1,9 @@
+This package, the RabbitMQ JMS Client Compliance Test Suite, is licensed under
+the Mozilla Public License 1.1 ("MPL"). For the MPL, please see LICENSE-MPL-RabbitMQ.
+
+The RabbitMQ JMS Client Compliance Test Suite includes third-party software under various
+licenses. For those licenses, please see LICENSES.txt. For attribution of
+copyright and other details of provenance, please refer to the source code.
+
+If you have any questions regarding licensing, please contact us at 
+info@rabbitmq.com.
