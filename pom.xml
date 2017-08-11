@@ -34,7 +34,7 @@
     <xdoclet.xdoclet.version>1.2.3</xdoclet.xdoclet.version>
     <xdoclet.xjavadoc.version>1.1</xdoclet.xjavadoc.version>
     <castor.version>0.9.4.3</castor.version>
-    <xalan.version>2.5.1</xalan.version>
+    <xalan.version>2.7.2</xalan.version>
     <xerces-impl.version>2.9.0</xerces-impl.version>
 
     <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
@@ -144,6 +144,7 @@
       <version>${xerces-impl.version}</version>
     </dependency>
 
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -217,7 +218,7 @@
     </plugins>
 
   </build>
-  
+
   <profiles>
     <profile>
       <!--
