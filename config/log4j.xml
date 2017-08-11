@@ -39,7 +39,7 @@
   <!-- logs a trace of test runs -->
   <category name="org.exolab.jmscts.core.JUnitTestRunner.Trace"
             additivity="false">
-    <priority value="info" />
+    <priority value="warn" />
     <appender-ref ref="STDOUT-SHORT" />
   </category>
 
