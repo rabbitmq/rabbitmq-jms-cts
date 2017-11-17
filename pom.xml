@@ -14,6 +14,7 @@
   <properties>
     <!-- overridable parameter -->
     <rabbitmq-jms.version>2.0.0-SNAPSHOT</rabbitmq-jms.version>
+    <rabbitmq.version>3.6.6</rabbitmq.version>
 
     <!-- pervasive properties -->
     <java-compile-version>1.6</java-compile-version>
@@ -182,6 +183,7 @@
         <configuration>
           <encoding>UTF-8</encoding>
           <systemPropertyVariables>
+            <RABBITMQ_VERSION>${rabbitmq.version}</RABBITMQ_VERSION>
             <make.bin>${make.bin}</make.bin>
             <rabbitmq.dir>${rabbitmq.dir}</rabbitmq.dir>
             <rabbitmqctl.bin>${rabbitmqctl.bin}</rabbitmqctl.bin>
