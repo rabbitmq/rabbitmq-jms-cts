@@ -133,7 +133,25 @@ public abstract class AbstractSelectorTestCase
      * @throws Exception for any error
      */
     protected void checkSelector(String selector, boolean selectsAll,
-                                 Map<?, ?> properties)
+        Map<?, ?> properties)
+        throws Exception {
+        checkSelector(selector, selectsAll, properties, -1);
+    }
+
+    /**
+     * Verifies that the specified selector correctly selects messages
+     *
+     * @param selector the selector to test
+     * @param selectsAll if <code>true</code>, the selector is expected to
+     * select all messages; if <code>false</code>, the selector is expected
+     * to select no messages
+     * @param properties a map of property names to property values, to be
+     * populated on sent messages. May be <code>null</code>
+     * @param timeout receive timeout, default to messaging behavior timeout if < 0
+     * @throws Exception for any error
+     */
+    protected void checkSelector(String selector, boolean selectsAll,
+                                 Map<?, ?> properties, long timeout)
         throws Exception {
         final int count = 5; // the number of messages to send
         TestContext context = getContext();
@@ -151,7 +169,7 @@ public abstract class AbstractSelectorTestCase
             }
             MessagingHelper.send(context, message, destination, count);
             int expected = (selectsAll) ? count : 0;
-            long timeout = context.getMessagingBehaviour().getTimeout();
+            timeout = timeout >= 0 ? timeout : context.getMessagingBehaviour().getTimeout();
             List<?> result = receiver.receive(expected, timeout);
             int received = (result == null) ? 0 : result.size();
             if (received != expected) {

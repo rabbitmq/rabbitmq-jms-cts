@@ -45,6 +45,7 @@
 package org.exolab.jmscts.test.selector;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import junit.framework.Test;
 
@@ -584,4 +585,8 @@ public class FloatTest extends AbstractSelectorTestCase {
 //        PROPERTIES.put("doubleNaN", new Double(Double.NaN));
     }
 
+    @Override
+    protected void checkSelector(String selector, boolean selectsAll, Map<?, ?> properties) throws Exception {
+        super.checkSelector(selector, selectsAll, properties, 1000);
+    }
 }
