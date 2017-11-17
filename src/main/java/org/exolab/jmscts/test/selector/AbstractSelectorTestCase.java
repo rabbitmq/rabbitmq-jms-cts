@@ -152,6 +152,7 @@ public abstract class AbstractSelectorTestCase
             MessagingHelper.send(context, message, destination, count);
             int expected = (selectsAll) ? count : 0;
             long timeout = context.getMessagingBehaviour().getTimeout();
+            System.out.println(timeout);
             List<?> result = receiver.receive(expected, timeout);
             int received = (result == null) ? 0 : result.size();
             if (received != expected) {
