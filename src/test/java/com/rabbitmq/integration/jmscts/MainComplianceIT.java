@@ -18,27 +18,27 @@ public class MainComplianceIT extends TestCase {
         System.setProperty("jmscts.home", System.getProperty("basedir"));
     }
 
-//    public void testAll() throws Exception {
-//        if (System.getProperty("rabbit.jms.terminationTimeout") == null) {
-//            System.setProperty("rabbit.jms.terminationTimeout", "1000");
-//        }
-//        String basedir = System.getProperty("basedir");
-//        ComplianceTestSuite.main(new String[] { "-output",
-//                                                new File(basedir, "target/jmscts-report").getAbsolutePath(),
-//                                                "-filter",
-//                                                new File(basedir, "config/filter.xml").getAbsolutePath() });
-//    }
+    public void testAll() throws Exception {
+        if (System.getProperty("rabbit.jms.terminationTimeout") == null) {
+            System.setProperty("rabbit.jms.terminationTimeout", "1000");
+        }
+        String basedir = System.getProperty("basedir");
+        ComplianceTestSuite.main(new String[] { "-output",
+                                                new File(basedir, "target/jmscts-report").getAbsolutePath(),
+                                                "-filter",
+                                                new File(basedir, "config/filter.xml").getAbsolutePath() });
+    }
 
-//    public void testSelector() throws Exception {
-//        if (System.getProperty("rabbit.jms.terminationTimeout") == null) {
-//            System.setProperty("rabbit.jms.terminationTimeout", "1000");
-//        }
-//        String basedir = System.getProperty("basedir");
-//        ComplianceTestSuite.main(new String[] { "-output",
-//                                                new File(basedir, "target/jmscts-selector-report").getAbsolutePath(),
-//                                                "-filter",
-//                                                new File(basedir, "config/selector-filter.xml").getAbsolutePath() });
-//    }
+    public void testSelector() throws Exception {
+        if (System.getProperty("rabbit.jms.terminationTimeout") == null) {
+            System.setProperty("rabbit.jms.terminationTimeout", "1000");
+        }
+        String basedir = System.getProperty("basedir");
+        ComplianceTestSuite.main(new String[] { "-output",
+                                                new File(basedir, "target/jmscts-selector-report").getAbsolutePath(),
+                                                "-filter",
+                                                new File(basedir, "config/selector-filter.xml").getAbsolutePath() });
+    }
 
     public void testBrowse() throws Exception {
         if (System.getProperty("rabbit.jms.terminationTimeout") == null) {
