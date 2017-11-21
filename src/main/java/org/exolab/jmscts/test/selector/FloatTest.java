@@ -589,4 +589,9 @@ public class FloatTest extends AbstractSelectorTestCase {
     protected void checkSelector(String selector, boolean selectsAll, Map<?, ?> properties) throws Exception {
         super.checkSelector(selector, selectsAll, properties, 1000);
     }
+
+    @Override
+    protected void checkSelector(String selector, boolean selectsAll) throws Exception {
+        super.checkSelector(selector, selectsAll, null, 1000);
+    }
 }

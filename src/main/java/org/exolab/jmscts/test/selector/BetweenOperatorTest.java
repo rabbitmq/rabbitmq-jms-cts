@@ -45,6 +45,7 @@
 package org.exolab.jmscts.test.selector;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import junit.framework.Test;
 
@@ -364,6 +365,16 @@ public class BetweenOperatorTest extends AbstractSelectorTestCase {
         PROPERTIES.put("one", new Integer(1));
         PROPERTIES.put("two", new Integer(2));
         PROPERTIES.put("three", new Integer(3));
+    }
+
+    @Override
+    protected void checkSelector(String selector, boolean selectsAll, Map<?, ?> properties) throws Exception {
+        super.checkSelector(selector, selectsAll, properties, 1000);
+    }
+
+    @Override
+    protected void checkSelector(String selector, boolean selectsAll) throws Exception {
+        super.checkSelector(selector, selectsAll, null, 1000);
     }
 
 }
