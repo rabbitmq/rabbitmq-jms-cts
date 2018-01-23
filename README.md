@@ -16,7 +16,7 @@ You need a RabbitMQ node with the default options and
 with the `rabbitmq_jms_topic_exchange` plugin enabled.
 You can then run the test suite with Maven:
 
-    mvn clean verify -P '!setup-test-node'
+    ./mvnw clean verify -P '!setup-test-node'
     
 ### Running the test suite against a build-started broker
 
@@ -25,7 +25,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for an overview of the development proc
 You can then run the test suite with Maven (the build process will and stop a broker
 node with the appropriate configuration):
 
-    mvn clean verify
+    ./mvnw clean verify
     
 ### Reading the results
 
