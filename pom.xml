@@ -346,7 +346,7 @@
     <repository>
       <id>jboss.org</id>
       <name>Jboss Maven 2 Repository</name>
-      <url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+      <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
     </repository>
     <repository>
       <releases>
