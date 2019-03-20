@@ -12,7 +12,7 @@
  * from this Software may not be called "Exolab" nor may "Exolab" appear in
  * their names without prior written permission of Exoffice Technologies. Exolab
  * is a registered trademark of Exoffice Technologies. 5. Due credit should be
- * given to the Exolab Project (http://www.exolab.org/). THIS SOFTWARE IS
+ * given to the Exolab Project (https://castor.exolab.org). THIS SOFTWARE IS
  * PROVIDED BY EXOFFICE TECHNOLOGIES AND CONTRIBUTORS ``AS IS'' AND ANY
  * EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE

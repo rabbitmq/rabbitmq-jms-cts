@@ -23,7 +23,7 @@
  * trademark of Exoffice Technologies.
  * <p/>
  * 5. Due credit should be given to the Exolab Project
- * (http://www.exolab.org/).
+ * (https://castor.exolab.org).
  * <p/>
  * THIS SOFTWARE IS PROVIDED BY EXOFFICE TECHNOLOGIES AND CONTRIBUTORS
  * ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT
