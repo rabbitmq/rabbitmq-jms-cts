@@ -179,11 +179,11 @@
   </reference>
 
   <reference referenceId="url.message.bytes">
-    <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/BytesMessage.html</url>
+    <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/BytesMessage.html</url>
   </reference>
 
   <reference referenceId="url.message.stream">
-    <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/StreamMessage.html</url>
+    <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/StreamMessage.html</url>
   </reference>
 
   <requirement requirementId="selector.null">
@@ -899,7 +899,7 @@
       CLIENT_ACKWNOWLEDGE etc
     </description>
     <reference>
-      <url>http://java.sun.com/products/jms/faq.html#msg_ack_close</url>
+      <url>https://java.sun.com/products/jms/faq.html#msg_ack_close</url>
     </reference>
   </requirement>
 
@@ -920,7 +920,7 @@
       IllegalStateException
     </description>
     <reference>
-      <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/Session.html#commit()</url>
+      <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/Session.html#commit()</url>
     </reference>
     <referenceId>section.7.3</referenceId>
   </requirement>
@@ -931,7 +931,7 @@
       IllegalStateException
     </description>
     <reference>
-      <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/Session.html#rollback()</url>
+      <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/Session.html#rollback()</url>
     </reference>
   </requirement>
 
@@ -941,7 +941,7 @@
       IllegalStateException
     </description>
     <reference>
-      <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/Session.html#recover()</url>
+      <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/Session.html#recover()</url>
     </reference>
   </requirement>
 
@@ -951,10 +951,10 @@
       <code>0</code>
     </description>
     <reference>
-      <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/MessageProducer.html#getTimeToLive()</url>
+      <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/MessageProducer.html#getTimeToLive()</url>
     </reference>
     <reference>
-      <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/MessageProducer.html#setTimeToLive()</url>
+      <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/MessageProducer.html#setTimeToLive()</url>
     </reference>
   </requirement>
 
@@ -970,19 +970,19 @@
       </p>
     </description>
     <reference>
-      <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/MessageProducer.html</url>
+      <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/MessageProducer.html</url>
     </reference>
     <reference>
-      <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/TopicPublisher.html#publish(javax.jms.Message)</url>
+      <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/TopicPublisher.html#publish(javax.jms.Message)</url>
     </reference>
     <reference>
-      <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/TopicPublisher.html#publish(javax.jms.Topic,%20javax.jms.Message)</url>
+      <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/TopicPublisher.html#publish(javax.jms.Topic,%20javax.jms.Message)</url>
     </reference>
     <reference>
-      <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/QueueSender.html#send(javax.jms.Message)</url>
+      <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/QueueSender.html#send(javax.jms.Message)</url>
     </reference>
     <reference>
-      <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/QueueSender.html#send(javax.jms.Queue,%20javax.jms.Message)</url>
+      <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/QueueSender.html#send(javax.jms.Queue,%20javax.jms.Message)</url>
     </reference>
   </requirement>
 
@@ -1638,7 +1638,7 @@
       Refer to javadoc
     </description>
     <reference>
-      <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/BytesMessage.html#readBytes(byte[])</url>
+      <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/BytesMessage.html#readBytes(byte[])</url>
     </reference>
   </requirement>
 
@@ -1647,7 +1647,7 @@
       Refer to javadoc
     </description>
     <reference>
-      <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/BytesMessage.html#readBytes(byte[], int)</url>
+      <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/BytesMessage.html#readBytes(byte[], int)</url>
     </reference>
   </requirement>
 
@@ -1656,7 +1656,7 @@
       Refer to javadoc
     </description>
     <reference>
-      <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/BytesMessage.html#writeObject()</url>
+      <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/BytesMessage.html#writeObject()</url>
     </reference>
   </requirement>
 
@@ -1665,7 +1665,7 @@
       Refer to javadoc
     </description>
     <reference>
-      <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/MapMessage.html#setObject()</url>
+      <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/MapMessage.html#setObject()</url>
     </reference>
   </requirement>
 
@@ -1674,7 +1674,7 @@
       Refer to javadoc
     </description>
     <reference>
-      <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/MapMessage.html#itemExists()</url>
+      <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/MapMessage.html#itemExists()</url>
     </reference>
   </requirement>
 
@@ -1683,7 +1683,7 @@
       Refer to javadoc
     </description>
     <reference>
-      <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/MapMessage.html#getMapNames()</url>
+      <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/MapMessage.html#getMapNames()</url>
     </reference>
   </requirement>
 
@@ -1702,7 +1702,7 @@
       Refer to javadoc
     </description>
     <reference>
-      <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/StreamMessage.html#writeObject()</url>
+      <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/StreamMessage.html#writeObject()</url>
     </reference>
   </requirement>
 
@@ -1711,7 +1711,7 @@
       Refer to javadoc
     </description>
     <reference>
-      <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/StreamMessage.html#writeBytes(byte[])</url>
+      <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/StreamMessage.html#writeBytes(byte[])</url>
     </reference>
   </requirement>
 
@@ -1720,7 +1720,7 @@
       Refer to javadoc
     </description>
     <reference>
-      <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/StreamMessage.html#writeBytes(byte[], int, int)</url>
+      <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/StreamMessage.html#writeBytes(byte[], int, int)</url>
     </reference>
   </requirement>
 
@@ -1729,7 +1729,7 @@
       Refer to javadoc
     </description>
     <reference>
-      <url>http://java.sun.com/products/jms/javadoc-102a/javax/jms/StreamMessage.html#readBytes</url>
+      <url>https://java.sun.com/products/jms/javadoc-102a/javax/jms/StreamMessage.html#readBytes</url>
     </reference>
   </requirement>
 
