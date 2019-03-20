@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
                 xmlns:c="http://jmscts.sourceforge.net/coverage"
                 xmlns:t="http://jmscts.sourceforge.net/test"
-                xmlns:redirect="https://xml.apache.org/xalan/redirect"
+                xmlns:redirect="http://xml.apache.org/xalan/redirect"
                 extension-element-prefixes="redirect">
 
 
