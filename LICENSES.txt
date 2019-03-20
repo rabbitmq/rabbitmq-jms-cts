@@ -150,7 +150,7 @@ Apache Geronimo
 Copyright 2003-2008 The Apache Software Foundation
 
 This product includes software developed by
-The Apache Software Foundation (http://www.apache.org/).
+The Apache Software Foundation (https://www.apache.org/).
 
 >>> commons-cli-1.2
 
@@ -158,7 +158,7 @@ Apache Commons CLI
 Copyright 2001-2009 The Apache Software Foundation
 
 This product includes software developed by
-The Apache Software Foundation (http://www.apache.org/).
+The Apache Software Foundation (https://www.apache.org/).
 
 >>> commons-logging-1.0.4
 
@@ -166,7 +166,7 @@ Apache Commons Logging
 Copyright 2001-2014 The Apache Software Foundation.
 
 This product includes software developed by
-The Apache Software Foundation (http://www.apache.org/).
+The Apache Software Foundation (https://www.apache.org/).
 
 >>> log4j-1.2.17
 
@@ -174,7 +174,7 @@ Apache log4j
 Copyright 2007 The Apache Software Foundation
 
 This product includes software developed at
-The Apache Software Foundation (http://www.apache.org/).
+The Apache Software Foundation (https://www.apache.org/).
 
 >>> commons-collections-2.1.1
 
@@ -182,7 +182,7 @@ Apache Commons Collections
 Copyright 2001-2015 The Apache Software Foundation.
 
 This product includes software developed by
-The Apache Software Foundation (http://www.apache.org/).
+The Apache Software Foundation (https://www.apache.org/).
 
 >>> xerces-impl-2.9.0
 
@@ -190,11 +190,11 @@ Apache Xerces Java
 Copyright 1999-2006 The Apache Software Foundation
 
 This product includes software developed at
-The Apache Software Foundation (http://www.apache.org/).
+The Apache Software Foundation (https://www.apache.org/).
 
 Portions of this software were originally based on the following:
- - software copyright (c) 1999, IBM Corporation., http://www.ibm.com.
- - software copyright (c) 1999, Sun Microsystems., http://www.sun.com.
+ - software copyright (c) 1999, IBM Corporation., https://www.ibm.com.
+ - software copyright (c) 1999, Sun Microsystems., https://www.sun.com.
  - voluntary contributions made by Paul Eng on behalf of the
    Apache Software Foundation that were originally developed at iClick, Inc.,
    software copyright (c) 1999.
@@ -226,7 +226,7 @@ Apache License, V1.1 is applicable to the following component(s).
  * 3. The end-user documentation included with the redistribution,
  *    if any, must include the following acknowledgment:
  *       "This product includes software developed by the
- *        Apache Software Foundation (http://www.apache.org/)."
+ *        Apache Software Foundation (https://www.apache.org/)."
  *    Alternately, this acknowledgment may appear in the software itself,
  *    if and wherever such third-party acknowledgments normally appear.
  *
@@ -256,7 +256,7 @@ Apache License, V1.1 is applicable to the following component(s).
  * This software consists of voluntary contributions made by many
  * individuals on behalf of the Apache Software Foundation.  For more
  * information on the Apache Software Foundation, please see
- * <http://www.apache.org/>.
+ * <https://www.apache.org/>.
  */
 
 --------------- SECTION 3: Mozilla Public License, V1.1 ----------
@@ -306,7 +306,7 @@ permission of Exoffice Technologies. Exolab is a registered
 trademark of Exoffice Technologies.
 
 5. Due credit should be given to the Exolab Project
-(http://www.exolab.org/).
+(https://castor.exolab.org).
 
 THIS SOFTWARE IS PROVIDED BY EXOFFICE TECHNOLOGIES AND CONTRIBUTORS
 ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT
@@ -352,7 +352,7 @@ conditions are met:
    Intalio Inc.
 
 5. Due credit should be given to the ExoLab Project
-   (<a href="http://www.exolab.org/">http://www.exolab.org/</a>).
+   (<a href="https://castor.exolab.org">https://castor.exolab.org</a>).
 
 
 THIS SOFTWARE IS PROVIDED BY INTALIO AND CONTRIBUTORS ``AS IS'' AND
@@ -1026,7 +1026,7 @@ EXHIBIT A -Mozilla Public License.
    Version 1.1 (the "License"); you may not use this file except in
    compliance with the License. You may obtain a copy of the License at
 
-   http://www.mozilla.org/MPL/
+   https://www.mozilla.org/MPL/
 
    Software distributed under the License is distributed on an "AS IS"
    basis, WITHOUT WARRANTY OF
@@ -1236,7 +1236,7 @@ available (as would be noted above), you may obtain a copy of
 the source code corresponding to the binaries for such open
 source components and modifications thereto, if any, (the
 "Source Files"), by downloading the Source Files from Pivotal's website at
-http://www.pivotal.io/open-source, or by sending a request, 
+https://www.pivotal.io/open-source, or by sending a request, 
 with your name and address to: Pivotal Software, Inc., 3496 Deer Creek Rd, 
 Palo Alto, CA 94304, Attention: General Counsel. All such requests should 
 clearly specify: OPEN SOURCE FILES REQUEST, Attention General Counsel. 
