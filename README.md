@@ -37,7 +37,7 @@ Results can be found in:
 
 ## License and Copyright
 
-(c) Pivotal Software, Inc., 2007-2017.
+(c) Pivotal Software, Inc., 2007-2020.
 
 This package, the RabbitMQ JMS client CTS, is licensed the Mozilla Public License
 1.1 ("MPL").
