@@ -266,7 +266,7 @@ Mozilla Public License, V1.1 is applicable to the following component(s).
 
 >>> rabbitmq-jms-1.7.0
 
-(c) Pivotal Software, Inc., 2007-2020.
+(c) 2007-2020 VMware, Inc. or its affiliates.
 
 This package, the RabbitMQ JMS client library, is double-licensed
 under the Apache License version 2 ("ASL") and the Mozilla Public License
