@@ -13,7 +13,7 @@
 
   <properties>
     <!-- overridable parameter -->
-    <rabbitmq-jms.version>2.0.0-SNAPSHOT</rabbitmq-jms.version>
+    <rabbitmq-jms.version>2.1.0-SNAPSHOT</rabbitmq-jms.version>
     <rabbitmq.version>3.6.6</rabbitmq.version>
 
     <!-- pervasive properties -->
