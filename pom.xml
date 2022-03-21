@@ -13,7 +13,7 @@
 
   <properties>
     <!-- overridable parameter -->
-    <rabbitmq-jms.version>2.1.0-SNAPSHOT</rabbitmq-jms.version>
+    <rabbitmq-jms.version>2.5.0-SNAPSHOT</rabbitmq-jms.version>
     <rabbitmq.version>3.6.6</rabbitmq.version>
 
     <!-- pervasive properties -->
@@ -31,9 +31,9 @@
     <slf4j-log4j12.version>1.7.33</slf4j-log4j12.version>
     <log4j.version>1.2.17</log4j.version>
     <oro.version>2.0.8</oro.version>
-    <xdoclet.xdoclet.version>2.0.4</xdoclet.xdoclet.version>
+    <xdoclet.xdoclet.version>1.2.3</xdoclet.xdoclet.version>
     <xdoclet.xjavadoc.version>1.1</xdoclet.xjavadoc.version>
-    <castor.version>1.0</castor.version>
+    <castor.version>0.9.4.3</castor.version>
     <xalan.version>2.7.2</xalan.version>
     <xerces-impl.version>2.9.0</xerces-impl.version>
 
