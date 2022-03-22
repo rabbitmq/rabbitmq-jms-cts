@@ -51,7 +51,8 @@ import junit.framework.Protectable;
 import junit.framework.Test;
 import junit.framework.TestResult;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -73,7 +74,7 @@ public class SessionTestRunner extends TestRunner
      * The logger
      */
     private static final Logger _log =
-        Logger.getLogger(SessionTestRunner.class);
+        LoggerFactory.getLogger(SessionTestRunner.class);
 
 
     /**
@@ -209,7 +210,7 @@ public class SessionTestRunner extends TestRunner
             try {
                 session = ConnectionHelper.createSession(parent, _type);
             } catch (Exception exception) {
-                _log.error(exception, exception);
+                _log.error("{}", exception);
                 throw exception;
             }
 
@@ -236,7 +237,7 @@ public class SessionTestRunner extends TestRunner
             try {
                 child.close();
             } catch (JMSException exception) {
-                _log.error(exception, exception);
+                _log.error("{}", exception);
                 throw exception;
             }
 
@@ -245,7 +246,7 @@ public class SessionTestRunner extends TestRunner
                 try {
                     parent.close();
                 } catch (Exception exception) {
-                    _log.error(exception, exception);
+                    _log.error("{}", exception);
                     throw exception;
                 }
             }

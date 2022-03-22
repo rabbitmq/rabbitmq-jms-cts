@@ -50,7 +50,8 @@ import javax.jms.MessageEOFException;
 import javax.jms.MessageNotReadableException;
 import javax.jms.StreamMessage;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import junit.framework.Test;
 
@@ -82,7 +83,7 @@ public class ReadWriteTest extends AbstractMessageTestCase
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(ReadWriteTest.class);
+        LoggerFactory.getLogger(ReadWriteTest.class);
 
 
     /**
@@ -129,7 +130,7 @@ public class ReadWriteTest extends AbstractMessageTestCase
             MessagePropertyVerifier populator = new MessagePropertyVerifier();
             populator.populate(message);
         } catch (Exception exception) {
-            log.debug(exception, exception);
+            log.debug("{}", exception);
             fail("Failed to populate message properties on creation: "
                  + exception);
         }
@@ -139,7 +140,7 @@ public class ReadWriteTest extends AbstractMessageTestCase
                 PopulatorVerifierFactory.create(message, null);
             populator.populate(message);
         } catch (Exception exception) {
-            log.debug(exception, exception);
+            log.debug("{}", exception);
             fail("Failed to populate message body on creation: " + exception);
         }
     }
@@ -229,7 +230,7 @@ public class ReadWriteTest extends AbstractMessageTestCase
         try {
             populator.populate(message);
         } catch (Exception exception) {
-            log.debug(exception, exception);
+            log.debug("{}", exception);
             fail("Failed to populate message body on creation: " + exception);
         }
 
@@ -238,7 +239,7 @@ public class ReadWriteTest extends AbstractMessageTestCase
         try {
             populator.populate(message);
         } catch (Exception exception) {
-            log.debug(exception, exception);
+            log.debug("{}", exception);
             fail("Failed to populate message body after invoking clearBody: "
                  + exception);
         }

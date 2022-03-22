@@ -50,7 +50,8 @@ import javax.jms.JMSException;
 import javax.jms.MessageConsumer;
 import javax.jms.Session;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -67,7 +68,7 @@ class AsynchronousReceiver extends AbstractMessageReceiver {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(AsynchronousReceiver.class.getName());
+        LoggerFactory.getLogger(AsynchronousReceiver.class.getName());
 
     /**
      * Construct an instance with the consumer to receive messages with

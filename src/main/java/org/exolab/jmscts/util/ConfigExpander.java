@@ -47,7 +47,8 @@ package org.exolab.jmscts.util;
 import java.io.IOException;
 import java.io.Reader;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.exolab.castor.util.Configuration;
 import org.exolab.castor.xml.EventProducer;
 import org.xml.sax.AttributeList;
@@ -96,7 +97,7 @@ public class ConfigExpander implements EventProducer {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(ConfigExpander.class);
+        LoggerFactory.getLogger(ConfigExpander.class);
 
     /**
      * Construct a new instance

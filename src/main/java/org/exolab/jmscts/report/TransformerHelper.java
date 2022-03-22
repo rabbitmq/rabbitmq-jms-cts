@@ -59,7 +59,8 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.transform.stream.StreamResult;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -74,7 +75,7 @@ public final class TransformerHelper {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(TransformerHelper.class);
+        LoggerFactory.getLogger(TransformerHelper.class);
 
     /**
      * Xdoc file extension

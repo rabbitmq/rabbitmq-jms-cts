@@ -49,7 +49,8 @@ import java.util.List;
 
 import javax.jms.Message;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.exolab.jmscts.core.AbstractSendReceiveTestCase;
 import org.exolab.jmscts.core.MessagePopulator;
@@ -72,7 +73,7 @@ abstract class ClientAcknowledgeTestCase extends AbstractSendReceiveTestCase {
      */
     @SuppressWarnings("unused")
     private static final Logger log =
-        Logger.getLogger(ClientAcknowledgeTestCase.class);
+        LoggerFactory.getLogger(ClientAcknowledgeTestCase.class);
 
 
     /**

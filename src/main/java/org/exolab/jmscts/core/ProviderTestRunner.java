@@ -53,7 +53,8 @@ import javax.jms.XATopicConnectionFactory;
 import junit.framework.Test;
 import junit.framework.TestResult;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.exolab.jmscts.provider.Administrator;
 import org.exolab.jmscts.provider.Provider;
@@ -83,7 +84,7 @@ public class ProviderTestRunner extends TestRunner {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(ProviderTestRunner.class);
+        LoggerFactory.getLogger(ProviderTestRunner.class);
 
 
     /**
@@ -227,7 +228,7 @@ public class ProviderTestRunner extends TestRunner {
                 factory = (ConnectionFactory) admin.lookup(factoryName);
 
             } catch (Exception exception) {
-                log.debug(exception, exception);
+                log.debug("{}", exception);
                 throw exception;
             }
 

@@ -49,7 +49,8 @@ import javax.jms.Session;
 
 import junit.framework.Test;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.exolab.jmscts.core.AbstractSendReceiveTestCase;
 import org.exolab.jmscts.core.DelayedAction;
 import org.exolab.jmscts.core.EchoListener;
@@ -96,7 +97,7 @@ public class ListenerCloseTest extends AbstractSendReceiveTestCase {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(ListenerCloseTest.class);
+        LoggerFactory.getLogger(ListenerCloseTest.class);
 
 
     /**

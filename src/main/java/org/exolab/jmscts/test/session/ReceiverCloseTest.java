@@ -48,7 +48,8 @@ import javax.jms.Connection;
 import javax.jms.Destination;
 import javax.jms.Session;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import junit.framework.Test;
 
@@ -77,7 +78,7 @@ public class ReceiverCloseTest extends AbstractSendReceiveTestCase {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(ReceiverCloseTest.class);
+        LoggerFactory.getLogger(ReceiverCloseTest.class);
 
     /**
      * The destination used by this test case

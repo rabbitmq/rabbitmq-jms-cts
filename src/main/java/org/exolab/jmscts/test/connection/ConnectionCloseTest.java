@@ -50,7 +50,8 @@ import javax.jms.JMSException;
 
 import junit.framework.Test;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.exolab.jmscts.core.AbstractConnectionTestCase;
 import org.exolab.jmscts.core.MethodInvoker;
 import org.exolab.jmscts.core.TestContext;
@@ -70,7 +71,7 @@ public class ConnectionCloseTest extends AbstractConnectionTestCase {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(ConnectionCloseTest.class);
+        LoggerFactory.getLogger(ConnectionCloseTest.class);
 
 
     /**

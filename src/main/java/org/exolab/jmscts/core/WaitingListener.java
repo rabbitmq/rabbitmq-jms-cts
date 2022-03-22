@@ -47,7 +47,8 @@ package org.exolab.jmscts.core;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import EDU.oswego.cs.dl.util.concurrent.Semaphore;
 
@@ -92,7 +93,7 @@ public class WaitingListener extends DelegatingListener {
      * The logger
      */
     private static final Logger _log =
-        Logger.getLogger(WaitingListener.class);
+        LoggerFactory.getLogger(WaitingListener.class);
 
 
     /**
@@ -207,7 +208,7 @@ public class WaitingListener extends DelegatingListener {
                 super.onMessage(message);
             }
         } catch (RuntimeException exception) {
-            _log.error(exception, exception);
+            _log.error("{}", exception);
             throw exception;
         } finally {
             _completedLock.release();

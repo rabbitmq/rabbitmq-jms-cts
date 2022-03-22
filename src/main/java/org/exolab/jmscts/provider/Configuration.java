@@ -49,8 +49,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-import org.apache.log4j.Logger;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.InputSource;
 
 import org.exolab.castor.mapping.Mapping;
@@ -79,7 +80,7 @@ public class Configuration {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(Configuration.class);
+        LoggerFactory.getLogger(Configuration.class);
 
     /**
      * The castor mapping

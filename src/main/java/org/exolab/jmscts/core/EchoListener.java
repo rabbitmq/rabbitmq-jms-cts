@@ -48,7 +48,8 @@ import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.Session;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -84,7 +85,7 @@ public class EchoListener implements MessageListener {
      * The logging category
      */
     private static final Logger log =
-        Logger.getLogger(EchoListener.class.getName());
+        LoggerFactory.getLogger(EchoListener.class.getName());
 
 
     /**
@@ -131,7 +132,7 @@ public class EchoListener implements MessageListener {
                 }
             }
         } catch (Exception exception) {
-            log.error(exception, exception);
+            log.error("{}", exception);
         }
     }
 

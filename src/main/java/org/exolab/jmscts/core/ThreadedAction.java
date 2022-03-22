@@ -44,7 +44,8 @@
  */
 package org.exolab.jmscts.core;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import EDU.oswego.cs.dl.util.concurrent.Semaphore;
 
 
@@ -87,7 +88,7 @@ public abstract class ThreadedAction extends Thread {
      * The logger
      */
     private static final Logger _log
-            = Logger.getLogger(ThreadedAction.class);
+            = LoggerFactory.getLogger(ThreadedAction.class);
 
 
     /**

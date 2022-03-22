@@ -54,7 +54,8 @@ import java.util.Map;
 
 import junit.framework.Test;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.exolab.jmscts.report.Context;
 import org.exolab.jmscts.report.Coverage;
 import org.exolab.jmscts.report.CurrentTest;
@@ -111,7 +112,7 @@ public class TestCoverage {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(TestCoverage.class);
+        LoggerFactory.getLogger(TestCoverage.class);
 
 
     /**

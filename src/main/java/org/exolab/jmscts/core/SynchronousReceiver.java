@@ -52,7 +52,8 @@ import javax.jms.Message;
 import javax.jms.MessageConsumer;
 import javax.jms.Session;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -67,7 +68,7 @@ class SynchronousReceiver extends AbstractMessageReceiver {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(SynchronousReceiver.class);
+        LoggerFactory.getLogger(SynchronousReceiver.class);
 
 
     /**

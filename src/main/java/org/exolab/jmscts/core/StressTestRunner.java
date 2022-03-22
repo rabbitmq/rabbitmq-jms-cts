@@ -47,7 +47,8 @@ package org.exolab.jmscts.core;
 import junit.framework.Test;
 import junit.framework.TestResult;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.exolab.jmscts.provider.ProviderLoader;
 import org.exolab.jmscts.report.StatisticsReport;
@@ -104,7 +105,7 @@ public class StressTestRunner extends AbstractTestRunner {
      */
     @SuppressWarnings("unused")
     private static final Logger log =
-        Logger.getLogger(StressTestRunner.class);
+        LoggerFactory.getLogger(StressTestRunner.class);
 
 
     /**

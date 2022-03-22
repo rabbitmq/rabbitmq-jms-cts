@@ -44,7 +44,8 @@
  */
 package org.exolab.jmscts.core;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.exolab.jmscts.core.types.PropertyTypeType;
 
@@ -61,7 +62,7 @@ public final class PropertyHelper {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(PropertyHelper.class);
+        LoggerFactory.getLogger(PropertyHelper.class);
 
 
     /**
@@ -113,7 +114,7 @@ public final class PropertyHelper {
                 result = property.getValue();
             }
         } catch (ClassNotFoundException exception) {
-            log.error(exception, exception);
+            log.error("{}", exception);
         }
         return result;
     }

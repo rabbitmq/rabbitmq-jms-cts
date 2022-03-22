@@ -47,7 +47,8 @@ package org.exolab.jmscts.core;
 import junit.framework.Test;
 import junit.framework.TestResult;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.exolab.jmscts.report.CoverageReport;
 import org.exolab.jmscts.requirements.Requirements;
@@ -110,7 +111,7 @@ public class JMSTestRunner extends AbstractTestRunner {
      */
     @SuppressWarnings("unused")
     private static final Logger log =
-        Logger.getLogger(JMSTestRunner.class.getName());
+        LoggerFactory.getLogger(JMSTestRunner.class.getName());
 
 
     /**

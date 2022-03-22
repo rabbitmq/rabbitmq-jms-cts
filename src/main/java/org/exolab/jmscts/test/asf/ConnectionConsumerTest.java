@@ -47,7 +47,8 @@ package org.exolab.jmscts.test.asf;
 import javax.jms.ConnectionConsumer;
 import javax.jms.Destination;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import junit.framework.Test;
 
@@ -81,7 +82,7 @@ public class ConnectionConsumerTest extends AbstractSendReceiveTestCase {
      */
     @SuppressWarnings("unused")
     private static final Logger log =
-        Logger.getLogger(ConnectionConsumerTest.class.getName());
+        LoggerFactory.getLogger(ConnectionConsumerTest.class.getName());
 
     /**
      * Create a new <code>ConnectionConsumerTest</code>.

@@ -1,0 +1,60 @@
+<configuration>
+  <!-- log containing a test summary and any errors or failures, produced  -->
+  <!-- at the completion of the test                                       -->
+  <appender name="jmscts-report.log" class="ch.qos.logback.core.FileAppender">
+    <file>target/jmscts-report.log</file>
+    <append>false</append>
+    <encoder>
+      <pattern>%d{HH:mm:ss} %m%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- console log -->
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss} [%c] %p - %m%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- console log - provides less detail than STDOUT -->
+  <appender name="STDOUT-SHORT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss} %m%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- log for debugging purposes -->
+  <appender name="jmscts.log" class="ch.qos.logback.core.FileAppender">
+    <file>target/jmscts.log</file>
+    <append>false</append>
+    <encoder>
+      <pattern>%d{HH:mm:ss} [%c] %p - %m%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- logs a trace of test runs -->
+  <logger name="org.exolab.jmscts.core.JUnitTestRunner.Trace" level="warn" additivity="false">
+    <appender-ref ref="STDOUT-SHORT"/>
+  </logger>
+
+  <!-- logs a summary of the test run at completion -->
+  <logger name="org.exolab.jmscts.core.JUnitTestRunner.Summary" level="info" additivity="false">
+    <appender-ref ref="jmscts-report.log"/>
+    <appender-ref ref="STDOUT-SHORT"/>
+  </logger>
+
+  <!-- logs detailed errors/failures of the test run at completion -->
+  <logger name="org.exolab.jmscts.core.JUnitTestRunner.Detail" level="info" additivity="false">
+    <appender-ref ref="jmscts-report.log"/>
+  </logger>
+
+  <!-- logs detailed errors/failures of the test run at completion -->
+  <logger name="org.exolab.jmscts.core.JUnitTestRunner.Detail" level="info" additivity="false">
+    <appender-ref ref="jmscts-report.log"/>
+  </logger>
+
+  <root level="warn">
+    <appender-ref ref="jmscts.log"/>
+    <appender-ref ref="STDOUT"/>
+  </root>
+</configuration>

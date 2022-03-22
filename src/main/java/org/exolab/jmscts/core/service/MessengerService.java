@@ -44,7 +44,8 @@
  */
 package org.exolab.jmscts.core.service;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.exolab.core.service.Service;
 import org.exolab.core.service.ServiceException;
@@ -90,7 +91,7 @@ public class MessengerService extends Service implements ExecutionListener {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(MessengerService.class);
+        LoggerFactory.getLogger(MessengerService.class);
 
 
     /**

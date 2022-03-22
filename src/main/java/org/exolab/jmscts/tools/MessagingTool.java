@@ -60,7 +60,8 @@ import javax.jms.XAQueueConnectionFactory;
 import javax.jms.XATopicConnectionFactory;
 import javax.naming.NamingException;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.exolab.jmscts.core.TestContext;
 import org.exolab.jmscts.core.TestStatistics;
@@ -126,7 +127,7 @@ public abstract class MessagingTool {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(MessagingTool.class);
+        LoggerFactory.getLogger(MessagingTool.class);
 
 
     /**
@@ -266,7 +267,7 @@ public abstract class MessagingTool {
                 mode = "NON_PERSISTENT";
             }
         } catch (JMSException exception) {
-            log.error(exception);
+            log.error("{}", exception);;
         }
         System.out.println(messageId + " " + mode);
         if (_verbose) {
@@ -278,7 +279,7 @@ public abstract class MessagingTool {
                     System.out.println(" " + name + "=" + object);
                 }
             } catch (JMSException exception) {
-                log.error(exception);
+                log.error("{}", exception);;
             }
         }
     }

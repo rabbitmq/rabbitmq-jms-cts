@@ -51,7 +51,8 @@ import javax.jms.IllegalStateException;
 import javax.jms.Message;
 import javax.jms.Session;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import junit.framework.Test;
 
@@ -86,7 +87,7 @@ public class RollbackTest extends AbstractSendReceiveTestCase {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(RollbackTest.class);
+        LoggerFactory.getLogger(RollbackTest.class);
 
     /**
      * Construct a new <code>RollbackTest</code>

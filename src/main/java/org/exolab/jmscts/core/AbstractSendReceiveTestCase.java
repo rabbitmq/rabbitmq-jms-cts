@@ -51,7 +51,8 @@ import javax.jms.Destination;
 import javax.jms.Message;
 import javax.jms.MessageConsumer;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -76,7 +77,7 @@ public abstract class AbstractSendReceiveTestCase
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(AbstractSendReceiveTestCase.class);
+        LoggerFactory.getLogger(AbstractSendReceiveTestCase.class);
 
 
     /**

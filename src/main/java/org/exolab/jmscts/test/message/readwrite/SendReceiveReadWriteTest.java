@@ -46,7 +46,8 @@ package org.exolab.jmscts.test.message.readwrite;
 
 import javax.jms.Message;
 import javax.jms.MessageNotWriteableException;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import junit.framework.Test;
 
@@ -83,7 +84,7 @@ public class SendReceiveReadWriteTest extends AbstractSendReceiveTestCase
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(SendReceiveReadWriteTest.class);
+        LoggerFactory.getLogger(SendReceiveReadWriteTest.class);
 
 
     /**

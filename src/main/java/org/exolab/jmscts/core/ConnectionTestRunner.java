@@ -46,7 +46,8 @@ package org.exolab.jmscts.core;
 
 import javax.jms.Connection;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import junit.framework.Test;
 import junit.framework.TestResult;
@@ -72,7 +73,7 @@ public class ConnectionTestRunner extends TestRunner
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(ConnectionTestRunner.class.getName());
+        LoggerFactory.getLogger(ConnectionTestRunner.class.getName());
 
 
     /**
@@ -155,7 +156,7 @@ public class ConnectionTestRunner extends TestRunner
                 try {
                     connection.start();
                 } catch (Exception exception) {
-                    log.error(exception, exception);
+                    log.error("{}", exception);
                     throw exception;
                 }
             }

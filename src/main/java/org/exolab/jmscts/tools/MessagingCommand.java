@@ -52,7 +52,7 @@ import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
-import org.apache.log4j.xml.DOMConfigurator;
+import org.exolab.jmscts.LogUtils;
 
 
 /**
@@ -119,7 +119,7 @@ public abstract class MessagingCommand {
      */
     public MessagingCommand() {
         // configure the logger
-        DOMConfigurator.configure(getHome() + "/config/log4j.xml");
+        LogUtils.configure(getHome() + "/config/logback.xml");
     }
 
     /**

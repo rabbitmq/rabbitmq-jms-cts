@@ -50,7 +50,8 @@ import javax.jms.MessageEOFException;
 import javax.jms.MessageNotReadableException;
 import javax.jms.StreamMessage;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.exolab.jmscts.core.MessageVerifier;
 import org.exolab.jmscts.test.message.util.EmptyMessageVerifier;
 import org.exolab.jmscts.test.message.util.EmptyPropertyVerifier;
@@ -70,7 +71,7 @@ class ClearHelper extends Assert {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(ClearHelper.class);
+        LoggerFactory.getLogger(ClearHelper.class);
 
 
     /**

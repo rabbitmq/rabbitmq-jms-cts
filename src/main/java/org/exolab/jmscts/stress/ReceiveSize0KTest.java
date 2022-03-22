@@ -48,7 +48,8 @@ import javax.jms.Destination;
 import javax.jms.Message;
 import javax.jms.Session;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import junit.framework.Test;
 
@@ -87,7 +88,7 @@ public class ReceiveSize0KTest extends AbstractSendReceiveTestCase {
      * The logger
      */
     @SuppressWarnings("unused")
-    private static final Logger LOG = Logger.getLogger(
+    private static final Logger LOG = LoggerFactory.getLogger(
         ReceiveSize0KTest.class);
 
     /**

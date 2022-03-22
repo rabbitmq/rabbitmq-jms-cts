@@ -44,7 +44,8 @@
  */
 package org.exolab.jmscts.core;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -64,7 +65,7 @@ public abstract class AbstractMessageTestCase extends AbstractSessionTestCase
      */
     @SuppressWarnings("unused")
     private static final Logger log =
-        Logger.getLogger(AbstractMessageTestCase.class.getName());
+        LoggerFactory.getLogger(AbstractMessageTestCase.class.getName());
 
 
     /**

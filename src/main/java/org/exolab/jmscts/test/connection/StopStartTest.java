@@ -46,7 +46,8 @@ package org.exolab.jmscts.test.connection;
 
 import javax.jms.Connection;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import junit.framework.Test;
 
@@ -68,7 +69,7 @@ public class StopStartTest extends AbstractConnectionTestCase {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(StopStartTest.class);
+        LoggerFactory.getLogger(StopStartTest.class);
 
 
     /**

@@ -46,7 +46,8 @@ package org.exolab.jmscts.core;
 
 import java.util.HashMap;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.exolab.castor.types.Time;
 
@@ -87,7 +88,7 @@ public class TestStatistics {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(TestStatistics.class);
+        LoggerFactory.getLogger(TestStatistics.class);
 
 
     /**

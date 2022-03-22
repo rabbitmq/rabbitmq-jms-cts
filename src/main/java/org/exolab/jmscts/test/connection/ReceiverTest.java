@@ -51,7 +51,8 @@ import javax.jms.Session;
 
 import junit.framework.Test;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.exolab.jmscts.core.AbstractSendReceiveTestCase;
 import org.exolab.jmscts.core.CompletionListener;
 import org.exolab.jmscts.core.ConnectionHelper;
@@ -86,7 +87,7 @@ public class ReceiverTest extends AbstractSendReceiveTestCase {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(ReceiverTest.class);
+        LoggerFactory.getLogger(ReceiverTest.class);
 
 
     /**

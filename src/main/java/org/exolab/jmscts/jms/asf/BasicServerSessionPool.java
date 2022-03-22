@@ -60,7 +60,8 @@ import javax.jms.XAQueueSession;
 import javax.jms.XATopicConnection;
 import javax.jms.XATopicSession;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -110,7 +111,7 @@ public class BasicServerSessionPool implements ServerSessionPool {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(BasicServerSessionPool.class);
+        LoggerFactory.getLogger(BasicServerSessionPool.class);
 
 
     /**
@@ -209,7 +210,7 @@ public class BasicServerSessionPool implements ServerSessionPool {
                 try {
                     session.close();
                 } catch (JMSException exception) {
-                    log.error(exception);
+                    log.error("{}", exception);;
                 }
             } else {
                 _pool.add(session);

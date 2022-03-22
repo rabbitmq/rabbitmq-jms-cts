@@ -57,7 +57,8 @@ import javax.jms.Session;
 import junit.framework.Test;
 import junit.framework.TestResult;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.exolab.jmscts.provider.Administrator;
 
@@ -94,7 +95,7 @@ public class SendReceiveTestInvoker extends MessageTestInvoker {
      * The logger
      */
     private static final Logger _log =
-        Logger.getLogger(SendReceiveTestInvoker.class);
+        LoggerFactory.getLogger(SendReceiveTestInvoker.class);
 
 
     /**
@@ -231,7 +232,7 @@ public class SendReceiveTestInvoker extends MessageTestInvoker {
                     DestinationHelper.destroy(name, admin);
                     destination = DestinationHelper.create(context, name);
                 } catch (Exception exception) {
-                    _log.error(exception, exception);
+                    _log.error("{}", exception);
                     throw exception;
                 }
                 destinations.put(key, destination);
@@ -258,7 +259,7 @@ public class SendReceiveTestInvoker extends MessageTestInvoker {
                 if (destination!=null) 
                     DestinationHelper.destroy(destination, admin);
             } catch (Exception exception) {
-                _log.error(exception, exception);
+                _log.error("{}", exception);
                 throw exception;
             }
         }

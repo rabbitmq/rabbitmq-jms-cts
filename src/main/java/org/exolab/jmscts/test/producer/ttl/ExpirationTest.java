@@ -51,7 +51,8 @@ import java.util.List;
 import javax.jms.Message;
 import javax.jms.Session;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import junit.framework.Test;
 
@@ -81,7 +82,7 @@ public class ExpirationTest extends AbstractSendReceiveTestCase {
     /**
      * The logger.
      */
-    private static final Logger log = Logger.getLogger(
+    private static final Logger log = LoggerFactory.getLogger(
         ExpirationTest.class);
 
     /**

@@ -53,7 +53,8 @@ import junit.framework.TestResult;
 import junit.framework.TestSuite;
 import junit.runner.BaseTestRunner;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -68,19 +69,19 @@ public class JUnitTestRunner extends BaseTestRunner {
     /**
      * The summary logger
      */
-    private static final Logger SUMMARY_LOG = Logger.getLogger(
+    private static final Logger SUMMARY_LOG = LoggerFactory.getLogger(
         JUnitTestRunner.class.getName() + ".Summary");
 
     /**
      * The trace logger
      */
-    private static final Logger TRACE_LOG = Logger.getLogger(
+    private static final Logger TRACE_LOG = LoggerFactory.getLogger(
         JUnitTestRunner.class.getName() + ".Trace");
 
     /**
      * The detail logger
      */
-    private static final Logger DETAIL_LOG = Logger.getLogger(
+    private static final Logger DETAIL_LOG = LoggerFactory.getLogger(
         JUnitTestRunner.class.getName() + ".Detail");
 
 

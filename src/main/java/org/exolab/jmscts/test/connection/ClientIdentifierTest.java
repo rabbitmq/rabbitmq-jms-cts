@@ -49,7 +49,8 @@ import javax.jms.ExceptionListener;
 import javax.jms.IllegalStateException;
 import javax.jms.InvalidClientIDException;
 import javax.jms.JMSException;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import junit.framework.Test;
 
@@ -83,7 +84,7 @@ public class ClientIdentifierTest extends AbstractConnectionTestCase {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(ClientIdentifierTest.class);
+        LoggerFactory.getLogger(ClientIdentifierTest.class);
 
 
     /**

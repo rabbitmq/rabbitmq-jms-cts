@@ -58,11 +58,12 @@ import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.GnuParser;
 import org.apache.commons.cli.Options;
-import org.apache.log4j.Logger;
-import org.apache.log4j.xml.DOMConfigurator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.exolab.core.service.ServiceException;
 import org.exolab.core.service.ServiceGroup;
 import org.exolab.core.util.RmiRegistryService;
+import org.exolab.jmscts.LogUtils;
 import org.exolab.jmscts.core.filter.Filter;
 import org.exolab.jmscts.core.service.SnapshotService;
 import org.exolab.jmscts.core.service.TestTerminatorService;
@@ -136,9 +137,9 @@ public abstract class AbstractTestRunner extends TestSetup {
     private static final String PORT = "port";
 
     /**
-     * The log4j configuration filename
+     * The log configuration filename
      */
-    private static final String LOG4J = "log4j.xml";
+    private static final String LOG_CONFIGURATION_FILE = "logback.xml";
 
     /**
      * The configuration for each provider
@@ -184,7 +185,7 @@ public abstract class AbstractTestRunner extends TestSetup {
      * The logger
      */
     private static final Logger log =
-        Logger.getLogger(AbstractTestRunner.class.getName());
+        LoggerFactory.getLogger(AbstractTestRunner.class.getName());
 
 
     /**
@@ -203,7 +204,7 @@ public abstract class AbstractTestRunner extends TestSetup {
         _args = args;
 
         // configure the logger
-        DOMConfigurator.configure(getHome() + "/config/" + LOG4J);
+        LogUtils.configure(getHome() + "/config/" + LOG_CONFIGURATION_FILE);
     }
 
     /**
@@ -221,7 +222,7 @@ public abstract class AbstractTestRunner extends TestSetup {
         _args = args;
 
         // configure the logger
-        DOMConfigurator.configure(getHome() + "/config/" + LOG4J);
+        LogUtils.configure(getHome() + "/config/" + LOG_CONFIGURATION_FILE);
     }
 
     /**
@@ -305,7 +306,7 @@ public abstract class AbstractTestRunner extends TestSetup {
             try {
                 report(_output);
             } catch (Exception exception) {
-                log.error(exception, exception);
+                log.error("{}", exception);
             }
         }
     }
