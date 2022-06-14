@@ -1,0 +1,33 @@
+name: Build (Linux)
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    services:
+      rabbitmq:
+        image: rabbitmq:3.10
+        ports:
+          - 5672:5672
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'maven'
+      - name: Enable JMS topic exchange plugin
+        run: docker exec ${{job.services.rabbitmq.id}} rabbitmq-plugins enable rabbitmq_jms_topic_exchange
+      - name: Test
+        run: ./mvnw clean verify -P '!setup-test-node'
