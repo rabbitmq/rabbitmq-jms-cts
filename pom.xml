@@ -39,33 +39,6 @@
 
     <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
     <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
-    <maven-antrun-plugin.version>1.7</maven-antrun-plugin.version>
-    <ant-junit.version>1.9.2</ant-junit.version>
-    <ant.version>1.9.2</ant.version>
-
-    <!--
-    These groovy scripts are used later in this POM file for the
-    testsuite.
-    -->
-    <groovy-scripts.dir>${basedir}/src/main/scripts</groovy-scripts.dir>
-    <!--
-    ${deps.dir} should point to a directory containing a working copy of
-    rabbitmq-server and of the JMS topic exchange plugin, named "rabbit"
-    and "rabbitmq_jms_topic_exchange", respectively.
-
-    "rabbit" and "rabbitmq_jms_topic_exchange" are used to automatically
-    setup a RabbitMQ node with the JMS topic exchange plugin for the testsuite.
-    -->
-    <deps.dir>${basedir}/deps</deps.dir>
-
-    <!-- For testing only -->
-    <make.bin>make</make.bin>
-    <rabbitmq.dir>${deps.dir}/rabbit</rabbitmq.dir>
-    <rabbitmqctl.bin>${rabbitmq.dir}/scripts/rabbitmqctl</rabbitmqctl.bin>
-
-    <test-broker.A.nodename>rabbit@localhost</test-broker.A.nodename>
-    <test-broker.A.node_port>5672</test-broker.A.node_port>
-    <test-broker.A.config_file>${project.build.directory}/test-classes/${test-broker.A.nodename}</test-broker.A.config_file>
   </properties>
 
   <dependencies>
@@ -143,7 +116,6 @@
       <version>${xerces-impl.version}</version>
     </dependency>
 
-
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -181,25 +153,7 @@
 
         <configuration>
           <encoding>UTF-8</encoding>
-          <systemPropertyVariables>
-            <RABBITMQ_VERSION>${rabbitmq.version}</RABBITMQ_VERSION>
-            <make.bin>${make.bin}</make.bin>
-            <rabbitmq.dir>${rabbitmq.dir}</rabbitmq.dir>
-            <rabbitmqctl.bin>${rabbitmqctl.bin}</rabbitmqctl.bin>
-
-            <test-broker.A.nodename>${test-broker.A.nodename}</test-broker.A.nodename>
-            <test-broker.A.node_port>${test-broker.A.node_port}</test-broker.A.node_port>
-            <test-broker.A.config_file>${test-broker.A.config_file}</test-broker.A.config_file>
-          </systemPropertyVariables>
           <argLine>-Xms1024m -Xmx4096m</argLine>
-          <environmentVariables>
-            <DEPS_DIR>${deps.dir}</DEPS_DIR>
-          </environmentVariables>
-	  <!--
-            needed because of bug in OpenJDK 8 u181 on Debian distros
-            see https://stackoverflow.com/questions/53010200/maven-surefire-could-not-find-forkedbooter-class
-          -->
-          <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
         </configuration>
 
         <executions>
@@ -222,124 +176,6 @@
     </plugins>
 
   </build>
-
-  <profiles>
-    <profile>
-      <!--
-      If we detect the RabbitMQ Umbrella project, use its dependencies
-      directory.
-      -->
-      <id>in-umbrella</id>
-      <activation>
-        <file>
-          <exists>../../UMBRELLA.md</exists>
-        </file>
-      </activation>
-      <properties>
-        <deps.dir>${basedir}/..</deps.dir>
-      </properties>
-    </profile>
-
-    <profile>
-      <!-- On FreeBSD, GNU Make is installed as "gmake". -->
-      <id>use-gmake</id>
-      <activation>
-        <os><name>FreeBSD</name></os>
-      </activation>
-      <properties>
-        <make.bin>gmake</make.bin>
-      </properties>
-    </profile>
-
-    <profile>
-      <!-- On Windows, use the Batch version of rabbitmqctl. -->
-      <id>use-rabbitmqctl.bat</id>
-      <activation>
-        <os><family>Windows</family></os>
-      </activation>
-      <properties>
-        <rabbitmqctl.bin>${rabbitmq.dir}/scripts/rabbitmqctl.bat</rabbitmqctl.bin>
-      </properties>
-    </profile>
-
-    <profile>
-      <!--
-      To ease testing, this POM can setup a RabbitMQ
-      node automatically.
-
-      It depends on the presence of ${rabbitmq.dir} which points to
-      a working copy of the rabbitmq-server Git repository. If it
-      is missing, nothing is setup and the testsuite relies on an
-      externally provided broker/cluster.
-
-      If you want to explicitely disable the automatic cluster setup,
-      you must disable this profile:
-
-          mvn verify -P '!setup-test-node'
-
-      -->
-      <id>setup-test-node</id>
-      <activation>
-        <property>
-          <name>!skipTests</name>
-        </property>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.codehaus.gmaven</groupId>
-            <artifactId>groovy-maven-plugin</artifactId>
-            <version>2.1.1</version>
-            <executions>
-              <!--
-              Start a broker.
-
-              Currently, this test broker will listen to the default
-              TCP ports of 5672 for AMQP. Unfortunately, this means
-              no other standard RabbitMQ can run on the same host at the same time.
-              -->
-              <execution>
-                <phase>pre-integration-test</phase>
-                <id>start-test-broker-A</id>
-                <goals>
-                  <goal>execute</goal>
-                </goals>
-                <configuration>
-                  <properties>
-                    <nodename>${test-broker.A.nodename}</nodename>
-                    <node_port>${test-broker.A.node_port}</node_port>
-                  </properties>
-                  <source>
-                    ${groovy-scripts.dir}/manage_test_broker.groovy
-                  </source>
-                </configuration>
-              </execution>
-
-              <!--
-              After the testsuite, no matter the result, stop both the test broker.
-              -->
-              <execution>
-                <phase>post-integration-test</phase>
-                <id>stop-test-broker-A</id>
-                <goals>
-                  <goal>execute</goal>
-                </goals>
-                <configuration>
-                  <properties>
-                    <nodename>${test-broker.A.nodename}</nodename>
-                  </properties>
-                  <source>
-                    ${groovy-scripts.dir}/manage_test_broker.groovy
-                  </source>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
 
   <repositories>
     <repository>
