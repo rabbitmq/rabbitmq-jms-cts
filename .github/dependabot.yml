@@ -5,3 +5,6 @@ updates:
     schedule:
       interval: "daily"
     open-pull-requests-limit: 30
+    ignore:
+      - dependency-name: "ch.qos.logback:logback-classic"
+        versions: [ "[1.4,)" ]
