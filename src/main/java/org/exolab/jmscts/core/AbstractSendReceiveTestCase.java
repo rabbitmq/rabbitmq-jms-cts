@@ -45,7 +45,6 @@
 package org.exolab.jmscts.core;
 
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -545,22 +544,8 @@ public abstract class AbstractSendReceiveTestCase
         String name = DestinationHelper.getName(receiver.getDestination());
         long timeout = context.getMessagingBehaviour().getTimeout();
 
-        List<Message> result = receiver.receive(count, timeout);
-        if (result == null || result.size() < count) {
-            List<Message> accumulator = result == null ? new ArrayList<>(count) :
-                new ArrayList<>(result);
-            result = Utils.retryUntilNotNull(Duration.ofSeconds(10),
-                () -> {
-                    List<Message> messages = receiver.receive(count, timeout);
-                    if (messages != null) {
-                        accumulator.addAll(messages);
-                        if (accumulator.size() == count) {
-                            return accumulator;
-                        }
-                    }
-                    return null;
-                });
-        }
+        List<Message> result = Utils.retryUntilExpectedCount(Duration.ofSeconds(10),
+            () -> receiver.receive(count, timeout), count);
         if (result == null) {
             if (count != 0) {
                 String msg = "Failed to receive any messages from "

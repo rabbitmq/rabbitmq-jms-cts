@@ -44,6 +44,7 @@
  */
 package org.exolab.jmscts.test.selector;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
@@ -58,6 +59,7 @@ import org.exolab.jmscts.core.MessageReceiver;
 import org.exolab.jmscts.core.PropertyPopulator;
 import org.exolab.jmscts.core.SessionHelper;
 import org.exolab.jmscts.core.TestContext;
+import org.exolab.jmscts.core.Utils;
 
 
 /**
@@ -170,7 +172,10 @@ public abstract class AbstractSelectorTestCase
             MessagingHelper.send(context, message, destination, count);
             int expected = (selectsAll) ? count : 0;
             timeout = timeout >= 0 ? timeout : context.getMessagingBehaviour().getTimeout();
-            List<?> result = receiver.receive(expected, timeout);
+            long tout = timeout;
+            MessageReceiver rcvr = receiver;
+            List<Message> result = Utils.retryUntilExpectedCount(Duration.ofSeconds(10),
+                () -> rcvr.receive(expected, tout), expected);
             int received = (result == null) ? 0 : result.size();
             if (received != expected) {
                 fail("Expected " + expected + " messages for selector=\""
