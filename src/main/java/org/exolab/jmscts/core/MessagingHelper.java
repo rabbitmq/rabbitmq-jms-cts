@@ -44,8 +44,10 @@
  */
 package org.exolab.jmscts.core;
 
+import java.time.Duration;
 import java.util.List;
 
+import java.util.concurrent.atomic.AtomicReference;
 import javax.jms.Destination;
 import javax.jms.Message;
 import javax.jms.Session;
@@ -185,7 +187,7 @@ public final class MessagingHelper {
 
         MessageReceiver receiver = null;
         MessageSender sender = null;
-        List<?> messages = null;
+        List<?> messages;
         try {
             receiver = SessionHelper.createReceiver(context, destination);
             sender = SessionHelper.createSender(context, destination);
@@ -195,7 +197,12 @@ public final class MessagingHelper {
                 session.commit();
             }
             long timeout = context.getMessagingBehaviour().getTimeout();
+            AtomicReference<MessageReceiver> receiverReference = new AtomicReference<>(receiver);
             messages = receiver.receive(1, timeout);
+            if (messages == null) {
+                messages = Utils.retryUntilNotNull(Duration.ofSeconds(10),
+                    () -> receiverReference.get().receive(1, timeout));
+            }
             if (messages == null) {
                 throw new Exception(
                     "Failed to receive a message from destination="

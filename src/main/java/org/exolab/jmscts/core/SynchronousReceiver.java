@@ -110,7 +110,7 @@ class SynchronousReceiver extends AbstractMessageReceiver {
             // don't expect any messages to be received
             Message message = getConsumer().receive(timeout);
             if (message != null) {
-                result = new ArrayList<Message>();
+                result = new ArrayList<>();
                 result.add(message);
             }
         } else {
@@ -118,7 +118,7 @@ class SynchronousReceiver extends AbstractMessageReceiver {
                 Message message = getConsumer().receive(timeout);
                 if (message != null) {
                     if (result == null) {
-                        result = new ArrayList<Message>(count);
+                        result = new ArrayList<>(count);
                     }
                     result.add(message);
                 }

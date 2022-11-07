@@ -164,7 +164,7 @@ class MessageBrowser implements MessageReceiver {
         while (iter.hasMoreElements() && count > 0) {
             Message message = (Message) iter.nextElement();
             if (result == null) {
-                result = new LinkedList<Message>();
+                result = new LinkedList<>();
             }
             result.add(message);
             --count;

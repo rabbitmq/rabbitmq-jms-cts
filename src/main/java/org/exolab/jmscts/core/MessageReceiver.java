@@ -48,6 +48,7 @@ import java.util.List;
 
 import javax.jms.Destination;
 import javax.jms.JMSException;
+import javax.jms.Message;
 
 
 /**
@@ -73,7 +74,7 @@ public interface MessageReceiver {
      * the specified time
      * @throws JMSException if the operation fails
      */
-    List<?> receive(int count, long timeout) throws JMSException;
+    List<Message> receive(int count, long timeout) throws JMSException;
 
     /**
      * Receive messages, delegating received messages to a

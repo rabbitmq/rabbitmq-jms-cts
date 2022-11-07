@@ -47,6 +47,7 @@ package org.exolab.jmscts.core;
 import java.util.List;
 
 import javax.jms.JMSException;
+import javax.jms.Message;
 import javax.jms.MessageConsumer;
 import javax.jms.Session;
 
@@ -97,7 +98,7 @@ class AsynchronousReceiver extends AbstractMessageReceiver {
      * @throws JMSException if the operation fails
      */
     @Override
-    public List<?> receive(int count, long timeout) throws JMSException {
+    public List<Message> receive(int count, long timeout) throws JMSException {
         if (log.isDebugEnabled()) {
             log.debug("Expecting to receive count=" + count + " messages "
                       + "[destination=" + getDestination()
