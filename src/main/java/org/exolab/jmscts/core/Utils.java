@@ -3,8 +3,12 @@ package org.exolab.jmscts.core;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public abstract class Utils {
+
+  private static final Logger LOGGER = LoggerFactory.getLogger(Utils.class);
 
   private Utils() {
   }
@@ -37,8 +41,12 @@ public abstract class Utils {
       CallableSupplier<List<T>> operation, int expected) throws Exception {
     List<T> result = operation.get();
     if (expected != 0 && (result == null || result.size() < expected)) {
+      LOGGER.warn("Expected result is {} message(s) but got {} on the first try, retrying...",
+          expected,
+          result == null ? "null" : result.size());
       List<T> accumulator = result == null ? new ArrayList<>(expected) :
           new ArrayList<>(result);
+      long start = System.nanoTime();
       Utils.retryUntilNotNull(timeout,
           () -> {
             List<T> messages = operation.get();
@@ -51,6 +59,11 @@ public abstract class Utils {
             return null;
           });
       result = accumulator;
+      LOGGER.warn("Retry returns with {} message(s), expected {}, time spent retrying {} ms",
+          result.size(), expected, Duration.ofNanos(System.nanoTime() - start).toMillis());
+      if (result.size() != expected) {
+        LOGGER.warn("Dumping stack trace...", new Exception("Stack trace"));
+      }
     }
     return result;
   }
