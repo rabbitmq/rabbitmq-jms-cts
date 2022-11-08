@@ -39,7 +39,7 @@ public abstract class Utils {
     if (expected != 0 && (result == null || result.size() < expected)) {
       List<T> accumulator = result == null ? new ArrayList<>(expected) :
           new ArrayList<>(result);
-      result = Utils.retryUntilNotNull(timeout,
+      Utils.retryUntilNotNull(timeout,
           () -> {
             List<T> messages = operation.get();
             if (messages != null) {
@@ -50,6 +50,7 @@ public abstract class Utils {
             }
             return null;
           });
+      result = accumulator;
     }
     return result;
   }
