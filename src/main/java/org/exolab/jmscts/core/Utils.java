@@ -38,19 +38,26 @@ public abstract class Utils {
   }
 
   public static <T> List<T> retryUntilExpectedCount(Duration timeout,
-      CallableSupplier<List<T>> operation, int expected) throws Exception {
+      CallableSupplier<List<T>> operation, int expected, boolean clearBetweenAttempts)
+      throws Exception {
     List<T> result = operation.get();
     if (expected != 0 && (result == null || result.size() < expected)) {
       LOGGER.warn("Expected result is {} message(s) but got {} on the first try, retrying...",
           expected,
           result == null ? "null" : result.size());
       List<T> accumulator = result == null ? new ArrayList<>(expected) :
-          new ArrayList<>(result);
+          new ArrayList<>();
+      if (clearBetweenAttempts) {
+        accumulator.clear();
+      }
       long start = System.nanoTime();
       Utils.retryUntilNotNull(timeout,
           () -> {
             List<T> messages = operation.get();
             if (messages != null) {
+              if (clearBetweenAttempts) {
+                accumulator.clear();
+              }
               accumulator.addAll(messages);
               if (accumulator.size() == expected) {
                 return accumulator;

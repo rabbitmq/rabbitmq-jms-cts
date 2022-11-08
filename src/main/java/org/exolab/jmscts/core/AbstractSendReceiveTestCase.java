@@ -544,8 +544,10 @@ public abstract class AbstractSendReceiveTestCase
         String name = DestinationHelper.getName(receiver.getDestination());
         long timeout = context.getMessagingBehaviour().getTimeout();
 
+        boolean clearBetweenRetryAttempts = ReceiptType.BROWSER.equals(
+            context.getMessagingBehaviour().getReceiptType());
         List<Message> result = Utils.retryUntilExpectedCount(Duration.ofSeconds(10),
-            () -> receiver.receive(count, timeout), count);
+            () -> receiver.receive(count, timeout), count, clearBetweenRetryAttempts);
         if (result == null) {
             if (count != 0) {
                 String msg = "Failed to receive any messages from "

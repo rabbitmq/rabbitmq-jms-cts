@@ -57,6 +57,7 @@ import org.exolab.jmscts.core.MessagingHelper;
 import org.exolab.jmscts.core.MessagePopulator;
 import org.exolab.jmscts.core.MessageReceiver;
 import org.exolab.jmscts.core.PropertyPopulator;
+import org.exolab.jmscts.core.ReceiptType;
 import org.exolab.jmscts.core.SessionHelper;
 import org.exolab.jmscts.core.TestContext;
 import org.exolab.jmscts.core.Utils;
@@ -174,8 +175,10 @@ public abstract class AbstractSelectorTestCase
             timeout = timeout >= 0 ? timeout : context.getMessagingBehaviour().getTimeout();
             long tout = timeout;
             MessageReceiver rcvr = receiver;
+            boolean clearBetweenRetryAttempts = ReceiptType.BROWSER.equals(
+                context.getMessagingBehaviour().getReceiptType());
             List<Message> result = Utils.retryUntilExpectedCount(Duration.ofSeconds(10),
-                () -> rcvr.receive(expected, tout), expected);
+                () -> rcvr.receive(expected, tout), expected, clearBetweenRetryAttempts);
             int received = (result == null) ? 0 : result.size();
             if (received != expected) {
                 fail("Expected " + expected + " messages for selector=\""
