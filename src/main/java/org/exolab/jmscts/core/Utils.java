@@ -37,7 +37,6 @@ public abstract class Utils {
       CallableSupplier<List<T>> operation, int expected) throws Exception {
     List<T> result = operation.get();
     if (expected != 0 && (result == null || result.size() < expected)) {
-      System.out.println("retry");
       List<T> accumulator = result == null ? new ArrayList<>(expected) :
           new ArrayList<>(result);
       result = Utils.retryUntilNotNull(timeout,
