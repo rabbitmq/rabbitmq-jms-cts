@@ -36,7 +36,8 @@ public abstract class Utils {
   public static <T> List<T> retryUntilExpectedCount(Duration timeout,
       CallableSupplier<List<T>> operation, int expected) throws Exception {
     List<T> result = operation.get();
-    if (result == null || result.size() < expected) {
+    if (expected != 0 && (result == null || result.size() < expected)) {
+      System.out.println("retry");
       List<T> accumulator = result == null ? new ArrayList<>(expected) :
           new ArrayList<>(result);
       result = Utils.retryUntilNotNull(timeout,
