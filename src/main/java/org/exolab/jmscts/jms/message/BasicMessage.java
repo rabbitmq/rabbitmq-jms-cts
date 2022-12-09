@@ -161,6 +161,16 @@ public class BasicMessage implements Message {
         _bodyReadOnly = false;
     }
 
+    @Override
+    public <T> T getBody(Class<T> c) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean isBodyAssignableTo(Class c) {
+        throw new UnsupportedOperationException();
+    }
+
     /**
      * Clear the message properties
      */
@@ -348,6 +358,16 @@ public class BasicMessage implements Message {
     @Override
     public void setJMSExpiration(long expiration) {
         _expiration = expiration;
+    }
+
+    @Override
+    public long getJMSDeliveryTime() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void setJMSDeliveryTime(long deliveryTime) {
+        throw new UnsupportedOperationException();
     }
 
     /**

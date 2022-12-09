@@ -21,7 +21,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <!-- private project build dependencies -->
-    <geronimo-spec.version>1.1.1</geronimo-spec.version>
     <junit.version>4.13.2</junit.version>
     <commons-cli.version>1.5.0</commons-cli.version>
     <commons-collections.version>3.2.2</commons-collections.version>
@@ -44,9 +43,9 @@
   <dependencies>
 
     <dependency>
-      <groupId>org.apache.geronimo.specs</groupId>
-      <artifactId>geronimo-jms_1.1_spec</artifactId>
-      <version>${geronimo-spec.version}</version>
+      <groupId>javax.jms</groupId>
+      <artifactId>javax.jms-api</artifactId>
+      <version>2.0.1</version>
     </dependency>
 
     <dependency>
