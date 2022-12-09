@@ -1,4 +1,4 @@
-name: Build (Linux)
+name: Test against RabbitMQ 3.11 alpha
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
 
     services:
       rabbitmq:
-        image: rabbitmq:3.10
+        image: pivotalrabbitmq/rabbitmq-dev:3.11
         ports:
           - 5672:5672
 
@@ -35,5 +35,7 @@ jobs:
         run: docker exec ${{job.services.rabbitmq.id}} rabbitmqctl stop_app
       - name: Start RabbitMQ application
         run: docker exec ${{job.services.rabbitmq.id}} rabbitmqctl start_app
+      - name: Output dependencies
+        run: ./mvnw dependency:tree --no-transfer-progress
       - name: Test
-        run: ./mvnw clean verify
+        run: ./mvnw clean verify --no-transfer-progress
