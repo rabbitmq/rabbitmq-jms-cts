@@ -29,6 +29,8 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
           cache: 'maven'
+      - name: Output broker version
+        run: docker exec ${{job.services.rabbitmq.id}} rabbitmqctl version
       - name: Enable JMS topic exchange plugin
         run: docker exec ${{job.services.rabbitmq.id}} rabbitmq-plugins enable rabbitmq_jms_topic_exchange --offline
       - name: Stop RabbitMQ application
