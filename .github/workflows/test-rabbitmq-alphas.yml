@@ -1,4 +1,4 @@
-name: Test against RabbitMQ 3.11 alpha
+name: Test against RabbitMQ alphas
 
 on:
   push:
@@ -13,13 +13,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
-
+    strategy:
+      matrix:
+        rabbitmq-image: [ 'pivotalrabbitmq/rabbitmq:v3.11.x-otp-max-bazel', 'pivotalrabbitmq/rabbitmq:v3.12.x-otp-max-bazel' ]
     services:
       rabbitmq:
-        image: pivotalrabbitmq/rabbitmq-dev:3.11
+        image: ${{ matrix.rabbitmq-image }}
         ports:
           - 5672:5672
 
+    name:  Test against ${{ matrix.rabbitmq-image }}
     steps:
       - uses: actions/checkout@v3
 
