@@ -37,7 +37,7 @@
     <xerces-impl.version>2.9.0</xerces-impl.version>
 
     <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
-    <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
+    <maven-failsafe-plugin.version>3.0.0</maven-failsafe-plugin.version>
   </properties>
 
   <dependencies>
