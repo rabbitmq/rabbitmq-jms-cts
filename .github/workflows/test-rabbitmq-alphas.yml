@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-22.04
     strategy:
       matrix:
-        rabbitmq-image: [ 'pivotalrabbitmq/rabbitmq:v3.12.x-otp-max-bazel', 'pivotalrabbitmq/rabbitmq:main-otp-max-bazel' ]
+        rabbitmq-image: [ 'pivotalrabbitmq/rabbitmq:v3.12.x-otp-max-bazel', 'pivotalrabbitmq/rabbitmq:mc-fixes-otp-max-bazel' ]
     services:
       rabbitmq:
         image: ${{ matrix.rabbitmq-image }}
