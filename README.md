@@ -37,7 +37,8 @@ Results can be found in:
 
 ## License and Copyright
 
-(c) 2007-2020 VMware, Inc. or its affiliates.
+(c) 2007-2023 Broadcom. All Rights Reserved.
+The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.
 
 This package, the RabbitMQ JMS client CTS, is licensed the Mozilla Public License
 2.0 ("MPL").
