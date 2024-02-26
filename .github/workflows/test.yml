@@ -16,7 +16,7 @@ jobs:
 
     services:
       rabbitmq:
-        image: rabbitmq:3.12
+        image: rabbitmq:3.13
         ports:
           - 5672:5672
 
