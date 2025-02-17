@@ -37,6 +37,8 @@ jobs:
         run: docker exec ${{job.services.rabbitmq.id}} rabbitmqctl stop_app
       - name: Start RabbitMQ application
         run: docker exec ${{job.services.rabbitmq.id}} rabbitmqctl start_app
+      - name: Activate Khepri
+        run: docker exec ${{job.services.rabbitmq.id}} rabbitmqctl enable_feature_flag --opt-in khepri_db
       - name: Output dependencies
         run: ./mvnw dependency:tree --no-transfer-progress
       - name: Test
