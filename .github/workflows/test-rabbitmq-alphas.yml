@@ -16,7 +16,6 @@ jobs:
     strategy:
       matrix:
         rabbitmq-image:
-          - pivotalrabbitmq/rabbitmq:v4.0.x-otp27
           - pivotalrabbitmq/rabbitmq:v4.1.x-otp27
           - pivotalrabbitmq/rabbitmq:main-otp27
     services:
