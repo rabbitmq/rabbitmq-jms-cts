@@ -9,6 +9,7 @@ on:
       - main
   repository_dispatch:
     types: [new_client_snapshot]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -48,3 +49,7 @@ jobs:
         run: ./mvnw dependency:tree --no-transfer-progress
       - name: Test
         run: ./mvnw clean verify --no-transfer-progress
+      - uses: actions/upload-artifact@v4
+        with:
+          name: logs-${{ matrix.rabbitmq-image }}
+          path: target/
