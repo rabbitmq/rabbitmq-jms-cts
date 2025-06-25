@@ -16,9 +16,11 @@ jobs:
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        rabbitmq-image:
-          - pivotalrabbitmq/rabbitmq:v4.1.x-otp27
-          - pivotalrabbitmq/rabbitmq:main-otp27
+        include:
+          - rabbitmq-image: "pivotalrabbitmq/rabbitmq:v4.1.x-otp27"
+            label: "4.1"
+          - rabbitmq-image: "pivotalrabbitmq/rabbitmq:main-otp27"
+            label: "main"
     services:
       rabbitmq:
         image: ${{ matrix.rabbitmq-image }}
@@ -53,5 +55,5 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: logs-${{ matrix.rabbitmq-image }}
+          name: logs-${{ matrix.label }}
           path: target/
