@@ -151,7 +151,6 @@
         <version>${maven-failsafe-plugin.version}</version>
 
         <configuration>
-          <encoding>UTF-8</encoding>
           <argLine>-Xms1024m -Xmx4096m</argLine>
         </configuration>
 
