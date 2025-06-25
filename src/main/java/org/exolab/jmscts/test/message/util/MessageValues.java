@@ -56,8 +56,8 @@ public interface MessageValues extends PropertyValues {
     /**
      * Char values to test against
      */
-    Character[] CHARS = {new Character(Character.MIN_VALUE),
-                         new Character(Character.MAX_VALUE)};
+    Character[] CHARS = {Character.valueOf(Character.MIN_VALUE),
+                         Character.valueOf(Character.MAX_VALUE)};
 
     /**
      * Byte array values to test against

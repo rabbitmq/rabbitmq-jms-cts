@@ -56,7 +56,7 @@ import junit.framework.TestSuite;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
-import org.apache.commons.cli.GnuParser;
+import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Options;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -334,7 +334,7 @@ public abstract class AbstractTestRunner extends TestSetup {
         options.addOption(FILTER, true, "the test case filter path");
         options.addOption(PORT, true, "registry port");
 
-        CommandLineParser parser = new GnuParser();
+        CommandLineParser parser = new DefaultParser();
         CommandLine commands = parser.parse(options, _args);
 
         String config = commands.getOptionValue(

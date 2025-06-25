@@ -120,15 +120,15 @@ public class EmptyMessageVerifier extends AbstractMessageVerifier {
             // exception type is MessageEOFException. In this case,
             // readBytes should return -1
             MethodInvoker invoker = new MethodInvoker();
-            Integer result = new Integer(-1);
+            Integer result = Integer.valueOf(-1);
             equal(invoker.invoke(message, "readBytes", new byte[size]),
                   result);
 
-            Object[] args = {new byte[size], new Integer(size)};
+            Object[] args = {new byte[size], Integer.valueOf(size)};
             equal(invoker.invoke(message, "readBytes", args), result);
         } else {
             expect(message, "readBytes", new Object[]{new byte[size]}, null);
-            Object[] args = {new byte[size], new Integer(size)};
+            Object[] args = {new byte[size], Integer.valueOf(size)};
             expect(message, "readBytes", args, null);
         }
 

@@ -107,28 +107,28 @@ class MapMessageVerifier extends MessagePopulatorVerifier {
         byte[] bytes = new byte[BYTE_ARRAY_SIZE];
         _seed = 0;
         set(message, "setBoolean", Boolean.TRUE);
-        set(message, "setByte", new Byte(Byte.MIN_VALUE));
+        set(message, "setByte", Byte.valueOf(Byte.MIN_VALUE));
         set(message, "setBytes", bytes);
 
-        Object[] args = {bytes, new Integer(1), new Integer(bytes.length - 2)};
+        Object[] args = {bytes, Integer.valueOf(1), Integer.valueOf(bytes.length - 2)};
         set(message, "setBytes", args);
-        set(message, "setChar", new Character(Character.MIN_VALUE));
-        set(message, "setDouble", new Double(Double.MIN_VALUE));
-        set(message, "setFloat", new Float(Float.MIN_VALUE));
-        set(message, "setInt", new Integer(Integer.MIN_VALUE));
-        set(message, "setLong", new Long(Long.MIN_VALUE));
-        set(message, "setShort", new Short(Short.MIN_VALUE));
+        set(message, "setChar", Character.valueOf(Character.MIN_VALUE));
+        set(message, "setDouble", Double.valueOf(Double.MIN_VALUE));
+        set(message, "setFloat", Float.valueOf(Float.MIN_VALUE));
+        set(message, "setInt", Integer.valueOf(Integer.MIN_VALUE));
+        set(message, "setLong", Long.valueOf(Long.MIN_VALUE));
+        set(message, "setShort", Short.valueOf(Short.MIN_VALUE));
         set(message, "setString", "ABC");
 
         set(message, "setObject", Boolean.TRUE);
-        set(message, "setObject", new Byte(Byte.MAX_VALUE));
+        set(message, "setObject", Byte.valueOf(Byte.MAX_VALUE));
         set(message, "setObject", bytes);
-        set(message, "setObject", new Character(Character.MAX_VALUE));
-        set(message, "setObject", new Double(Double.MAX_VALUE));
-        set(message, "setObject", new Float(Float.MAX_VALUE));
-        set(message, "setObject", new Integer(Integer.MAX_VALUE));
-        set(message, "setObject", new Long(Long.MAX_VALUE));
-        set(message, "setObject", new Short(Short.MAX_VALUE));
+        set(message, "setObject", Character.valueOf(Character.MAX_VALUE));
+        set(message, "setObject", Double.valueOf(Double.MAX_VALUE));
+        set(message, "setObject", Float.valueOf(Float.MAX_VALUE));
+        set(message, "setObject", Integer.valueOf(Integer.MAX_VALUE));
+        set(message, "setObject", Long.valueOf(Long.MAX_VALUE));
+        set(message, "setObject", Short.valueOf(Short.MAX_VALUE));
         set(message, "setObject", "ABC");
     }
 
@@ -143,27 +143,27 @@ class MapMessageVerifier extends MessagePopulatorVerifier {
     public void verifyMapMessage(MapMessage message) throws Exception {
         _seed = 0;
         get(message, "getBoolean", Boolean.TRUE);
-        get(message, "getByte", new Byte(Byte.MIN_VALUE));
+        get(message, "getByte", Byte.valueOf(Byte.MIN_VALUE));
         get(message, "getBytes", new byte[BYTE_ARRAY_SIZE]);
 
         get(message, "getBytes", new byte[BYTE_ARRAY_SIZE - 2]);
-        get(message, "getChar", new Character(Character.MIN_VALUE));
-        get(message, "getDouble", new Double(Double.MIN_VALUE));
-        get(message, "getFloat", new Float(Float.MIN_VALUE));
-        get(message, "getInt", new Integer(Integer.MIN_VALUE));
-        get(message, "getLong", new Long(Long.MIN_VALUE));
-        get(message, "getShort", new Short(Short.MIN_VALUE));
+        get(message, "getChar", Character.valueOf(Character.MIN_VALUE));
+        get(message, "getDouble", Double.valueOf(Double.MIN_VALUE));
+        get(message, "getFloat", Float.valueOf(Float.MIN_VALUE));
+        get(message, "getInt", Integer.valueOf(Integer.MIN_VALUE));
+        get(message, "getLong", Long.valueOf(Long.MIN_VALUE));
+        get(message, "getShort", Short.valueOf(Short.MIN_VALUE));
         get(message, "getString", "ABC");
 
         get(message, "getObject", Boolean.TRUE);
-        get(message, "getObject", new Byte(Byte.MAX_VALUE));
+        get(message, "getObject", Byte.valueOf(Byte.MAX_VALUE));
         get(message, "getObject", new byte[BYTE_ARRAY_SIZE]);
-        get(message, "getObject", new Character(Character.MAX_VALUE));
-        get(message, "getObject", new Double(Double.MAX_VALUE));
-        get(message, "getObject", new Float(Float.MAX_VALUE));
-        get(message, "getObject", new Integer(Integer.MAX_VALUE));
-        get(message, "getObject", new Long(Long.MAX_VALUE));
-        get(message, "getObject", new Short(Short.MAX_VALUE));
+        get(message, "getObject", Character.valueOf(Character.MAX_VALUE));
+        get(message, "getObject", Double.valueOf(Double.MAX_VALUE));
+        get(message, "getObject", Float.valueOf(Float.MAX_VALUE));
+        get(message, "getObject", Integer.valueOf(Integer.MAX_VALUE));
+        get(message, "getObject", Long.valueOf(Long.MAX_VALUE));
+        get(message, "getObject", Short.valueOf(Short.MAX_VALUE));
         get(message, "getObject", "ABC");
     }
 

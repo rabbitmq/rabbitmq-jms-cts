@@ -110,7 +110,7 @@ public class RequirementDescriptor extends org.exolab.castor.xml.util.XMLClassDe
                 Requirement target = (Requirement) object;
                 if(!target.hasOptional())
                     return null;
-                return new Boolean(target.getOptional());
+                return Boolean.valueOf(target.getOptional());
             }
             public void setValue( java.lang.Object object, java.lang.Object value)
                 throws IllegalStateException, IllegalArgumentException

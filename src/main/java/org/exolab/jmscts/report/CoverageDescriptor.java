@@ -73,7 +73,7 @@ public class CoverageDescriptor extends org.exolab.castor.xml.util.XMLClassDescr
                 Coverage target = (Coverage) object;
                 if(!target.hasRuns())
                     return null;
-                return new Integer(target.getRuns());
+                return Integer.valueOf(target.getRuns());
             }
             public void setValue( java.lang.Object object, java.lang.Object value)
                 throws IllegalStateException, IllegalArgumentException
@@ -114,7 +114,7 @@ public class CoverageDescriptor extends org.exolab.castor.xml.util.XMLClassDescr
                 Coverage target = (Coverage) object;
                 if(!target.hasFailures())
                     return null;
-                return new Integer(target.getFailures());
+                return Integer.valueOf(target.getFailures());
             }
             public void setValue( java.lang.Object object, java.lang.Object value)
                 throws IllegalStateException, IllegalArgumentException
@@ -155,7 +155,7 @@ public class CoverageDescriptor extends org.exolab.castor.xml.util.XMLClassDescr
                 Coverage target = (Coverage) object;
                 if(!target.hasSupported())
                     return null;
-                return new Boolean(target.getSupported());
+                return Boolean.valueOf(target.getSupported());
             }
             public void setValue( java.lang.Object object, java.lang.Object value)
                 throws IllegalStateException, IllegalArgumentException

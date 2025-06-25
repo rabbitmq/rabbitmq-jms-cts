@@ -135,7 +135,7 @@ public class ConnectionCloseTest extends AbstractConnectionTestCase {
         invoker.invoke(connection, "start");
         invoker.invoke(connection, "stop");
 
-        Object[] args = new Object[]{Boolean.TRUE, new Integer(0)};
+        Object[] args = new Object[]{Boolean.TRUE, Integer.valueOf(0)};
         if (context.isQueueConnectionFactory()) {
             invoker.invoke(connection, "createQueueSession", args);
         } else if (context.isTopicConnectionFactory()) {

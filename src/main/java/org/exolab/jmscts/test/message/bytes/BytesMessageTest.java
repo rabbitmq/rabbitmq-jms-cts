@@ -334,12 +334,12 @@ public class BytesMessageTest extends AbstractMessageTestCase
         BytesMessage message = (BytesMessage) context.getMessage();
 
         message.writeObject(Boolean.TRUE);
-        message.writeObject(new Byte(Byte.MAX_VALUE));
-        message.writeObject(new Character(Character.MAX_VALUE));
-        message.writeObject(new Short(Short.MAX_VALUE));
-        message.writeObject(new Integer(Integer.MAX_VALUE));
-        message.writeObject(new Float(Float.MAX_VALUE));
-        message.writeObject(new Double(Double.MAX_VALUE));
+        message.writeObject(Byte.valueOf(Byte.MAX_VALUE));
+        message.writeObject(Character.valueOf(Character.MAX_VALUE));
+        message.writeObject(Short.valueOf(Short.MAX_VALUE));
+        message.writeObject(Integer.valueOf(Integer.MAX_VALUE));
+        message.writeObject(Float.valueOf(Float.MAX_VALUE));
+        message.writeObject(Double.valueOf(Double.MAX_VALUE));
         String utf = "ABCD";
         message.writeObject(utf);
         byte[] bytes = populateByteArray(size, 0);

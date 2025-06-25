@@ -246,7 +246,7 @@ public class BasicMapMessage extends BasicMessage implements MapMessage {
     public void setBoolean(String name, boolean value)
         throws MessageNotWriteableException {
         checkWrite();
-        _map.put(name, new Boolean(value));
+        _map.put(name, Boolean.valueOf(value));
     }
 
     /**
@@ -260,7 +260,7 @@ public class BasicMapMessage extends BasicMessage implements MapMessage {
     public void setByte(String name, byte value)
         throws MessageNotWriteableException {
         checkWrite();
-        _map.put(name, new Byte(value));
+        _map.put(name, Byte.valueOf(value));
     }
 
     /**
@@ -274,7 +274,7 @@ public class BasicMapMessage extends BasicMessage implements MapMessage {
     public void setShort(String name, short value)
         throws MessageNotWriteableException {
         checkWrite();
-        _map.put(name, new Short(value));
+        _map.put(name, Short.valueOf(value));
     }
 
     /**
@@ -288,7 +288,7 @@ public class BasicMapMessage extends BasicMessage implements MapMessage {
     public void setChar(String name, char value)
         throws MessageNotWriteableException {
         checkWrite();
-        _map.put(name, new Character(value));
+        _map.put(name, Character.valueOf(value));
     }
 
     /**
@@ -302,7 +302,7 @@ public class BasicMapMessage extends BasicMessage implements MapMessage {
     public void setInt(String name, int value)
         throws MessageNotWriteableException {
         checkWrite();
-        _map.put(name, new Integer(value));
+        _map.put(name, Integer.valueOf(value));
     }
 
     /**
@@ -316,7 +316,7 @@ public class BasicMapMessage extends BasicMessage implements MapMessage {
     public void setLong(String name, long value)
         throws MessageNotWriteableException {
         checkWrite();
-        _map.put(name, new Long(value));
+        _map.put(name, Long.valueOf(value));
     }
 
     /**
@@ -330,7 +330,7 @@ public class BasicMapMessage extends BasicMessage implements MapMessage {
     public void setFloat(String name, float value)
         throws MessageNotWriteableException {
         checkWrite();
-        _map.put(name, new Float(value));
+        _map.put(name, Float.valueOf(value));
     }
 
     /**
@@ -344,7 +344,7 @@ public class BasicMapMessage extends BasicMessage implements MapMessage {
     public void setDouble(String name, double value)
         throws MessageNotWriteableException {
         checkWrite();
-        _map.put(name, new Double(value));
+        _map.put(name, Double.valueOf(value));
     }
 
     /**

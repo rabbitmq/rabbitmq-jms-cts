@@ -100,30 +100,30 @@ class BytesMessageVerifier extends MessagePopulatorVerifier {
     public void populateBytesMessage(BytesMessage message) throws Exception {
         byte[] bytes = populateByteArray(BYTE_ARRAY_SIZE, 0);
         invoke(message, "writeBoolean", Boolean.TRUE);
-        invoke(message, "writeByte", new Byte(Byte.MIN_VALUE));
-        invoke(message, "writeByte", new Byte((byte) 0xFF));
+        invoke(message, "writeByte", Byte.valueOf(Byte.MIN_VALUE));
+        invoke(message, "writeByte", Byte.valueOf((byte) 0xFF));
         invoke(message, "writeBytes", bytes);
 
-        Object[] args = {bytes, new Integer(1), new Integer(bytes.length - 2)};
+        Object[] args = {bytes, Integer.valueOf(1), Integer.valueOf(bytes.length - 2)};
         invoke(message, "writeBytes", args);
-        invoke(message, "writeShort", new Short(Short.MIN_VALUE));
-        invoke(message, "writeShort", new Short((short) 0xFFFF));
-        invoke(message, "writeChar", new Character(Character.MIN_VALUE));
-        invoke(message, "writeInt", new Integer(Integer.MIN_VALUE));
-        invoke(message, "writeLong", new Long(Long.MIN_VALUE));
-        invoke(message, "writeFloat", new Float(Float.MIN_VALUE));
-        invoke(message, "writeDouble", new Double(Double.MIN_VALUE));
+        invoke(message, "writeShort", Short.valueOf(Short.MIN_VALUE));
+        invoke(message, "writeShort", Short.valueOf((short) 0xFFFF));
+        invoke(message, "writeChar", Character.valueOf(Character.MIN_VALUE));
+        invoke(message, "writeInt", Integer.valueOf(Integer.MIN_VALUE));
+        invoke(message, "writeLong", Long.valueOf(Long.MIN_VALUE));
+        invoke(message, "writeFloat", Float.valueOf(Float.MIN_VALUE));
+        invoke(message, "writeDouble", Double.valueOf(Double.MIN_VALUE));
         invoke(message, "writeUTF", "ABC");
 
         invoke(message, "writeObject", Boolean.TRUE);
-        invoke(message, "writeObject", new Byte(Byte.MAX_VALUE));
+        invoke(message, "writeObject", Byte.valueOf(Byte.MAX_VALUE));
         invoke(message, "writeObject", bytes);
-        invoke(message, "writeObject", new Short(Short.MAX_VALUE));
-        invoke(message, "writeObject", new Character(Character.MAX_VALUE));
-        invoke(message, "writeObject", new Integer(Integer.MAX_VALUE));
-        invoke(message, "writeObject", new Long(Long.MAX_VALUE));
-        invoke(message, "writeObject", new Float(Float.MAX_VALUE));
-        invoke(message, "writeObject", new Double(Double.MAX_VALUE));
+        invoke(message, "writeObject", Short.valueOf(Short.MAX_VALUE));
+        invoke(message, "writeObject", Character.valueOf(Character.MAX_VALUE));
+        invoke(message, "writeObject", Integer.valueOf(Integer.MAX_VALUE));
+        invoke(message, "writeObject", Long.valueOf(Long.MAX_VALUE));
+        invoke(message, "writeObject", Float.valueOf(Float.MAX_VALUE));
+        invoke(message, "writeObject", Double.valueOf(Double.MAX_VALUE));
         invoke(message, "writeObject", "ABC");
     }
 
@@ -137,40 +137,40 @@ class BytesMessageVerifier extends MessagePopulatorVerifier {
     @Override
     public void verifyBytesMessage(BytesMessage message) throws Exception {
         expect(message, "readBoolean", Boolean.TRUE);
-        expect(message, "readByte", new Byte(Byte.MIN_VALUE));
-        expect(message, "readUnsignedByte", new Integer(0xFF));
+        expect(message, "readByte", Byte.valueOf(Byte.MIN_VALUE));
+        expect(message, "readUnsignedByte", Integer.valueOf(0xFF));
 
         byte[] buffer1 = new byte[BYTE_ARRAY_SIZE];
-        expect(message, "readBytes", buffer1, new Integer(buffer1.length));
+        expect(message, "readBytes", buffer1, Integer.valueOf(buffer1.length));
         equal(buffer1, populateByteArray(buffer1.length, 0));
 
         byte[] buffer2 = new byte[BYTE_ARRAY_SIZE - 2];
-        Object[] args = {buffer2, new Integer(buffer2.length)};
-        expect(message, "readBytes", args, new Integer(buffer2.length));
+        Object[] args = {buffer2, Integer.valueOf(buffer2.length)};
+        expect(message, "readBytes", args, Integer.valueOf(buffer2.length));
         equal(buffer2, populateByteArray(buffer2.length, 1));
 
-        expect(message, "readShort", new Short(Short.MIN_VALUE));
-        expect(message, "readUnsignedShort", new Integer(0xFFFF));
-        expect(message, "readChar", new Character(Character.MIN_VALUE));
-        expect(message, "readInt", new Integer(Integer.MIN_VALUE));
-        expect(message, "readLong", new Long(Long.MIN_VALUE));
-        expect(message, "readFloat", new Float(Float.MIN_VALUE));
-        expect(message, "readDouble", new Double(Double.MIN_VALUE));
+        expect(message, "readShort", Short.valueOf(Short.MIN_VALUE));
+        expect(message, "readUnsignedShort", Integer.valueOf(0xFFFF));
+        expect(message, "readChar", Character.valueOf(Character.MIN_VALUE));
+        expect(message, "readInt", Integer.valueOf(Integer.MIN_VALUE));
+        expect(message, "readLong", Long.valueOf(Long.MIN_VALUE));
+        expect(message, "readFloat", Float.valueOf(Float.MIN_VALUE));
+        expect(message, "readDouble", Double.valueOf(Double.MIN_VALUE));
         expect(message, "readUTF", "ABC");
 
         expect(message, "readBoolean", Boolean.TRUE);
-        expect(message, "readByte", new Byte(Byte.MAX_VALUE));
+        expect(message, "readByte", Byte.valueOf(Byte.MAX_VALUE));
 
         byte[] buffer3 = new byte[BYTE_ARRAY_SIZE];
-        expect(message, "readBytes", buffer3, new Integer(buffer3.length));
+        expect(message, "readBytes", buffer3, Integer.valueOf(buffer3.length));
         equal(buffer3, populateByteArray(buffer3.length, 0));
 
-        expect(message, "readShort", new Short(Short.MAX_VALUE));
-        expect(message, "readChar", new Character(Character.MAX_VALUE));
-        expect(message, "readInt", new Integer(Integer.MAX_VALUE));
-        expect(message, "readLong", new Long(Long.MAX_VALUE));
-        expect(message, "readFloat", new Float(Float.MAX_VALUE));
-        expect(message, "readDouble", new Double(Double.MAX_VALUE));
+        expect(message, "readShort", Short.valueOf(Short.MAX_VALUE));
+        expect(message, "readChar", Character.valueOf(Character.MAX_VALUE));
+        expect(message, "readInt", Integer.valueOf(Integer.MAX_VALUE));
+        expect(message, "readLong", Long.valueOf(Long.MAX_VALUE));
+        expect(message, "readFloat", Float.valueOf(Float.MAX_VALUE));
+        expect(message, "readDouble", Double.valueOf(Double.MAX_VALUE));
         expect(message, "readUTF", "ABC");
     }
 

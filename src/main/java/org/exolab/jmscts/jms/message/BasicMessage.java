@@ -443,7 +443,7 @@ public class BasicMessage implements Message {
      */
     @Override
     public void setBooleanProperty(String name, boolean value) {
-        _properties.put(name, new Boolean(value));
+        _properties.put(name, Boolean.valueOf(value));
     }
 
     /**
@@ -466,7 +466,7 @@ public class BasicMessage implements Message {
      */
     @Override
     public void setByteProperty(String name, byte value) {
-        _properties.put(name, new Byte(value));
+        _properties.put(name, Byte.valueOf(value));
     }
 
     /**
@@ -489,7 +489,7 @@ public class BasicMessage implements Message {
      */
     @Override
     public void setShortProperty(String name, short value)  {
-        _properties.put(name, new Short(value));
+        _properties.put(name, Short.valueOf(value));
     }
 
     /**
@@ -512,7 +512,7 @@ public class BasicMessage implements Message {
      */
     @Override
     public void setIntProperty(String name, int value) {
-        _properties.put(name, new Integer(value));
+        _properties.put(name, Integer.valueOf(value));
     }
 
     /**
@@ -535,7 +535,7 @@ public class BasicMessage implements Message {
      */
     @Override
     public void setLongProperty(String name, long value) {
-        _properties.put(name, new Long(value));
+        _properties.put(name, Long.valueOf(value));
     }
 
     /**
@@ -558,7 +558,7 @@ public class BasicMessage implements Message {
      */
     @Override
     public void setFloatProperty(String name, float value) {
-        _properties.put(name, new Float(value));
+        _properties.put(name, Float.valueOf(value));
     }
 
     /**
@@ -582,7 +582,7 @@ public class BasicMessage implements Message {
      */
     @Override
     public void setDoubleProperty(String name, double value) {
-        _properties.put(name, new Double(value));
+        _properties.put(name, Double.valueOf(value));
     }
 
     /**

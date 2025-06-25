@@ -115,7 +115,7 @@ public class SequenceMessagePopulator extends AbstractMessagePopulator {
      */
     @Override
     public void populateObjectMessage(ObjectMessage message) throws Exception {
-        message.setObject(new Integer(++_sequence));
+        message.setObject(Integer.valueOf(++_sequence));
     }
 
     /**
@@ -137,7 +137,7 @@ public class SequenceMessagePopulator extends AbstractMessagePopulator {
      */
     @Override
     public void populateTextMessage(TextMessage message) throws Exception {
-        message.setText(new Integer(++_sequence).toString());
+        message.setText(Integer.valueOf(++_sequence).toString());
     }
 
 }

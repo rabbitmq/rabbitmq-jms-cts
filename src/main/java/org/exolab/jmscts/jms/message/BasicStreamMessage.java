@@ -350,7 +350,7 @@ public class BasicStreamMessage extends BasicMessage implements StreamMessage {
     public void writeBoolean(boolean value)
         throws MessageNotWriteableException {
         checkWrite();
-        _body.add(new Boolean(value));
+        _body.add(Boolean.valueOf(value));
     }
 
     /**
@@ -362,7 +362,7 @@ public class BasicStreamMessage extends BasicMessage implements StreamMessage {
     @Override
     public void writeByte(byte value) throws MessageNotWriteableException {
         checkWrite();
-        _body.add(new Byte(value));
+        _body.add(Byte.valueOf(value));
     }
 
     /**
@@ -374,7 +374,7 @@ public class BasicStreamMessage extends BasicMessage implements StreamMessage {
     @Override
     public void writeShort(short value) throws MessageNotWriteableException {
         checkWrite();
-        _body.add(new Short(value));
+        _body.add(Short.valueOf(value));
     }
 
     /**
@@ -386,7 +386,7 @@ public class BasicStreamMessage extends BasicMessage implements StreamMessage {
     @Override
     public void writeChar(char value) throws MessageNotWriteableException {
         checkWrite();
-        _body.add(new Character(value));
+        _body.add(Character.valueOf(value));
     }
 
     /**
@@ -398,7 +398,7 @@ public class BasicStreamMessage extends BasicMessage implements StreamMessage {
     @Override
     public void writeInt(int value) throws MessageNotWriteableException {
         checkWrite();
-        _body.add(new Integer(value));
+        _body.add(Integer.valueOf(value));
     }
 
     /**
@@ -410,7 +410,7 @@ public class BasicStreamMessage extends BasicMessage implements StreamMessage {
     @Override
     public void writeLong(long value) throws MessageNotWriteableException {
         checkWrite();
-        _body.add(new Long(value));
+        _body.add(Long.valueOf(value));
     }
 
     /**
@@ -422,7 +422,7 @@ public class BasicStreamMessage extends BasicMessage implements StreamMessage {
     @Override
     public void writeFloat(float value) throws MessageNotWriteableException {
         checkWrite();
-        _body.add(new Float(value));
+        _body.add(Float.valueOf(value));
     }
 
     /**
@@ -434,7 +434,7 @@ public class BasicStreamMessage extends BasicMessage implements StreamMessage {
     @Override
     public void writeDouble(double value) throws MessageNotWriteableException {
         checkWrite();
-        _body.add(new Double(value));
+        _body.add(Double.valueOf(value));
     }
 
     /**

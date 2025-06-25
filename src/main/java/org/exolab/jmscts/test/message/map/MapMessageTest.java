@@ -93,7 +93,7 @@ public class MapMessageTest extends AbstractMessageTestCase
      * included here
      */
     private static final Float[] FLOAT_CONVERSION_VALUES = {
-        new Float(Float.MIN_VALUE), new Float(Float.MAX_VALUE)};
+        Float.valueOf(Float.MIN_VALUE), Float.valueOf(Float.MAX_VALUE)};
 
     /**
      * Double values to test string conversions against. String conversions
@@ -101,7 +101,7 @@ public class MapMessageTest extends AbstractMessageTestCase
      * included here
      */
     private static final Double[] DOUBLE_CONVERSION_VALUES = {
-        new Double(Double.MIN_VALUE), new Double(Double.MAX_VALUE)};
+        Double.valueOf(Double.MIN_VALUE), Double.valueOf(Double.MAX_VALUE)};
 
     /**
      * Values to test string conversions against
@@ -691,21 +691,21 @@ public class MapMessageTest extends AbstractMessageTestCase
         throws Exception {
         Object result = null;
         if (type.equals(Boolean.class)) {
-            result = new Boolean(message.getBoolean(key));
+            result = Boolean.valueOf(message.getBoolean(key));
         } else if (type.equals(Byte.class)) {
-            result = new Byte(message.getByte(key));
+            result = Byte.valueOf(message.getByte(key));
         } else if (type.equals(Short.class)) {
-            result = new Short(message.getShort(key));
+            result = Short.valueOf(message.getShort(key));
         } else if (type.equals(Character.class)) {
-            result = new Character(message.getChar(key));
+            result = Character.valueOf(message.getChar(key));
         } else if (type.equals(Integer.class)) {
-            result = new Integer(message.getInt(key));
+            result = Integer.valueOf(message.getInt(key));
         } else if (type.equals(Long.class)) {
-            result = new Long(message.getLong(key));
+            result = Long.valueOf(message.getLong(key));
         } else if (type.equals(Float.class)) {
-            result = new Float(message.getFloat(key));
+            result = Float.valueOf(message.getFloat(key));
         } else if (type.equals(Double.class)) {
-            result = new Double(message.getDouble(key));
+            result = Double.valueOf(message.getDouble(key));
         } else if (type.equals(String.class)) {
             result = message.getString(key);
         } else if (type.equals(byte[].class)) {

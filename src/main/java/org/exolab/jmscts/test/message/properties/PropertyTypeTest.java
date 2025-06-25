@@ -192,7 +192,7 @@ public class PropertyTypeTest extends AbstractMessageTestCase
 
         // test an invalid object property
         try {
-            message.setObjectProperty(name, new Character('A'));
+            message.setObjectProperty(name, Character.valueOf('A'));
             fail("Managed to set invalid object property");
         } catch (MessageFormatException expected) {
             // the expected behaviour

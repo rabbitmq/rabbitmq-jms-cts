@@ -376,17 +376,17 @@ public final class Conversions {
             illegalConversion(value, type);
         }
         if (type.equals(Byte.class)) {
-            result = new Byte(value.byteValue());
+            result = Byte.valueOf(value.byteValue());
         } else if (type.equals(Short.class)) {
-            result = new Short(value.shortValue());
+            result = Short.valueOf(value.shortValue());
         } else if (type.equals(Integer.class)) {
-            result = new Integer(value.intValue());
+            result = Integer.valueOf(value.intValue());
         } else if (type.equals(Long.class)) {
-            result = new Long(value.longValue());
+            result = Long.valueOf(value.longValue());
         } else if (type.equals(Float.class)) {
-            result = new Float(value.floatValue());
+            result = Float.valueOf(value.floatValue());
         } else if (type.equals(Double.class)) {
-            result = new Double(value.doubleValue());
+            result = Double.valueOf(value.doubleValue());
         } else if (type.equals(String.class)) {
             result = value.toString();
         }

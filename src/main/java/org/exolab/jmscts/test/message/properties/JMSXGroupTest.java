@@ -81,17 +81,17 @@ public class JMSXGroupTest extends AbstractMessageTestCase {
      * Invalid values for JMSXGroupID
      */
     private static final Object[] INVALID_GROUP_ID_VALUES = {
-        Boolean.TRUE, new Byte(Byte.MIN_VALUE), new Short(Short.MIN_VALUE),
-        new Character(Character.MIN_VALUE), new Integer(Integer.MIN_VALUE),
-        new Float(Float.MIN_VALUE), new Double(Double.MIN_VALUE)};
+        Boolean.TRUE, Byte.valueOf(Byte.MIN_VALUE), Short.valueOf(Short.MIN_VALUE),
+        Character.valueOf(Character.MIN_VALUE), Integer.valueOf(Integer.MIN_VALUE),
+        Float.valueOf(Float.MIN_VALUE), Double.valueOf(Double.MIN_VALUE)};
 
     /**
      * Invalid values for JMSGroupSeq
      */
     private static final Object[] INVALID_GROUP_SEQ_VALUES = {
-        Boolean.TRUE, new Byte(Byte.MIN_VALUE), new Short(Short.MIN_VALUE),
-        new Character(Character.MIN_VALUE), new Float(Float.MIN_VALUE),
-        new Double(Double.MIN_VALUE), "abc"};
+        Boolean.TRUE, Byte.valueOf(Byte.MIN_VALUE), Short.valueOf(Short.MIN_VALUE),
+        Character.valueOf(Character.MIN_VALUE), Float.valueOf(Float.MIN_VALUE),
+        Double.valueOf(Double.MIN_VALUE), "abc"};
 
 
     /**
@@ -237,7 +237,7 @@ public class JMSXGroupTest extends AbstractMessageTestCase {
             if (primitive) {
                 message.setIntProperty(GROUP_SEQ, value);
             } else {
-                message.setObjectProperty(GROUP_SEQ, new Integer(value));
+                message.setObjectProperty(GROUP_SEQ, Integer.valueOf(value));
             }
             if (!valid) {
                 fail("Managed to use invalid int=" + value + " for property="

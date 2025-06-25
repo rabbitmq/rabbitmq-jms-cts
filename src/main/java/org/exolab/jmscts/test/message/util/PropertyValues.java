@@ -61,42 +61,42 @@ public interface PropertyValues {
     /**
      * Byte values to test against
      */
-    Byte[] BYTES = {new Byte(Byte.MIN_VALUE), new Byte(Byte.MAX_VALUE)};
+    Byte[] BYTES = {Byte.valueOf(Byte.MIN_VALUE), Byte.valueOf(Byte.MAX_VALUE)};
 
     /**
      * Short values to test against
      */
-    Short[] SHORTS = {new Short(Short.MIN_VALUE), new Short(Short.MAX_VALUE)};
+    Short[] SHORTS = {Short.valueOf(Short.MIN_VALUE), Short.valueOf(Short.MAX_VALUE)};
 
     /**
      * Int values to test against
      */
-    Integer[] INTS = {new Integer(Integer.MIN_VALUE),
-                      new Integer(Integer.MAX_VALUE)};
+    Integer[] INTS = {Integer.valueOf(Integer.MIN_VALUE),
+                      Integer.valueOf(Integer.MAX_VALUE)};
 
     /**
      * Long values to test against
      */
-    Long[] LONGS = {new Long(Long.MIN_VALUE), new Long(Long.MAX_VALUE)};
+    Long[] LONGS = {Long.valueOf(Long.MIN_VALUE), Long.valueOf(Long.MAX_VALUE)};
 
     /**
      * Float values to test against
      */
     Float[] FLOATS = {
-        new Float(Float.MIN_VALUE), new Float(Float.MAX_VALUE)
-//        new Float(Float.NaN),
-//        new Float(Float.NEGATIVE_INFINITY),
-//        new Float(Float.POSITIVE_INFINITY)
+        Float.valueOf(Float.MIN_VALUE), Float.valueOf(Float.MAX_VALUE)
+//        Float.valueOf(Float.NaN),
+//        Float.valueOf(Float.NEGATIVE_INFINITY),
+//        Float.valueOf(Float.POSITIVE_INFINITY)
         };
 
     /**
      * Double values to test against
      */
     Double[] DOUBLES = {
-        new Double(Double.MIN_VALUE), new Double(Double.MAX_VALUE)
-//        new Double(Double.NaN),
-//        new Double(Double.NEGATIVE_INFINITY),
-//        new Double(Double.POSITIVE_INFINITY)
+        Double.valueOf(Double.MIN_VALUE), Double.valueOf(Double.MAX_VALUE)
+//        Double.valueOf(Double.NaN),
+//        Double.valueOf(Double.NEGATIVE_INFINITY),
+//        Double.valueOf(Double.POSITIVE_INFINITY)
         };
 
     /**

@@ -86,7 +86,7 @@ public class StreamMessageTest extends AbstractMessageTestCase
      * included here
      */
     private static final Float[] FLOAT_CONVERSION_VALUES = {
-        new Float(Float.MIN_VALUE), new Float(Float.MAX_VALUE)};
+        Float.valueOf(Float.MIN_VALUE), Float.valueOf(Float.MAX_VALUE)};
 
     /**
      * Double values to test string conversions against. String conversions
@@ -94,7 +94,7 @@ public class StreamMessageTest extends AbstractMessageTestCase
      * included here
      */
     private static final Double[] DOUBLE_CONVERSION_VALUES = {
-        new Double(Double.MIN_VALUE), new Double(Double.MAX_VALUE)};
+        Double.valueOf(Double.MIN_VALUE), Double.valueOf(Double.MAX_VALUE)};
 
     /**
      * Values to test string conversions against
@@ -787,21 +787,21 @@ public class StreamMessageTest extends AbstractMessageTestCase
         final int dataSize = 256;
         Object result = null;
         if (type.equals(Boolean.class)) {
-            result = new Boolean(message.readBoolean());
+            result = Boolean.valueOf(message.readBoolean());
         } else if (type.equals(Byte.class)) {
-            result = new Byte(message.readByte());
+            result = Byte.valueOf(message.readByte());
         } else if (type.equals(Short.class)) {
-            result = new Short(message.readShort());
+            result = Short.valueOf(message.readShort());
         } else if (type.equals(Character.class)) {
-            result = new Character(message.readChar());
+            result = Character.valueOf(message.readChar());
         } else if (type.equals(Integer.class)) {
-            result = new Integer(message.readInt());
+            result = Integer.valueOf(message.readInt());
         } else if (type.equals(Long.class)) {
-            result = new Long(message.readLong());
+            result = Long.valueOf(message.readLong());
         } else if (type.equals(Float.class)) {
-            result = new Float(message.readFloat());
+            result = Float.valueOf(message.readFloat());
         } else if (type.equals(Double.class)) {
-            result = new Double(message.readDouble());
+            result = Double.valueOf(message.readDouble());
         } else if (type.equals(String.class)) {
             result = message.readString();
         } else if (type.equals(byte[].class)) {

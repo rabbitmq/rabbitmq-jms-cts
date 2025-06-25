@@ -111,7 +111,7 @@ public class StatisticDescriptor extends org.exolab.castor.xml.util.XMLClassDesc
                 Statistic target = (Statistic) object;
                 if(!target.hasCount())
                     return null;
-                return new Integer(target.getCount());
+                return Integer.valueOf(target.getCount());
             }
             public void setValue( java.lang.Object object, java.lang.Object value)
                 throws IllegalStateException, IllegalArgumentException
@@ -190,7 +190,7 @@ public class StatisticDescriptor extends org.exolab.castor.xml.util.XMLClassDesc
                 Statistic target = (Statistic) object;
                 if(!target.hasRate())
                     return null;
-                return new Double(target.getRate());
+                return Double.valueOf(target.getRate());
             }
             public void setValue( java.lang.Object object, java.lang.Object value)
                 throws IllegalStateException, IllegalArgumentException
