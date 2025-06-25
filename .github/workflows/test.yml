@@ -44,7 +44,9 @@ jobs:
         run: ./mvnw dependency:tree --no-transfer-progress
       - name: Test
         run: ./mvnw clean verify --no-transfer-progress
-      - uses: actions/upload-artifact@v4
+      - name: Upload test logs
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
           name: logs
           path: target/
