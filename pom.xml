@@ -22,7 +22,7 @@
 
     <!-- private project build dependencies -->
     <junit.version>4.13.2</junit.version>
-    <commons-cli.version>1.10.0</commons-cli.version>
+    <commons-cli.version>1.11.0</commons-cli.version>
     <commons-collections.version>3.2.2</commons-collections.version>
     <commons-logging.version>1.2</commons-logging.version>
     <oswego-concurrent.version>1.3.4-jboss-update1</oswego-concurrent.version>
