@@ -46,7 +46,7 @@ jobs:
         run: ./mvnw clean verify --no-transfer-progress
       - name: Upload test logs
         if: always()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: logs
           path: target/
