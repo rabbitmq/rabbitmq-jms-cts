@@ -33,7 +33,7 @@
     <xdoclet.xdoclet.version>1.2.3</xdoclet.xdoclet.version>
     <xdoclet.xjavadoc.version>1.2.3</xdoclet.xjavadoc.version>
     <castor.version>0.9.4.3</castor.version>
-    <xalan.version>2.7.2</xalan.version>
+    <xalan.version>2.7.3</xalan.version>
     <xerces-impl.version>2.9.0</xerces-impl.version>
 
     <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
