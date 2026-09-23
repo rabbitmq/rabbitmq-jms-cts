@@ -19,7 +19,7 @@ jobs:
         include:
           - rabbitmq-image: "pivotalrabbitmq/rabbitmq:v4.3.x-otp27"
             label: "4.3"
-          - rabbitmq-image: "pivotalrabbitmq/rabbitmq:main-otp27"
+          - rabbitmq-image: "pivotalrabbitmq/rabbitmq:v4.4.x-otp28"
             label: "4.4"
     services:
       rabbitmq:
