@@ -17,10 +17,10 @@ jobs:
     strategy:
       matrix:
         include:
-          - rabbitmq-image: "pivotalrabbitmq/rabbitmq:v4.3.x-otp27"
-            label: "4.3"
           - rabbitmq-image: "pivotalrabbitmq/rabbitmq:v4.4.x-otp28"
             label: "4.4"
+          - rabbitmq-image: "pivotalrabbitmq/rabbitmq:main-otp29"
+            label: "5.0"
     services:
       rabbitmq:
         image: ${{ matrix.rabbitmq-image }}
